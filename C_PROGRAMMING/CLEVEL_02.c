@@ -1,5 +1,5 @@
 
-//write a loop Program to print 1 to 5 on one by one.
+//01.write a loop Program to print 1 to 5 on one by one.
 /*
 1
 2
@@ -22,7 +22,7 @@ int main()
     }
 }
 */
-//write a loop Program to print 5 to 1 on one by one.
+//02. write a loop Program to print 5 to 1 on one by one.
 /*
 5
 4
@@ -44,7 +44,7 @@ int main()
         goto loop;
     }
 }*/
-//write a loop Program to  print sum from 1 to 5 .
+//03. write a loop Program to  print sum from 1 to 5 .
 //Answer: 15
 /*#include<stdio.h>
 int main()
@@ -64,7 +64,7 @@ int main()
      printf("%d",sum);
     }
 }*/
-//Question: write a loop Program to print sum from 6 to 1 .
+//Question 04.: write a loop Program to print sum from 6 to 1 .
 //Answer: 21
 /*#include<stdio.h>
 int main()
@@ -84,7 +84,7 @@ int main()
      printf("%d",sum);
     }
 }*/
-// Question: Write a loop Program to print odd numberes 1 to 9.
+// Question 05: Write a loop Program to print odd numberes 1 to 9.
 // Answer:
 /*
 1
@@ -117,7 +117,7 @@ loop:
     }
 }
 */
-// Question: Write a loop Program to print two-digit odd numberes below 20.
+// Question 06: Write a loop Program to print two-digit odd numberes below 20.
 // Answer:
 /*
 11
@@ -150,7 +150,7 @@ loop:
         }
     }
 }*/
-// Question: Write a loop Program to print two-digit odd numbers whose sum of digits is 7.
+// Question 07: Write a loop Program to print two-digit odd numbers whose sum of digits is 7.
 // Answer:
 /*
 25
@@ -182,7 +182,7 @@ loop:
         }
     }
 }*/
-// Question: Write a loop Program to print two-digit even numbers whose sum of digits is 6.
+// Question 08: Write a loop Program to print two-digit even numbers whose sum of digits is 6.
 // Answer:
 /*
 24
@@ -215,7 +215,7 @@ loop:
     }
 }
 */
-//Question: Write loop program to print the sum of two-digit numbers whose one's digit is 5.
+//Question 09: Write loop program to print the sum of two-digit numbers whose one's digit is 5.
 //Answer: 495
 /*#include<stdio.h>
 int main()
@@ -243,7 +243,7 @@ int main()
 
 }
 */
-//Question: Write loop program to print the sum of two-digit odd numbers whose ten's digit is 7.
+//Question 10: Write loop program to print the sum of two-digit odd numbers whose ten's digit is 7.
 //Answer: 375
 /*#include<stdio.h>
 int main()
@@ -271,7 +271,7 @@ int main()
 
 }
 */
-//Question: Write a program to get number from the user print the total number of digits in that number.
+//Question 11: Write a program to get number from the user print the total number of digits in that number.
 /*Answer:
 Input:123456 - Output- 6
 Input:76895439- Output - 8
@@ -294,7 +294,7 @@ int main()
 
 }
 */
-//Question: Write a program to get number from the user and print the sum of all digits.
+//Question 12: Write a program to get number from the user and print the sum of all digits.
 /*Answer:
 Input:123456 - Output- 21
 Input:76895439- Output - 51
@@ -339,7 +339,7 @@ int main()
     printf("%d",reverse);
 
 }*/
-// Question: Write a program to get a number from user and interchange the first and
+// Question 14: Write a program to get a number from user and interchange the first and
 // last digits and print the result.
 // Answer:
 // Input : 123456 - Output – 623451
@@ -368,7 +368,7 @@ int main () {
     printf("%d",x);
 }
 */
-//Question: Write a program to get a number from user and if the last digit of the 
+//Question 15: Write a program to get a number from user and if the last digit of the 
 //number is even print the same number. If the last digit of the number is 
 //odd then subtract 1 from the last digit and print the number. 
 //(Note: Last digit -MSB)
@@ -395,7 +395,7 @@ int main () {
         printf("%d",x);
     }
 }*/
-//Question: Write a program get number from user
+//Question 16: Write a program get number from user
 //print whether that number is prime or not.
 //Answer: 
 //Input : 31 - Output : Prime
@@ -419,7 +419,7 @@ int main()
         printf("not");
 
 }*/
-//Question: Write a program to get a number from user, print whether that number is 
+//Question 17: Write a program to get a number from user, print whether that number is 
 //prime, and sum of digit is equal to 14.
 //Answer: 
 //Input: 59 - Output: Prime & Sum of Digits is 14
@@ -453,7 +453,7 @@ int main()
             printf("%d is not prime & sum is not 14",x);    
 
 }*/
-//Question: Write a program to get number from user, print whether that number’s 
+//Question 18: Write a program to get number from user, print whether that number’s 
 //first two digits (ten’s digits and one’s digit) is prime.
 //Answer: 
 //Input: 359 - Output: Prime
@@ -481,7 +481,7 @@ int main()
 
 }
 */
-//Question: Write a program to get a 4-digit number from user, print whether that 
+//Question 19: Write a program to get a 4-digit number from user, print whether that 
 //number’s middle two digits (hundred’s digit and ten’s digit) is prime.
 //Answer: 
 //Input: 6359 - Output: Not Prime
@@ -510,7 +510,7 @@ int main()
 }
 */
 
-//Question: Write a program print total number of single digit Prime numbers
+//Question 20: Write a program print total number of single digit Prime numbers
 //Answer: 4
 /*#include<stdio.h>
 int main()
@@ -527,7 +527,7 @@ int main()
     printf("%d",c);
 }
 */
-//Question: Write a program get number from user
+//Question 21: Write a program get number from user
 //print the total number digits
 //which are odd in the number.
 //Answer:
@@ -550,7 +550,7 @@ int main()
     printf("Result: %d", count);
 
 }*/
-//Question: Write a program get number from user 
+//Question 22: Write a program get number from user 
 //print the total number of two-digit odd numbers in the number.
 //Answer: 
 //Input: 12345678 - Output: 3
@@ -572,7 +572,7 @@ int main()
   
 }
 */
-//Question: Write a program get number from user print the total number of single-
+//Question 23: Write a program get number from user print the total number of single-
 //digit perfect square numbers in the number.
 //Answer: 
 //Input: 123456789 - Output: 3
@@ -594,7 +594,7 @@ int main()
     printf("Total count of single digit perfect square numbers: %d",c);
 }
 */
-//Question: Write a program get number from user 
+//Question 24: Write a program get number from user 
 //print the total number of two-digit 
 //perfect square numbers in the number.
 //Answer: 
@@ -620,7 +620,7 @@ int main()
     }
     printf("Total count of Two digit perfect square numbers: %d",c);
 }*/
-//Question: Write a loop program to print the two-digit even numbers, who’s sum of digits are 6.
+//Question 25: Write a loop program to print the two-digit even numbers, who’s sum of digits are 6.
 //Answer:
 //24
 //42
@@ -649,7 +649,7 @@ loop:
         goto loop;
     }
 }*/
-//Question: Write a program to print biggest 4-digit number 
+//Question 26: Write a program to print biggest 4-digit number 
 //which is divisible by 7 and 9.
 /*
 #include <stdio.h>
@@ -664,7 +664,7 @@ int main() {
     printf("Biggest 4-digit number divisible by 7 and 9: %d\n", max_num);
     return 0;
 }*/
-// Question: Write a program to print the total count of numbers
+// Question 27: Write a program to print the total count of numbers
 // which are less than 100000 and whose sum of digits is 14.
 /*#include <stdio.h>
 int  main()
@@ -687,7 +687,7 @@ int  main()
     printf("The total count of numbers which are less than 100000 and whose sum of digits is 14 is %d\n", count);
     return 0;
 }*/
-//Question: Write a program to get two numbers from user and 
+//Question 28: Write a program to get two numbers from user and 
 //print the LCM of those numbers.
 /*#include<stdio.h>
 int main()
@@ -704,7 +704,7 @@ int main()
     lcm=(num1*num2)/a;
     printf("LCM of %d and %d is %d",&num1,&num2,&lcm);
 }*/
-//Question: Write a program to get three numbers from user and print the LCM of 
+//Question29: Write a program to get three numbers from user and print the LCM of 
 //those numbers.
 /*#include<stdio.h>
 int main()
@@ -730,7 +730,7 @@ int main()
     printf("LCM of %d and %d is %d",&num1,&num2,&lcm);
 }
 */
-//Question: Write a program to get two numbers from user and print the HCF of 
+//Question 30: Write a program to get two numbers from user and print the HCF of 
 //those numbers.
 #include<stdio.h>
 int main()
