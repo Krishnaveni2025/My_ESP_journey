@@ -513,7 +513,7 @@ int main()
 //print the sum, otherwise print the difference. 
 //Example: Input: 56 78 – Output: 22
 //Input: 14 65 - Output: 79
-
+/*
 #include<stdio.h>
 int main ()
 {
@@ -539,7 +539,106 @@ int main ()
         break;
     }
 }
+*/
+//Question 33: Get two 2-digit numbers from user. 
+//Print the sum of digits of the biggest number.
+//Example: Input: 56 78 – Output: 15
+//Input: 14 65 - Output: 11
+/*
+#include<stdio.h>
+int main ()
+{
+int x1,x2,y;
+printf ("Enter First Number : ");
+scanf("%d",&x1);
+printf ("Enter Second Number : ");
+scanf("%d",&x2);
+ // Your Code Here
+ if(x1>x2){
+ y=(x1%10)+(x1/10);
+ printf("%d",y);
+ }
+ else{
+ y=(x2%10)+(x2/10);
+printf ("Result = %d",y);
+}
+}*/
+// Question 34: Get two 3-digit numbers from user.
+// Print the difference between the one’s digit and
+// hundred’s digit of the number
+// whose ten’s digit is bigger than the other number’s ten’s digit
+// Example: Input: 856 978 – Output: 1
+// Input: 128 365 - Output: 2
+/*
+#include <stdio.h>
+int main()
+{
+    int x1, x2, y;
+    printf("Enter First Number : ");
+    scanf("%d", &x1);
+    printf("Enter Second Number : ");
+    scanf("%d", &x2);
+    // Your Code Here
+    int y1, y2, ones, hundreds;
+    y1 = (x1 % 100) / 10;
+    y2 = (x2 % 100) / 10;
+    while (y1 > y2)
+    {
+        ones = x1 % 10;
+        hundreds = x1 / 100;
+        if (ones > hundreds)
+        {
+            y = ones - hundreds;
+        }
+        else
+        {
+            y = hundreds - ones;
+        }
+        printf("Result = %d", y);
+        break;
+    }
+    while (y1 < y2)
+    {
+        ones = x2 % 10;
+        hundreds = x2 / 100;
+        if (ones > hundreds)
+        {
+            y = ones - hundreds;
+        }
+        else
+        {
+            y = hundreds - ones;
+        }
+        printf("Result = %d", y);
+        break;
+    }
+}*/
+// Question 35: Get two 3-digit numbers from user. Add the one’s and hundred’s digits of both the
+// numbers. Print the sum of all the digits of the number whose sum of one’s and
+// hundred’s digits is bigger.
+#include <stdio.h>
 
-
-
+int main()
+{
+    int x1, x2, y;
+    printf("Enter First Number: ");
+    scanf("%d", &x1);
+    printf("Enter second Number: ");
+    scanf("%d", &x2);
+    int sum1, sum2;
+    sum1 = (x1 / 100) + (x1 % 10);
+    sum2 = (x2 / 100) + (x2 % 10);
+    while (sum1 > sum2)
+    {
+        y = sum1 + ((x1 % 100) / 10);
+        printf("Result = %d", y);
+        break;
+    }
+    while (sum1 < sum2)
+    {
+        y = sum2 + ((x2 % 100) / 10);
+        printf("Result = %d", y);
+        break;
+    }
+}
 
