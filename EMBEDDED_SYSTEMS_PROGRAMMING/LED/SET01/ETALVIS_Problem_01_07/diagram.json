@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 123.91, "left": -25.36, "attrs": {} },
+    { "type": "wokwi-led", "id": "led0", "top": -25, "left": 325, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led1", "top": -25, "left": 275, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led2", "top": -25, "left": 225, "attrs": { "color": "blue" } },
+    { "type": "wokwi-led", "id": "led3", "top": -25, "left": 175, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "led4", "top": -25, "left": 125, "attrs": { "color": "orange" } },
+    { "type": "wokwi-led", "id": "led5", "top": -25, "left": 75, "attrs": { "color": "purple" } },
+    { "type": "wokwi-led", "id": "led6", "top": -25, "left": 25, "attrs": { "color": "magenta" } },
+    { "type": "wokwi-led", "id": "led7", "top": -25, "left": -25, "attrs": { "color": "cyan" } }
+  ],
+  "connections": [
+    [ "led7:C", "mega:GND.1", "empty", [ "v62.14", "h1.58" ] ],
+    [ "led6:C", "mega:GND.1", "empty", [ "v80.36", "h9.29" ] ],
+    [ "led5:C", "mega:GND.1", "empty", [ "v42.39", "h-17.93" ] ],
+    [ "led4:C", "mega:GND.1", "empty", [ "v75.8", "h-7.19" ] ],
+    [ "led3:C", "mega:GND.1", "empty", [ "v63.66", "h-116.41" ] ],
+    [ "led2:C", "mega:GND.1", "empty", [ "v74.29", "h-164.89", "v4.56" ] ],
+    [ "led1:C", "mega:GND.1", "empty", [ "v89.47", "h-14.43" ] ],
+    [ "led0:C", "mega:GND.1", "empty", [ "v43.91", "h-8.24" ] ],
+    [ "mega:A0", "led0:A", "empty", [ "v-193.21", "h8.86" ] ],
+    [ "mega:A1", "led1:A", "empty", [ "v-202.81", "h-0.64" ] ],
+    [ "mega:A2", "led2:A", "empty", [ "v-212.41", "h9.06" ] ],
+    [ "mega:A3", "led3:A", "empty", [ "v0" ] ],
+    [ "mega:A4", "led4:A", "empty", [ "v-222.01", "h-0.59" ] ],
+    [ "mega:A5", "led5:A", "empty", [ "v-241.21", "h-134.89" ] ],
+    [ "mega:A6", "led6:A", "empty", [ "v-260.41", "h-192.64", "v-28.8" ] ],
+    [ "mega:A7", "led7:A", "empty", [ "v-270.01", "h-250.14" ] ]
+  ],
+  "dependencies": {}
+}
