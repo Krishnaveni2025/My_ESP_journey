@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 123.91, "left": -25.36, "attrs": {} },
+    { "type": "wokwi-led", "id": "led0", "top": -25, "left": 325, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led1", "top": -25, "left": 275, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led3", "top": -25, "left": 175, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "led4", "top": -25, "left": 125, "attrs": { "color": "orange" } },
+    { "type": "wokwi-led", "id": "led5", "top": -25, "left": 75, "attrs": { "color": "purple" } }
+  ],
+  "connections": [
+    [ "led5:C", "mega:GND.1", "empty", [ "v42.39", "h-17.93" ] ],
+    [ "led4:C", "mega:GND.1", "empty", [ "v75.8", "h-7.19" ] ],
+    [ "led3:C", "mega:GND.1", "empty", [ "v63.66", "h-116.41" ] ],
+    [ "led1:C", "mega:GND.1", "empty", [ "v89.47", "h-14.43" ] ],
+    [ "led0:C", "mega:GND.1", "empty", [ "v43.91", "h-8.24" ] ],
+    [ "mega:0", "led0:A", "empty", [ "v-56.11", "h-11.34" ] ],
+    [ "mega:1", "led1:A", "empty", [ "v-65.71", "h-10.94" ] ],
+    [ "mega:5", "led3:A", "empty", [ "v-94.51", "h17.46" ] ],
+    [ "mega:2", "led4:A", "empty", [ "v-56.11", "h-68.64", "v-9.6" ] ],
+    [ "mega:3", "led5:A", "empty", [ "v-46.51", "h-1.54" ] ]
+  ],
+  "dependencies": {}
+}
