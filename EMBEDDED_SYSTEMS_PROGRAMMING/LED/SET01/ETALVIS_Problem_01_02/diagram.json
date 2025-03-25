@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 123.91, "left": -25.36, "attrs": {} },
+    { "type": "wokwi-led", "id": "led7", "top": -13.2, "left": 167, "attrs": { "color": "cyan" } }
+  ],
+  "connections": [
+    [ "led7:C", "mega:GND.1", "empty", [ "v62.14", "h1.58" ] ],
+    [ "led7:A","mega:38",  "empty", [ "v-35.76", "h-335.64", "v-163.2" ] ]
+  ],
+  "dependencies": {}
+}
