@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Krishnaveni purne",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -57, "left": -214.8, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -23.82,
+      "left": 321.88,
+      "attrs": { "common": "anode" }
+    }
+  ],
+  "connections": [
+    [ "mega:22", "sevseg1:A", "green", [ "v-27.7", "h7.4" ] ],
+    [ "sevseg1:B", "mega:23", "green", [ "v0" ] ],
+    [ "mega:24", "sevseg1:C", "green", [ "v0.95", "h-11.8", "v96", "h201.6" ] ],
+    [ "sevseg1:D", "mega:25", "green", [ "v28.8", "h-134.4", "v-105.6", "h-19.2" ] ],
+    [ "mega:29", "sevseg1:DP", "green", [ "v1.15", "h7", "v96", "h182.4" ] ],
+    [ "sevseg1:G", "mega:28", "green", [ "v-66.36", "h-172.8", "v67.2" ] ],
+    [ "mega:27", "sevseg1:F", "green", [ "v-27.75", "h160.6" ] ],
+    [ "sevseg1:E", "mega:26", "green", [ "v0", "h-182.4", "v-67.2" ] ],
+    [ "mega:VIN", "sevseg1:COM.1", "red", [ "v16.5", "h366.9" ] ]
+  ],
+  "dependencies": {}
+}
