@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 123.91, "left": -25.36, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -32.58,
+      "left": 125.36,
+      "attrs": { "digits": "2", "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "sevseg1:A", "mega:22", "empty", [ "v-38.4", "h153.6", "v211.2" ] ],
+    [ "sevseg1:B", "mega:23", "empty", [ "v-28.8", "h211.2", "v192", "h0", "v9.6" ] ],
+    [ "sevseg1:C", "mega:24", "empty", [ "v0" ] ],
+    [ "sevseg1:D", "mega:25", "empty", [ "v37.56", "h230.4", "v76.8", "h-9.6" ] ],
+    [ "sevseg1:E", "mega:26", "empty", [ "v0" ] ],
+    [ "sevseg1:F", "mega:27", "empty", [ "v-19.2", "h230.4", "v211.2" ] ],
+    [ "sevseg1:G", "mega:28", "empty", [ "h0", "v133.56" ] ],
+    [ "sevseg1:DP", "mega:29", "empty", [ "v56.76", "h278.4", "v76.8", "h-9.6" ] ],
+    [ "sevseg1:DIG1", "mega:52", "empty", [ "v-28.8", "h-67.2", "v326.4", "h19.2" ] ],
+    [ "sevseg1:DIG2", "mega:53", "empty", [ "v-28.8", "h220.8", "v336", "h0", "v9.6" ] ]
+  ],
+  "dependencies": {}
+}
