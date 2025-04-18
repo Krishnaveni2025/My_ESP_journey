@@ -5,48 +5,37 @@
 //share the eight port pins to all the displays
 //connect the common pin of seven segment displays to bit 0 & bit 1 of port B.
 //Display number 25
-void delay1();
-void delay2();
-void setup() {
-    volatile char *ddra, *ddrb;
-    ddra = (char*)0x21; // DDRA register address
-    *ddra = 0xFF; // Set Port A as output
-
-    ddrb = (char*)0x24; // DDRB register address
-    *ddrb = 0x03; // Set PB0 and PB1 as output
+void delay1(void);
+void setup()
+{
+  volatile char *ddra,*ddrb;
+  ddra = 0x21;
+  *ddra = 0xFF;
+  ddrb = 0x24;
+  *ddrb = 0x03;
 }
-
-void delay1() {
-    volatile long  i;
-    for (i = 0; i < 500000; i++) ;
+void loop()
+{
+  volatile char *outa,*outb ;
+  outa = 0x22;outb = 0x25;
+  while (1)
+  {
+    *outb = 0x02;   //enable tens digit
+    *outa = 0x6D;    //display 5
+    delay1();
+    *outb = 0x03;    //disable both the digits
+    *outa = 0x00;    //off the displays
+    delay1();
+    *outb = 0x01;    //enable ones digit
+    *outa = 0x5B;    //display 2
+    delay1();
+    *outb = 0x03;    //disable both digits
+    *outa = 0x00;    //off the displays
+    delay1();
+  }
 }
-void delay2() {
-    volatile long  k;
-    for (k = 0; k < 50000; k++) ;
-}
-
-void loop() {
-    volatile char *porta, *portb;
-    porta = (char*)0x22; // PORTA register address
-    portb = (char*)0x25; // PORTB register address
-
-  while (1) {
-        // Display '2' on the first digit (PB0)
-        *portb = 0x01; // Set PB0 high, PB1 low
-        *porta = 0x5B; // Segment code for '2'
-        delay1(); // Short delay for multiplexing
-
-        // Display '5' on the second digit (PB1)
-        *portb = 0x02; // Set PB1 high, PB0 low
-        *porta = 0x6D; // Segment code for '5'
-        delay2(); // Short delay for multiplexing
-        *porta = 0x00;
-        delay1(); 
-    }
-}
-
-int main() {
-    setup();
-    loop();
-    return 0;
+void delay1(void)
+{
+  volatile long i;
+  for (i = 0; i < 10000; i++);
 }
