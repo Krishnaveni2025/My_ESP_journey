@@ -26,9 +26,14 @@ int i, j;
             *outb = 0x01; // Display tens digit
             *outa = dig1[i];
             delay1();
-
+            *outb = 0x03; //disable both displays
+            *outa = 0x00;//off the displays
+            delay1();
             *outb = 0x02; // Display ones digit
             *outa = dig1[j];
+            delay1();
+            *outb = 0x03; //disable both displays
+            *outa = 0x00;//off the displays
             delay1();
         }
     }
@@ -37,5 +42,5 @@ int i, j;
 void delay1(void)
 {
   volatile long d;
-  for (d = 0; d < 100000; d++);
+  for (d = 0; d < 10000; d++);
 }
