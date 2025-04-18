@@ -7,15 +7,18 @@
 
 void setup() {
   // put your setup code here, to run once:
-  volatile char *ddrA, *ddrB;
-  ddrA = 0x21; ddrB = 0x24;
-  *ddrA = 0xFF; *ddrB = 0xFF;
-  volatile char *outA, *outB;
-  outA = 0x22; outB = 0x25;
-  *outA = 0x6D;//5
-  *outB = 0x5B;//2
+  volatile char *ddr;
+  ddr = 0x21;
+  *ddr = 0xFF;
+  ddr = 0x24;
+  *ddr = 0xFF;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  volatile char *out;
+  out = 0x25;
+  *out = 0x5B;
+  out = 0x22;
+  *out = 0x6D;
 }
