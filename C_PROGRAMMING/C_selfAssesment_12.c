@@ -1,38 +1,212 @@
 /* C PROGRAMMING SELF ASSESSMENT 12
 1. USE POINTERS*/
-/*1. gET TWO NUMBERS of upto 50 digits and
-perform addition and print the result. 
-#include<stdio.h>
+/*1. get TWO NUMBERS of upto 50 digits and
+perform addition and print the result.
+
+#include <stdio.h>
+#define MAX_DIGITS 50
+// Function prototypes
+void getnumbers(char *num1, char *num2);
+int length(char *num);
+void addnumbers(char *num1, char *num2, int *result);
+void print(int *result);
 int main()
 {
-getnumbers(number1,number2);
-addnumbers(number1,number2,result);
-print(result);
+    char number1[MAX_DIGITS + 1], number2[MAX_DIGITS + 1];
+    int result[MAX_DIGITS * 2];
+    getnumbers(number1, number2);
+    addnumbers(number1, number2, result);
+    print(result);
 }
-*/
+void getnumbers(char *num1, char *num2)
+{
+    printf("Enter 1st Number: ");
+    scanf("\n%s",num1);
+
+    printf("Enter 2nd Number: ");
+    scanf("\n%s",num2);
+}
+void addnumbers(char *num1, char *num2, int *result)
+{
+    int len1 = length(num1);
+    int len2 = length(num2);
+    int carry = 0;
+    int i = 0;
+
+    // Add numbers from the end
+    while (i < len1 || i < len2 || carry) {
+        int digit1 = (i < len1) ? num1[len1 - 1 - i] - '0' : 0;
+        int digit2 = (i < len2) ? num2[len2 - 1 - i] - '0' : 0;
+        int sum = digit1 + digit2 + carry;
+        result[i] = sum % 10;
+        carry = sum / 10;
+        i++;
+    }
+
+}
+
+int length(char *num) {
+    int len = 0;
+    while (num[len] != '\0') {
+        len++;
+    }
+    return len;
+}
+void print(int *result) {
+    int i = 0;
+    // Skip leading zeros
+    while (i < MAX_DIGITS * 2 && result[i] == 0) {
+        i++;
+    }
+
+    // Print the result
+    if (i == MAX_DIGITS * 2) {
+     printf("0\n");
+    } else {
+        for (; i < MAX_DIGITS * 2; i++) {
+            printf("%d", result[i]);
+        }
+        printf("\n");
+    }
+}*/
+
 /*2. Get a string and a character from use,
-find all the positions where the character is 
-present , and print it. 
+find all the positions where the character is
+present , and print it.
 Example:
 String: helloetalvislearning
-character: 6
+character: e
 Answer: 2,6,14
+
+#include <stdio.h>
+#include <string.h>
+
+void findPositions(char *str, char ch) {
+    char *ptr = str;  // Pointer to traverse the string
+    int index = 0;    // Position index
+    int first = 1;    // Flag for formatting output
+
+    printf("Positions: ");
+    while (*ptr != '\0') {
+        if (*ptr == ch) {
+            if (!first) {
+                printf(", ");  // Formatting for multiple values
+            }
+            printf("%d", index + 1);  // Corrected for 1-based indexing
+            first = 0;
+        }
+        ptr++;  // Move pointer forward
+        index++;
+    }
+    printf("\n");
+}
+
+int main() {
+    char str[100], ch;
+
+    // Getting input from the user
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove trailing newline character if present
+    if (str[strlen(str) - 1] == '\n') {
+        str[strlen(str) - 1] = '\0';
+    }
+
+    printf("Enter the character to find: ");
+    scanf(" %c", &ch);
+
+    findPositions(str, ch);
+
+    return 0;
+}
 */
-/*3. Get a main String and substring. 
+
+/*3. Get a main String and substring.
 check the sub-string in the main string and
-print the position. 
+print the position.
 String: helloetalvislearning
 sub-string:etal
 Answer: 6
-*/
-/*4. Geet a string using gets function and
-count all the words in it. 
-Example: 
+
+#include <stdio.h>
+#include <string.h>
+
+void findSubstringPosition(char *mainStr, char *subStr);
+
+int main() {
+    char mainStr[100], subStr[50];
+    
+        // Getting input from the user
+        printf("Enter the main string: ");
+        fgets(mainStr, sizeof(mainStr), stdin);
+        // Remove trailing newline character if present
+        if (mainStr[strlen(mainStr) - 1] == '\n') {
+            mainStr[strlen(mainStr) - 1] = '\0';
+        }
+
+        printf("Enter the substring: ");
+        fgets(subStr, sizeof(subStr), stdin);
+        // Remove trailing newline character if present
+        if (subStr[strlen(subStr) - 1] == '\n') {
+            subStr[strlen(subStr) - 1] = '\0';
+        }
+
+    findSubstringPosition(mainStr, subStr); // Call the function to find the substring position
+
+    return 0;
+}
+
+// Function to find the position of a substring in a main string
+void findSubstringPosition(char *mainStr, char *subStr)
+{
+    char *pos = strstr(mainStr, subStr); // Find the first occurrence of subStr in mainStr
+    if (pos != NULL)
+    {
+        int position = pos - mainStr;
+        printf("Answer: %d\n", position + 1); // Print the position (1-based index)
+    }
+    else
+    {
+        printf("Substring not found.\n");
+    }
+}*/
+
+/*4. Get a string using gets function and
+count all the words in it.
+Example:
 String: Welcome to Etalvis Learning
-Answer: 4*/
+Answer: 4
+#include <stdio.h>
+
+int countWords(char *str) {
+    int count = 0;
+    char *ptr = str;  // Pointer to traverse the string
+
+    // Start counting words
+    while (*ptr != '\0') {
+        if (*ptr == ' ') {
+            count++;  // Increment count for each space
+        }
+        ptr++;  // Move pointer forward
+    }
+
+    return count + 1;  // Add 1 for the last word
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    gets(str);  // Using gets() to take input
+
+    printf("Word Count: %d\n", countWords(str));
+
+    return 0;
+}*/
 
 /*5. Write a program ro multiply up to two 50-digit
-numbers. 
+numbers.
 #include<stdio.h>
 int main()
 {
@@ -121,24 +295,24 @@ void print(int *result) {
 }*/
 /*6. Write a calculator program that will give the "Calc" promt
 and always stay on this promt . when a user types one
-of the following commands, the program will calculate and give result. 
-Typing "Exit" will exit from the calculator program. 
-This program accepts up to 50-digit numbers. 
-Then, the division will give the quotient and remainder. 
-Note: 
-.> Do not accept invalid numbers. 
-.> Do not print leading zeros. 
-.> Use functions 
-.> Each number can be of a different digit. 
-.> Make sure that all the input conditions are taken care. 
-.> Try to minimize the exexution speed. 
+of the following commands, the program will calculate and give result.
+Typing "Exit" will exit from the calculator program.
+This program accepts up to 50-digit numbers.
+Then, the division will give the quotient and remainder.
+Note:
+.> Do not accept invalid numbers.
+.> Do not print leading zeros.
+.> Use functions
+.> Each number can be of a different digit.
+.> Make sure that all the input conditions are taken care.
+.> Try to minimize the exexution speed.
 
 Calc> 1233489374983933498398095+3487384 - Addition
 Calc> 1233489374983933498398095-3487384 - Subtraction
 Calc> 12347876378378837487*452135185215 - Multiplication
 Calc> 1233489374983933498398095/3487384 - Division
 Calc> Exit - Quit.
-*/
+
 #include <stdio.h>
 
 #define MAX_DIGITS 50
@@ -151,7 +325,7 @@ int length(char *num);
 void addNumbers(char *num1, char *num2, int *result);
 void subtractNumbers(char *num1, char *num2, int *result);
 void divideNumbers(char *num1, char *num2, int *quotient, int *remainder);
-void calculator();  
+void calculator();
 void printResult(int *result, int size);
 
 int main() {
@@ -159,7 +333,7 @@ int main() {
     return 0;
 }
 
-// Function definitions 
+// Function definitions
 void getInput(char *input) {
     printf("Calc> ");
     scanf("%s", input);
@@ -188,13 +362,13 @@ void addNumbers(char *num1, char *num2, int *result) {
     }
 }
 
-void subtractNumbers(char *num1, char *num2, int *result) { 
+void subtractNumbers(char *num1, char *num2, int *result) {
     int len1 = length(num1);
     int len2 = length(num2);
     int borrow = 0;
     int i = 0;
 
-    // Subtract numbers from the end    
+    // Subtract numbers from the end
     while (i < len1 || i < len2) {
         int digit1 = (i < len1) ? num1[len1 - 1 - i] - '0' : 0;
         int digit2 = (i < len2) ? num2[len2 - 1 - i] - '0' : 0;
@@ -216,7 +390,7 @@ void subtractNumbers(char *num1, char *num2, int *result) {
         result[0] = 0;
     } else {
 
-        for (int k = 0; k < MAX_DIGITS - j; k++) {
+   ]   for (int k = 0; k < MAX_DIGITS - j; k++) {
             result[k] = result[k + j];
         }
     }
@@ -276,7 +450,7 @@ void calculator() {
     while (1) {
         getInput(input);
         //if input is exit stop everything and break
-        
+
         getNumbers(num1, num2);
         char operator = input[length(input) - 1]; // Get the last character as operator
         switch (operator) {
@@ -322,7 +496,7 @@ void printResult(int *result, int size) {
 }
 void multiplyNumbers(char *num1, char *num2, int *result) {
     int len1 = length(num1);
-    int len2 = length(num2);    
+    int len2 = length(num2);
     for (int i = 0; i < len1; i++) {
         for (int j = 0; j < len2; j++) {
             result[i + j] += (num1[len1 - 1 - i] - '0') * (num2[len2 - 1 - j] - '0');
@@ -343,3 +517,4 @@ void multiplyNumbers(char *num1, char *num2, int *result) {
         }
     }
 }
+*/
