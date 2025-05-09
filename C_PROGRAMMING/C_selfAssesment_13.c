@@ -1,5 +1,5 @@
 /*  C PROGRAMMING SELF ASSESSMENT 13*/
-/*1. Create a linnk list for the follwing structure and get
+/*1. Create a link list for the following structure and get
 user input of id,Maths Mark. Science Mark.
 Once the user inputs id as -1 exit the input mode 
 and display the entries.
@@ -12,6 +12,64 @@ int science;
 struct student *next;
 };
 */
+#include <stdio.h>
+#include <stdlib.h>
+
+struct student {
+    int id;
+    int maths;
+    int science;
+    struct student *next;
+};
+
+void insertEntry(struct student **head, int id, int maths, int science) {
+    struct student *newStudent = (struct student *)malloc(sizeof(struct student));
+    newStudent->id = id;
+    newStudent->maths = maths;
+    newStudent->science = science;
+    newStudent->next = *head;
+    *head = newStudent;
+}   
+void displayList(struct student *head) {
+    struct student *current = head;
+    while (current != NULL) {
+        printf("ID: %d, Maths: %d, Science: %d\n", current->id, current->maths, current->science);
+        current = current->next;
+    }
+}
+
+int main() {
+    struct student *head = NULL;
+    int id, maths, science;
+
+    while (1) { 
+        printf("Enter ID (or -1 to exit): ");
+        scanf("%d", &id);
+        if (id == -1) {
+            break;
+        }
+        printf("Enter Maths Mark: ");
+        scanf("%d", &maths);
+        printf("Enter Science Mark: ");
+        scanf("%d", &science);
+        insertEntry(&head, id, maths, science);
+    }
+    
+        printf("\nStudent List:\n");
+        displayList(head);
+        // Free the allocated memory
+        struct student *current = head;
+        struct student *nextStudent;
+        while (current != NULL) {
+            nextStudent = current->next;
+            free(current);
+            current = nextStudent;
+        }
+    return 0;
+}
+/*2. Create a sample link list with about 5 entries
+using the following  Structure. 
+Insert a new entry before or after a given id.
 /*2. Create a sample link list with about 5 entries
 using the following  Structure. 
 Insert a new entry before or after a given id.
