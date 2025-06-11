@@ -14,11 +14,13 @@ void setup()
  
  
 }
+
 void loop(){
    volatile char *dirc;//D1 to D4 are connected to PortC as input
-   dirc = 0x27; *dirc = 0x01;
+   dirc = 0x27; *dirc = 0x0F;
    volatile char *outc;//D1 D2 D3 D4
-   *outc =0x01;
+   outc = 0x28;
+   *outc =0x07;
    display_number();
    delay1();
    
