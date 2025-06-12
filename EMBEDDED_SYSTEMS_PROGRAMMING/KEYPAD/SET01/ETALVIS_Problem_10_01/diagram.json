@@ -25,7 +25,7 @@
       "id": "r1",
       "top": 282.35,
       "left": -28.8,
-      "hide":true,
+      "hide": true,
       "attrs": { "value": "1000" }
     },
     {
@@ -33,7 +33,7 @@
       "id": "r2",
       "top": 301.55,
       "left": -28.8,
-      "hide":true,
+      "hide": true,
       "attrs": { "value": "1000" }
     },
     {
@@ -41,7 +41,7 @@
       "id": "r3",
       "top": 253.55,
       "left": -28.8,
-      "hide":true,
+      "hide": true,
       "attrs": { "value": "1000" }
     },
     {
@@ -49,12 +49,12 @@
       "id": "r4",
       "top": 224.75,
       "left": -28.8,
-      "hide":true,
+      "hide": true,
       "attrs": { "value": "1000" }
     }
   ],
   "connections": [
-    [ "mega:A0", "keypad1:R1", "green","empty", [ "v122.1", "h419.1" ] ],
+    [ "mega:A0", "keypad1:R1", "green", [ "v122.1", "h419.1" ] ],
     [ "mega:A1", "keypad1:R2", "green", [ "v131.7", "h419.2" ] ],
     [ "mega:A2", "keypad1:R3", "green", [ "v141.3", "h419.3" ] ],
     [ "mega:A3", "keypad1:R4", "green", [ "v150.9", "h438.35" ] ],
