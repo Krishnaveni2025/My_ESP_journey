@@ -9,3 +9,12 @@ Here is the 1x1 keypad
 Wokwi link: https://wokwi.com/projects/433630685180906497
 
 ![image](https://github.com/user-attachments/assets/ea3c961c-6d1a-45df-a087-17d47126a8ec)
+
+
+Here is the 2x2 kepad
+
+wokwi link:   https://wokwi.com/projects/433637922275252225
+
+
+
+![image](https://github.com/user-attachments/assets/01cbbd5d-2567-4e87-803c-ceaf73407771)
