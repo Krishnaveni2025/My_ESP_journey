@@ -24,8 +24,7 @@ https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/EMBEDDED_SYSTEMS_PRO
 
 Here is the 4x4 keypad:
 
-
-wokwi link: https://wokwi.com/projects/433644910846289921
+(https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/EMBEDDED_SYSTEMS_PROGRAMMING/KEYPAD/my_keypad/4x4)
 
 
 
