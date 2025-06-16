@@ -6,14 +6,16 @@ Self Assessment Set - 10
 
 Here is the 1x1 keypad 
 
-Wokwi link: https://wokwi.com/projects/433630685180906497
+(https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/EMBEDDED_SYSTEMS_PROGRAMMING/KEYPAD/my_keypad/1x1)
+
+
 
 ![image](https://github.com/user-attachments/assets/ea3c961c-6d1a-45df-a087-17d47126a8ec)
 
 
 Here is the 2x2 kepad
 
-(https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/EMBEDDED_SYSTEMS_PROGRAMMING/KEYPAD/my_keypad/1x1)
+
 
 
 
