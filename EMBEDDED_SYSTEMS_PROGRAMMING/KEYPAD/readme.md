@@ -18,3 +18,13 @@ wokwi link:   https://wokwi.com/projects/433637922275252225
 
 
 ![image](https://github.com/user-attachments/assets/01cbbd5d-2567-4e87-803c-ceaf73407771)
+
+
+Here is the 4x4 keypad:
+
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/16a30981-eec9-4a3a-a355-3e9b1f3bdab7)
