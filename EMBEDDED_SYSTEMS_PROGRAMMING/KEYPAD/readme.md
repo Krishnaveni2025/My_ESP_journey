@@ -13,7 +13,7 @@ Wokwi link: https://wokwi.com/projects/433630685180906497
 
 Here is the 2x2 kepad
 
-wokwi link:   https://wokwi.com/projects/433637922275252225
+(https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/EMBEDDED_SYSTEMS_PROGRAMMING/KEYPAD/my_keypad/1x1)
 
 
 
