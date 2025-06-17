@@ -36,7 +36,9 @@
       "rotate": 180,
       "attrs": { "value": "1000" }
     },
-    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -194, "left": 380, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -194, "left": 380, "attrs": {
+        "keys": [ "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "<-", "0", "=", "/" ]
+      }},
     {
       "type": "wokwi-7segment",
       "id": "sevseg1",
