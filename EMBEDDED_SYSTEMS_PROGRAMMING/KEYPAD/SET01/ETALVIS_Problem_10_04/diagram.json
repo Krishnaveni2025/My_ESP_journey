@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "author": "Krishnaveni purne",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -57, "left": -70.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 301.85,
+      "left": 94.6,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 282.65,
+      "left": 94.6,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 244.25,
+      "left": 94.6,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 263.45,
+      "left": 94.6,
+      "rotate": 180,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -194,
+      "left": 380,
+      "attrs": {
+        "keys": [ "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "<-", "0", "=", "/" ]
+      }
+    },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -214.98,
+      "left": 77.92,
+      "attrs": { "digits": "4", "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "keypad1:R1", "mega:A0", "green", [ "v57.6", "h-326.4" ] ],
+    [ "keypad1:R2", "mega:A1", "green", [ "v67.2", "h-326.8" ] ],
+    [ "mega:A2", "keypad1:R3", "green", [ "v93.3", "h323.3" ] ],
+    [ "mega:A3", "keypad1:R4", "green", [ "v102.9", "h332.75" ] ],
+    [ "mega:A8", "keypad1:C1", "blue", [ "v26.1", "h279.75" ] ],
+    [ "mega:A9", "keypad1:C2", "blue", [ "v35.7", "h279.6" ] ],
+    [ "mega:A10", "keypad1:C3", "blue", [ "v45.3", "h279.7" ] ],
+    [ "mega:A11", "keypad1:C4", "blue", [ "v54.9", "h269.95" ] ],
+    [ "mega:GND.2", "r1:2", "black", [ "v64.5", "h-26.65" ] ],
+    [ "r1:2", "r3:2", "green", [ "v0" ] ],
+    [ "r3:2", "r4:2", "green", [ "v0" ] ],
+    [ "r4:2", "r2:2", "green", [ "v0" ] ],
+    [ "mega:A8", "r3:1", "#8f4814", [ "v0" ] ],
+    [ "mega:A9", "r4:1", "#8f4814", [ "v0" ] ],
+    [ "mega:A10", "r2:1", "#8f4814", [ "v160.5", "h-85.1" ] ],
+    [ "mega:A11", "r1:1", "#8f4814", [ "v0" ] ],
+    [ "sevseg1:A", "mega:22", "magenta", [ "v-9.6", "h163.2", "v153.6", "h-38.4", "v28.8" ] ],
+    [ "sevseg1:B", "mega:23", "magenta", [ "v-19.2", "h134.4", "v182.4" ] ],
+    [ "sevseg1:C", "mega:24", "magenta", [ "v56.76", "h96", "v48" ] ],
+    [ "sevseg1:D", "mega:25", "magenta", [ "v37.56", "h-105.6", "v-134.4", "h288", "v211.2" ] ],
+    [ "sevseg1:E", "mega:26", "magenta", [ "v47.16", "h0.01", "v28.8", "h115.2", "v48" ] ],
+    [ "sevseg1:F", "mega:27", "magenta", [ "v-38.4", "h182.4", "v19.2" ] ],
+    [ "mega:28", "sevseg1:G", "magenta", [ "v1.15", "h-79" ] ],
+    [ "sevseg1:DP", "mega:29", "magenta", [ "v143.16", "h163.2", "v-9.6", "h-9.6" ] ],
+    [ "sevseg1:DIG1", "mega:10", "gold", [ "v-9.6", "h-76.79", "v86.4", "h19.2", "v9.6" ] ],
+    [ "sevseg1:DIG2", "mega:11", "gold", [ "v-19.2", "h-115.2", "v96", "h0", "v9.6", "h19.2" ] ],
+    [ "mega:12", "sevseg1:DIG3", "gold", [ "v-38.4", "h-28.8", "v-172.8", "h9.6" ] ],
+    [
+      "sevseg1:DIG4",
+      "mega:13",
+      "gold",
+      [ "v18.36", "h96", "v-144", "h-259.2", "v192", "h28.8" ]
+    ]
+  ],
+  "dependencies": {}
+}
