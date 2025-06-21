@@ -6,10 +6,6 @@
 //If the tota; exceeds 9999 then display EEEE.
 //Ex: 1561+2 = 1563,8765+987=9752.
 
-// EMBEDDED SYSTEMS PROGRAMMING – GPIO
-// KEYPAD + 4-DIGIT SEVEN-SEGMENT DISPLAY
-// ADD TWO 4-DIGIT NUMBERS; SHOW 'EEEE' IF RESULT > 9999
-
 void delay1(void);
 void delay2(void);
 const unsigned char segPatterns[11] = {
