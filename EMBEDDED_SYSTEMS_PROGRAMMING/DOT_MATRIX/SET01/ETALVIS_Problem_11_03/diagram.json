@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "author": "JACK Cp",
+  "author": "krishnaveni purne",
   "editor": "wokwi",
   "parts": [
-    { "type": "wokwi-arduino-mega", "id": "mega", "top": 528.6, "left": -99.6, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 413.4, "left": -118.8, "attrs": {} },
     { "type": "wokwi-led", "id": "led1", "top": -100, "left": 280, "attrs": { "color": "red" } },
     { "type": "wokwi-led", "id": "led2", "top": -40, "left": 280, "attrs": { "color": "red" } },
     { "type": "wokwi-led", "id": "led3", "top": 20, "left": 280, "attrs": { "color": "red" } },
@@ -80,7 +80,6 @@
     { "type": "wokwi-led", "id": "led62", "top": 200, "left": -140, "attrs": { "color": "red" } },
     { "type": "wokwi-led", "id": "led63", "top": 260, "left": -140, "attrs": { "color": "red" } },
     { "type": "wokwi-led", "id": "led64", "top": 320, "left": -140, "attrs": { "color": "red" } }
-    
   ],
   "connections": [
     [ "led57:A", "led49:A", "empty", [ "v19.6", "h57.4" ] ],
@@ -209,7 +208,8 @@
     [ "mega:10", "led40:C", "empty", [ "v0" ] ],
     [ "mega:11", "led48:C", "empty", [ "v-96", "h-58" ] ],
     [ "mega:12", "led56:C", "empty", [ "v-67.2", "h-105.6", "v-9.6" ] ],
-    [ "mega:13", "led64:C", "empty", [ "v-48", "h-163.8" ] ]
+    [ "mega:13", "led64:C", "empty", [ "v-48", "h-163.8" ] ],
+    [ "led55:C", "led56:C", "empty", [ "v5.2", "h-21.4", "v48" ] ]
   ],
   "dependencies": {}
 }
