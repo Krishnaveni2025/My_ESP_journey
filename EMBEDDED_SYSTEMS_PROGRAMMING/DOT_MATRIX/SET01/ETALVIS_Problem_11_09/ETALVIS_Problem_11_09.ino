@@ -14,19 +14,19 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  volatile char *porta, *portb, row, col;
+  volatile char *porta, *portb, row;
   porta = 0x22; portb = 0x25;
-  row = *porta;
-  col = *portb;
-
+  long i;
   for (row = 0; row < 8; row++)
   {
-    *porta = (1 << row);           // Set only one row HIGH
-    *portb = ~(1 << row);          // Clear only the corresponding column (active LOW)
-    for ( i = 0; i < 500000; i++); // small delay to make LED visible
+    *porta = 0x00;
+    *portb = 0xFF;
+    *porta = (1 << row);             // Activate one row at a time
+    *portb = ~(1 << (7 - row));      // Activate corresponding mirrored column
     *porta = 0x00;
     *portb = 0xFF;
     for ( i = 0; i < 500000; i++);
   }
 
 }
+
