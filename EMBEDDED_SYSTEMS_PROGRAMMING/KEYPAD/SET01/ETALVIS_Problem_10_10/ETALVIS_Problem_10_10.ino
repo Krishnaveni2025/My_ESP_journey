@@ -3,7 +3,7 @@
 //Use a 4x4 keypad and a quad seven segment display
 //SET 10 PROBLEM 10
 //perform  division.
-//display only remainder.
+//display only remainder.(%)
 //Ex: 1561/6=1,765/9=0.
 // === FUNCTION PROTOTYPES ===
 void delay1(void);
