@@ -7,8 +7,6 @@
 //Ex: 1561+2 = 1563,8765+987=9752.
 
 // === FUNCTION PROTOTYPES ===
-void setup();
-void loop();
 void delay1(void);
 void delay2(void);
 int getKey(void);
