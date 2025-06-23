@@ -4,8 +4,11 @@
 //SET 10 PROBLEM 02
 //press 4 digits any switch & display  that number
 //example: 1234,4567,9876.
-
-
+void enableDigit(int digit);
+void clearDisplay(void) ;
+int getKey(void);
+void delay1(void);
+void displayNumber(int number);
 // Seven-segment patterns for digits 0-9 (common-cathode, active-high)
 // Bit order: Dp G F E D C B A (1 = segment on)
 const unsigned char segPatterns[10] = {
@@ -31,122 +34,86 @@ void setup() {
   *ddrf = 0x0F;  // Rows (PF0–PF3) as output
   *ddrk = 0x00;  // Columns (PK0–PK3) as input
 }
-
 void loop() {
-  volatile char *porta = (char *)0x22;  // PORTA – A to Dp
-  volatile char *portb = (char *)0x25;  // PORTB – D1 to D4
-  volatile char *portf = (char *)0x31;  // PORTF – row driver
-  volatile char *pink  = (char *)0x106; // PINK – column reader
-  volatile long d;
-  volatile int count, number, a, d1, d2, d3, d4;
-  
-  while (1) {
-    // Keypad scanning
+  static int number = 0;
+  static int digitCount = 0;
+  int key = getKey();
 
-    for (int row = 0; row < 4; row++) {
-      // Activate one row (active-high)
-      *portf = (1 << row);
-      // Small delay for signal stabilization
-      for (d = 0; d < 100; d++);
-      // Read columns (active-high, assuming pull-down resistors)
-      char columns = *pink & 0x0F;
-      if (columns!=0) {
-        for (int col = 0; col < 4; col++) {
-          if (columns & (1 << col)) {
-            // Map row and column to key value directly
-            if (row == 0 && col == 0)//row 1 col 1 - 1
-            {
-              a = 1;
-              count = count + 1;
-            }
-            if (row == 0 && col == 1)//row 1 col 2 - 2
-            {
-              //*porta = segPatterns[2];//display 2
-              a = 2;
-              count = count + 1;
+  if (key >= 0 && key <= 9 && digitCount < 4) {
+    number = number * 10 + key;
+    digitCount++;
+  }
 
-            }
-            if (row == 0 && col == 2)//row 1 col 3 - 3
-            {
-              a = 3;
-              count = count + 1;
-            }
-            if (row == 1 && col == 0)//row 2 col 1 - 4
-              {
-                a = 4;
-                count = count + 1;
-              }
-            if (row == 1 && col == 1)//row 2 col 2 - 5
-              {
-                a = 5;
-                count = count + 1;
-              }
-            if (row == 1 && col == 2)//row 2 col 3 - 6
-              {
-                a = 6;
-                count = count + 1;
-              }
-            if (row == 2 && col == 0)//row 3 col 1 - 7
-              {
-                a = 7;
-                count = count + 1;
-              }
-            if (row == 2 && col == 1)//row 3 col 2 - 8
-              {
-                a = 8 ;
-                count = count + 1;
-              }
-            if (row == 2 && col == 2)//row 3 col 3 - 9
-              {
-                a = 9;
-                count = count + 1;
-              }
-            if (row == 3 && col == 1)//row 4 col 2 - 0
-              {
-                a = 0;
-                count = count + 1;
-              }
-              *portb = 0xE0;// enable D1
-              *porta = segPatterns[a];
-              // Small delay for signal stabilization
-              for (d = 0; d < 500000; d++);
-              *portb = 0xF0;
-              *porta = 0x00;
-              for (d = 0; d < 100; d++);
-              number = (number * 10) + (a * 1);
-              while(count == 4) {
-                d1 = number / 1000;
-                d2 = ((number % 1000) / 100);
-                d3 = ((number % 100) / 10);
-                d4 = (number % 10);
-                *portb = 0xE0;
-                *porta = segPatterns[d1];
-                for (d = 0; d < 100; d++);
-                *portb = 0xF0;
-                *porta = 0x00;
-                for (d = 0; d < 100; d++);
-                *portb = 0xD0;
-                *porta = segPatterns[d2];
-                for (d = 0; d < 100; d++);
-                *portb = 0xF0;
-                *porta = 0x00;
-                for (d = 0; d < 100; d++);
-                *portb = 0xB0;
-                *porta = segPatterns[d3];
-                for (d = 0; d < 100; d++);
-                *portb = 0xF0;
-                *porta = 0x00;
-                for (d = 0; d < 100; d++);
-                *portb = 0x70;
-                *porta = segPatterns[d4];
-                for (d = 0; d < 100; d++);
-                *portb = 0xF0;
-                *porta = 0x00;
-                for (d = 0; d < 100; d++);
-              }
-            }
-          }
+  if (digitCount > 0) {
+    for (int i = 0; i < 5; i++) {
+      displayNumber(number);
+    }
+  } else {
+    clearDisplay(); // Avoid displaying 0000 initially
+  }
+}
+int getKey(void) {
+  volatile char *portf = (char *)0x31;
+  volatile char *pink = (char *)0x106;
+
+
+  for (int row = 0; row < 4; row++) {
+    *portf = (1 << row);
+    delay1();  // debounce
+    char col = *pink & 0x0F;
+    if (col) {
+      for (int c = 0; c < 4; c++) {
+        if (col & (1 << c)) {
+          int keyMap[4][4] = {
+            {1, 2, 3, -1},
+            {4, 5, 6, -1},
+            {7, 8, 9, -1},
+            {-1, 0, -1, -1}
+          };
+          while (*pink & (1 << c)); // wait for release
+          return keyMap[row][c];
         }
       }
     }
   }
+  return -1;
+}
+void enableDigit(int digit) {
+  volatile char *portb = (char *)0x25;
+  switch (digit) {
+    case 1: *portb = 0xE0; break;
+    case 2: *portb = 0xD0; break;
+    case 3: *portb = 0xB0; break;
+    case 4: *portb = 0x70; break;
+    default: *portb = 0xF0; break; // Disable all
+  }
+}
+void clearDisplay(void)
+{
+  volatile char *porta = (char *)0x22;
+  volatile char *portb = (char *)0x25;
+  *porta = 0x00;      // Turn off segments
+  *portb = 0xF0;      // Disable all digits
+}
+void displayNumber(int number) {
+  volatile char *porta = (char *)0x22;
+  int digits[4] = {
+    number / 1000,
+    (number / 100) % 10,
+    (number / 10) % 10,
+    number % 10
+  };
+
+  for (int i = 0; i < 4; i++) {
+    enableDigit(i + 1);
+    *porta = segPatterns[digits[i]];
+    delay1();
+    clearDisplay();
+    delay1();
+  }
+}
+void delay1(void)
+{
+  volatile long d;
+  for (d = 0; d <= 100; d++);
+}
