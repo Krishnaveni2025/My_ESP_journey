@@ -16,5 +16,5 @@ void loop() {
   volatile char *porta,*portb;
   porta = 0x22;portb = 0x25;
   *porta = 0xFF;//ALL ROWS
-  *portb = 0x7F;//ALL columns  
+  *portb = 0x7F;//col 7
 }
