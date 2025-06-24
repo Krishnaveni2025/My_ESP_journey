@@ -39,8 +39,6 @@ void loop() {
     delay2();
     displayoff();
     delay1();
-    displayoff();
-    delay1();
     displayE();
     delay2();
     displayoff();
