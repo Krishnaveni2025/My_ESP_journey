@@ -4,7 +4,6 @@
 //use PORT A
 //self Assessment set -15 Problem 08
 //DISPLAY "1234" by entering from left
-// === PORTA Register Mapping ===
 volatile char *porta = (volatile char *)0x22;
 volatile char *ddra  = (volatile char *)0x21;
 
@@ -105,22 +104,22 @@ void initMAX7219() {
 
 // === Animate 1234 Left to Right ===
 void display1234_LTR() {
-  // Step 1: Matrix 1 → '1'
+  // Step 1: Matrix 4 → '1'
   for (unsigned char row = 1; row <= 8; row++)
-    sendFourMatrices(row, 0x00, 0x00, 0x00, digit1[row - 1]);
+    sendFourMatrices(row, digit1[row - 1], 0x00, 0x00, 0x00);
   delayStep();
 
-  // Step 2: Matrix 1 → '1', Matrix 2 → '2'
+  // Step 2: Matrix 4 → '1', Matrix 3 → '2'
   for (unsigned char row = 1; row <= 8; row++)
-    sendFourMatrices(row, 0x00, 0x00, digit1[row - 1], digit2[row - 1]);
+    sendFourMatrices(row, digit1[row - 1], digit2[row - 1], 0x00, 0x00);
   delayStep();
 
-  // Step 3: Matrix 1 → '1', Matrix 2 → '2', Matrix 3 → '3'
+  // Step 3: Matrix 4 → '1', Matrix 3 → '2', Matrix 2 → '3'
   for (unsigned char row = 1; row <= 8; row++)
-    sendFourMatrices(row, 0x00, digit1[row - 1], digit2[row - 1], digit3[row - 1]);
+    sendFourMatrices(row, digit1[row - 1], digit2[row - 1], digit3[row - 1], 0x00);
   delayStep();
 
-  // Step 4: Full 1234
+  // Step 4: Matrix 4 → '1', Matrix 3 → '2', Matrix 2 → '3', Matrix 1 → '4'
   for (unsigned char row = 1; row <= 8; row++)
     sendFourMatrices(row, digit1[row - 1], digit2[row - 1], digit3[row - 1], digit4[row - 1]);
   delayStep();
