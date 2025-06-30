@@ -2,7 +2,7 @@
 //Dot Matrix Control Problems
 //use max 7219-matrix DOTMATRIX
 //use PORT A
-//self Assessment set -16 Problem 06
+//self Assessment set -16 Problem 07
 //display "1234" by entering top half from top and bottom half from bottom simulataneously in 3 seconds
 
 #include "max7219.h"
