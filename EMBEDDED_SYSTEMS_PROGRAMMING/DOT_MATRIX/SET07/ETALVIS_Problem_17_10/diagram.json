@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "Krishnaveni purne",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 183, "left": -176.4, "attrs": {} },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -153,
+      "left": -136.56,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix2",
+      "top": -76.2,
+      "left": -136.56,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix3",
+      "top": 0.6,
+      "left": -136.56,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix4",
+      "top": 77.4,
+      "left": -136.56,
+      "attrs": { "chain": "4" }
+    }
+  ],
+  "connections": [
+    [ "matrix1:DIN", "mega:22", "empty", [ "h19.2", "v124.8", "h-76.8", "v9.6" ] ],
+    [ "matrix1:CLK", "mega:23", "empty", [ "h28.8", "v9.6" ] ],
+    [ "matrix1:CS", "mega:24", "empty", [ "h38.4", "v105.6", "h-105.6", "v19.2" ] ],
+    [ "matrix2:DIN", "mega:25", "empty", [ "h67.2", "v48" ] ],
+    [ "matrix2:CLK", "mega:26", "empty", [ "h96", "v19.2", "h-172.8", "v38.4" ] ],
+    [ "matrix2:CS", "mega:27", "empty", [ "h105.6", "v28.8" ] ],
+    [ "mega:GND.1", "matrix2:GND.2", "empty", [ "v-19.2", "h-57.8", "v-48" ] ],
+    [ "matrix2:GND.2", "matrix1:GND.2", "empty", [ "h-9.44", "v-67.2" ] ],
+    [ "mega:5V", "matrix2:V+.2", "empty", [ "v26.1", "h-180.1", "v-278.4" ] ],
+    [ "matrix2:V+.2", "matrix1:V+.2", "empty", [ "v-9.6", "h-38.24", "v-57.6" ] ],
+    [ "mega:5V", "matrix4:V+.2", "empty", [ "v45.3", "h-199.3", "v-336" ] ],
+    [ "matrix4:V+.2", "matrix3:V+.2", "empty", [ "v-9.6", "h-38.24", "v-57.6" ] ],
+    [ "mega:GND.1", "matrix4:GND.2", "empty", [ "v-38.4", "h-105.8", "v-67.2" ] ],
+    [ "matrix4:GND.2", "matrix3:GND.2", "empty", [ "h-28.64", "v-57.6" ] ],
+    [ "mega:A8", "matrix3:DIN", "empty", [ "v26.1", "h126.15", "v-67.2" ] ],
+    [ "matrix3:CLK", "mega:A9", "empty", [ "h28.8", "v355.2", "h-105.6" ] ],
+    [ "mega:A10", "matrix3:CS", "empty", [ "v45.3", "h106.9", "v-374.4", "h9.6" ] ],
+    [ "mega:A11", "matrix4:DIN", "empty", [ "v16.5", "h77.95", "v-278.4" ] ],
+    [ "matrix4:CLK", "mega:A12", "empty", [ "h48", "v297.6", "h0", "v9.6", "h-86.4" ] ],
+    [ "matrix4:CS", "mega:A13", "empty", [ "h57.6", "v326.4", "h-96", "v-57.6" ] ]
+  ],
+  "dependencies": {}
+}
