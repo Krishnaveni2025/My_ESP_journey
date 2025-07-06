@@ -7,7 +7,6 @@ Welcome! Here you’ll find highlights from my personal learning path in **Embed
 
 If you're a beginner or in your first year of engineering, here’s how I'd recommend starting — exactly the way I wish I had, if I were in your shoes:
 
----
 
 ### 🔰 Getting Started
 
@@ -37,6 +36,9 @@ This dual knowledge (software + electronics) makes embedded magic possible.
 ---
 
 ### 🔧 Hands-On Embedded Development
+
+https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/EMBEDDED_SYSTEMS_PROGRAMMING
+
 
 Once you're confident with C structures and the core electronics concepts, dive into real-world interfacing:
 
