@@ -10,9 +10,9 @@ DAY003: C Program to make a Simple Calculator using switch-case statements
 
 DAY004: Logical Programming three problems on arrays
 
-DAY005: Insertion,Bubble, Selection sorting algorithms 
+DAY005: Linera Search , Merging two arrays 
 
-DAY006:
+DAY006: Insertion,Bubble, Selection sorting algorithms
 
 
 DAY007: Bit Manipulation
