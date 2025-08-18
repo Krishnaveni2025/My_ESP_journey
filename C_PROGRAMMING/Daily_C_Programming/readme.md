@@ -17,15 +17,17 @@ DAY006: Insertion,Bubble, Selection sorting algorithms
 
 DAY007: Bit Manipulation
 
-DAY008:
+DAY008: Problems on arrays
 
 
-DAY009:
+DAY009: pointer to pointer
 
-DAY010:
+DAY010: pointer to pointer
 
 DAY011: Array of pointers to strings
 
 
-DAY012: Void POinters
+DAY012: Void Pointers
+
+DAY013: Bit Manipulation
 
