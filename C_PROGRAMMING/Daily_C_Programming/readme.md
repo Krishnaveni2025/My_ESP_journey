@@ -15,7 +15,7 @@ DAY005: Insertion,Bubble, Selection sorting algorithms
 DAY006:
 
 
-DAY007:
+DAY007: Bit Manipulation
 
 DAY008:
 
