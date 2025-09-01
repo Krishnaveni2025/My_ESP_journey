@@ -30,4 +30,6 @@ DAY011: Array of pointers to strings
 DAY012: Void Pointers
 
 DAY013: Bit Manipulation
+Day014: Bit Manipulation
+Day015: Bit manipulation
 
