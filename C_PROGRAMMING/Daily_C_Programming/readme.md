@@ -38,3 +38,10 @@ Day014: Bit Manipulation
 Day015: Bit manipulation
 
 Day016: Bit Manipulation
+
+
+Day017: Problem on Bit Field
+
+Day018: Problems on Bitwise Operations
+
+Day019: Problems on BitWise Operations
