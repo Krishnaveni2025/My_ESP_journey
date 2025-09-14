@@ -32,7 +32,7 @@ Example-3
 Input: mode = 4, speed = 16, status = 8
 Output: 8324
 (Hex: 0x2084, Binary: 0010000010000100)
-Absolutely, Krishnaveni. Here's your two-line solving approach:
+Here's your two-line solving approach:
 
 ```c
 mode &= 0x07; speed <<= 3; status <<= 10; // Mask and shift each field
