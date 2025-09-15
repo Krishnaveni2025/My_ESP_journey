@@ -45,3 +45,9 @@ Day017: Problem on Bit Field
 Day018: Problems on Bitwise Operations
 
 Day019: Problems on BitWise Operations
+
+Day020: Problem on Bitwise operation
+
+Day021: Practice Bitwise Operation logic(SET,CLEAR,TOGGLE,..)
+
+Day022: Solving Bitwise OPeration Problems with less time
