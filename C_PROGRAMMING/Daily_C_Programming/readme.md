@@ -51,3 +51,10 @@ Day020: Problem on Bitwise operation
 Day021: Practice Bitwise Operation logic(SET,CLEAR,TOGGLE,..)
 
 Day022: Solving Bitwise OPeration Problems with less time
+
+Day023: C Practice
+
+
+Day024: C Practice
+
+
