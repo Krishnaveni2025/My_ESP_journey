@@ -58,3 +58,6 @@ Day023: C Practice
 Day024: C Practice
 
 
+Day025: bit reversal of a 8 bit register
+
+
