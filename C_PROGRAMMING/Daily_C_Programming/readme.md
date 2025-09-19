@@ -61,3 +61,9 @@ Day024: C Practice
 Day025: bit reversal of a 8 bit register
 
 
+
+DAy026: Bit wise Rotation and counting
+
+
+
+
