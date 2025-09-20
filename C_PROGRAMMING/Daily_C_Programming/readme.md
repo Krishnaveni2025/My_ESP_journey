@@ -65,5 +65,6 @@ Day025: bit reversal of a 8 bit register
 DAy026: Bit wise Rotation and counting
 
 
+Day027: Array Manipulation: check Sum validaiton
 
 
