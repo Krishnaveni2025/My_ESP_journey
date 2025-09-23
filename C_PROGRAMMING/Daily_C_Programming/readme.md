@@ -73,3 +73,6 @@ Day028: Array Manipulation: Reverse an array in place
 
 
 Day029: Array Manipulation: Left Rotate Array by K positions
+
+
+Day030: Array Manipulation: Find Duplicate in Range 0 and n-1
