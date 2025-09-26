@@ -82,3 +82,5 @@ Day031: Array Manipulation: Slinding Window Sum
 
 
 Day032: Array Manipulation: Serial Data Buffer
+
+Day033: Assesment 1: Etalvis website( C Programming foundatio Course )
