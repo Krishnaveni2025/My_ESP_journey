@@ -88,3 +88,5 @@ Day033: Assesment 1: Etalvis website( C Programming foundatio Course )
 Day034: Pointer: swap value, Print sum of even numbers
 
 Day035: Pointer: Reverse an Array using only pointer
+
+Day036: Pointer: Find maximum element using pointer walk
