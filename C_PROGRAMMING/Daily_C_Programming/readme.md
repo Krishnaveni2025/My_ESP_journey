@@ -90,3 +90,5 @@ Day034: Pointer: swap value, Print sum of even numbers
 Day035: Pointer: Reverse an Array using only pointer
 
 Day036: Pointer: Find maximum element using pointer walk
+
+Day037: Pointer: calculate array sum using only pointer
