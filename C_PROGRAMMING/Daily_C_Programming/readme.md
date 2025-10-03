@@ -95,4 +95,6 @@ Day037: Pointer: calculate array sum using only pointer
 
 Day038: Pointer: Double Pointer
 
-DAy039: Swap two pointers using double pointer
+Day039: Swap two pointers using double pointer
+
+Day040: Add Two Integers using Void pointers
