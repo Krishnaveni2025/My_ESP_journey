@@ -103,5 +103,5 @@ Day041: Function Pointer Dispatch Table
 
 Day042: State Machine Using Function Pointers
 
-Day043: Simulate memcpy function using pointers walk
+Day043: Simulate memcpy function using pointers walk and self assesment 1
 
