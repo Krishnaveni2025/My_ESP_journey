@@ -102,3 +102,6 @@ Day040: Add Two Integers using Void pointers
 Day041: Function Pointer Dispatch Table
 
 Day042: State Machine Using Function Pointers
+
+Day043: Simulate memcpy function using pointers walk
+
