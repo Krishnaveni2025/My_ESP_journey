@@ -107,3 +107,4 @@ Day043: Simulate memcpy function using pointers walk and self assesment 1
 
 Day044: Detect alternate pattern using pointer arithmetic and self assesment 2
 
+Day046: Self assesment 3 and void pointer casting
