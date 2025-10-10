@@ -110,3 +110,5 @@ Day044: Detect alternate pattern using pointer arithmetic and self assesment 2
 Day046: Self assesment 3 and void pointer casting
 
 Day045: Self Assesment 4
+
+Day046: Self Assesment 1,2,3,4 and control Register Using Nested Bitfields
