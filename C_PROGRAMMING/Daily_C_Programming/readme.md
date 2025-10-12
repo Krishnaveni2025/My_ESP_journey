@@ -111,8 +111,8 @@ Day046: Self assesment 3 and void pointer casting
 
 Day045: Self Assesment 4
 
-Day046: Self Assesment 1,2,3,4 and control Register Using Nested Bitfields
+Day047: Self Assesment 1,2,3,4 and control Register Using Nested Bitfields
 
 
-Day047: Union Extract Bytes from a 32-bit value
+Day048: Union Extract Bytes from a 32-bit value
 
