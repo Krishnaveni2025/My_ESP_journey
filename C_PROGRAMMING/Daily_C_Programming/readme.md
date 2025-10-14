@@ -118,3 +118,6 @@ Day048: Union Extract Bytes from a 32-bit value
 
 Day049: Self Assesment 5 
 
+Day050: Structure :Construct UART Data Frame with Parity bit
+
+
