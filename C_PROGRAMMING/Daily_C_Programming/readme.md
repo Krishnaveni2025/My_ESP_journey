@@ -120,4 +120,5 @@ Day049: Self Assesment 5
 
 Day050: Structure :Construct UART Data Frame with Parity bit
 
+Day051: Filter Structs by field value for example threshold, Register Bitfields Using Struct Overlay, Extract Packet Fields from Byte Stream, Struct Padding, Validate Configuration Register Layout
 
