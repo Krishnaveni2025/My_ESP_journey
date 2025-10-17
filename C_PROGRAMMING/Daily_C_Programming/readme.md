@@ -124,3 +124,4 @@ Day051: Filter Structs by field value for example threshold, Register Bitfields 
 
 Day052: Circular Buffer Insert
 
+Day053: Circular buffer Read
