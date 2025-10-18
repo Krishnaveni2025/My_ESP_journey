@@ -123,5 +123,6 @@ Day050: Structure :Construct UART Data Frame with Parity bit
 Day051: Filter Structs by field value for example threshold, Register Bitfields Using Struct Overlay, Extract Packet Fields from Byte Stream, Struct Padding, Validate Configuration Register Layout
 
 Day052: Circular Buffer Insert
+Day053: Peek n bits from buffer
 
 Day053: Circular buffer Read
