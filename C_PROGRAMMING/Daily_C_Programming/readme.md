@@ -128,3 +128,5 @@ Day053: Peek n bits from buffer
 Day054: Circular buffer Read
 
 Day055: Implement Stack Using Array with push and pop operations
+
+Day056: Implement custom strlen Function 
