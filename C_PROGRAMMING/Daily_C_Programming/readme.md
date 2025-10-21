@@ -130,3 +130,7 @@ Day054: Circular buffer Read
 Day055: Implement Stack Using Array with push and pop operations
 
 Day056: Implement custom strlen Function 
+
+Day057: Implement custom strcpy strcmp functions
+
+
