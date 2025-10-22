@@ -133,4 +133,4 @@ Day056: Implement custom strlen Function
 
 Day057: Implement custom strcpy strcmp functions
 
-
+Day058: Count alphabets, digits, symbols, remove duplicate characters, reverse a string 
