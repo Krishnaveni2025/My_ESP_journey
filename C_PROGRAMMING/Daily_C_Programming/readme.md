@@ -138,3 +138,5 @@ Day058: Count alphabets, digits, symbols, remove duplicate characters, reverse a
 Day059: Convert Uppercase Letters to Lowercase and Parse Comma-Separated Integers into an Array
 
 Day060: Covert String to Integer 
+
+Day061: Check if the string numberic or alphabetic
