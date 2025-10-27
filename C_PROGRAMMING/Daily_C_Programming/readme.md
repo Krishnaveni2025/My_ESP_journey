@@ -140,3 +140,5 @@ Day059: Convert Uppercase Letters to Lowercase and Parse Comma-Separated Integer
 Day060: Covert String to Integer 
 
 Day061: Check if the string numberic or alphabetic
+
+Day062: Convert a string to Float  
