@@ -146,3 +146,5 @@ Day062: Convert a string to Float
 Day063: Split a string using Delimiter
 
 Day064: Implement a simple shell command Parser
+
+Day065: Linear Serach in Array
