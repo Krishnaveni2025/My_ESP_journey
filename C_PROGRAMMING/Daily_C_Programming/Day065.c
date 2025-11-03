@@ -10,21 +10,18 @@ Do not use standard library functions. Use only loop and index logic.
 Example-1
 
 Input: n = 5, arr = [10 20 30 40 50], key = 30
-Output: 2Copy
+Output: 2
 
 Example-2
 
 Input: n = 4, arr = [5 8 12 9], key = 7
-Output: -1Copy
+Output: -1
 
 Example-3
 
 Input: n = 6, arr = [1 1 2 3 1 4], key = 1
 Output: 0
   */
-
-
-Code
 
 #include <stdio.h>
 #include <stdint.h>
@@ -67,11 +64,12 @@ Read key: the value to search for
 
 InitializeSet index = -1 to represent "not found"
 
-Loop through the arrayFor each index i from 0 to n - 1:If arr[i] == key:Set index = i
-
+Loop through the array For each index i from 0 to n - 1:
+If arr[i] == key:Set index = i
 Break the loop (first occurrence found)
 
-OutputPrint index (either the found index or -1)
+Output
+Print index (either the found index or -1)
 
 🧪 Example
 
@@ -83,7 +81,6 @@ key = 30
 
 
 Output:
-
 2
 
 
