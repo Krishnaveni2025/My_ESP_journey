@@ -148,3 +148,5 @@ Day063: Split a string using Delimiter
 Day064: Implement a simple shell command Parser
 
 Day065: Linear Serach in Array
+
+Day066: Binary Search in Sorted Array
