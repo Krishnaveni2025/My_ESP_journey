@@ -150,3 +150,5 @@ Day064: Implement a simple shell command Parser
 Day065: Linear Serach in Array
 
 Day066: Binary Search in Sorted Array
+
+Day067: Find Minimum and Maximum in an Array
