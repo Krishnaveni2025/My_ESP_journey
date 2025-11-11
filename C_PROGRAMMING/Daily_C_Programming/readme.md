@@ -164,3 +164,5 @@ Day071: Find Top 3 Largest Values in an Array
 Day072: Little Endian to Big Endian
 
 Day073: Print Binary Representation of an 8-bit or 16-bit Value
+
+Day074: Convert Decimal Number to Binary or Hex Without itoa function
