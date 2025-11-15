@@ -168,3 +168,9 @@ Day073: Print Binary Representation of an 8-bit or 16-bit Value
 Day074: Convert Decimal Number to Binary or Hex Without itoa function
 
 Day075: Convert Integer to String
+
+Day076: Convert Hexadecimal String to Integer Without strtol or sscanf fun...
+
+Day077: Convert Integer to Hex String Without sprintf or itoa functions
+
+Day078: Carry Flag in 8 - bit addition
