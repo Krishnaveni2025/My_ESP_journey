@@ -176,3 +176,5 @@ Day077: Convert Integer to Hex String Without sprintf or itoa functions
 Day078: Carry Flag in 8 - bit addition
 
 Day079: Detect Underflow in Unsigned Subtraction
+
+Day080: Identify Trap in Signed vs Unsigned Comparison 
