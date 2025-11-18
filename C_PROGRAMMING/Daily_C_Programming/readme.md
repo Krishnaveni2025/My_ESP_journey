@@ -178,3 +178,5 @@ Day078: Carry Flag in 8 - bit addition
 Day079: Detect Underflow in Unsigned Subtraction
 
 Day080: Identify Trap in Signed vs Unsigned Comparison 
+
+Day081: Add Signed and Unsigned Integers safely
