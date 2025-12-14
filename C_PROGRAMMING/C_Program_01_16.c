@@ -11,7 +11,7 @@ int main()
   //your code here
   printf("Enter a four digit number: ");
   scanf("%d",&x);
-  y = (((x/100)%100)*100)+((x/1000)*10)+(((x/100)%10)*10)+(x%10);
+  y = (((x/100)%10)*1000)+((x/1000)*100)+(x%100);
   printf("%d",y);
   return  0;
 }
