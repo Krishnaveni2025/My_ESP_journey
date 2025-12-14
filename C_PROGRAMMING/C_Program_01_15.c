@@ -1,5 +1,5 @@
 /* C LEVEL 01 Program 15
-  Question: Write a program to get a four number from the user and only reverse the first two digits of the number then print the number
+  Question: Write a program to get a four digit number from the user and only reverse the first two digits of the number then print the number
 Example:
 Input:9561 Output:9516
 Input:3859 Output:3895
