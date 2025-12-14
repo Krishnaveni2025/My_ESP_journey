@@ -1,8 +1,8 @@
 /* C LEVEL 01 Program 11
   Question: Write a program to get a two digit number from the user and print it's sum of digits
 Example:
-Input: Output:
-Input: output:
+Input:56 Output:11
+Input:69 output:15
 */
 #include<stdio.h>
 int main()
