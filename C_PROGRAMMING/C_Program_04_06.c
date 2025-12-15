@@ -6,7 +6,7 @@ int main()
 {
   int x;
   //your code here
-  x = 1;
+  x = 11;
   loop:if(x<20)
   {
     if(x%2){
