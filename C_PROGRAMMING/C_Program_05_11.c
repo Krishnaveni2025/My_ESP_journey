@@ -10,9 +10,20 @@ int main()
 {
   int x;
   //your code here
+  printf("Enter a Number: ");
+  scanf("%d",&x);
+  int count = 0;
   for(;;)
     {
       //your code here
+      loop:
+      if(x)
+      {
+        count++;
+        x = x/10;
       goto loop;
+      }
+      break;
     }
+  printf("%d",count);
 }
