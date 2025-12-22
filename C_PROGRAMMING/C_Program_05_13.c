@@ -10,9 +10,20 @@ int main()
 {
   int x;
   //your code here
+  printf("Entner a Number: ");
+  scanf("%d",&x);
+  int rev = 0;
   for(;;)
     {
       //your code here
-      goto loop;
+      loop:
+      if(x)
+      {
+        rev = (rev*10)+(x%10);
+        x = x/10;
+        goto loop;
+      }
+      break;
     }
+  printf("%d",rev);
 }
