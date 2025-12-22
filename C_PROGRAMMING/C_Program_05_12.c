@@ -10,9 +10,20 @@ int main()
 {
   int x;
   //your code here
+  printf("Enter a Number: ");
+  scanf("%d",&x);
+  int sum = 0;
   for(;;)
     {
       //your code here
-      goto loop;
+      loop:
+      if(x)
+      {
+        sum = sum + (x%10);
+        x = x/10;
+        goto loop;
+      }
+      printf("%d",sum);
+      break;
     }
 }
