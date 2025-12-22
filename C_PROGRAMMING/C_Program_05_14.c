@@ -10,9 +10,29 @@ int main()
 {
   int x;
   //your code here
+  printf("Enter a Number: ");
+  scanf("%d",&x);
+  int middle, first, last, power = 1, result = 0,num; 
+  num = x;
   for(;;)
     {
       //your code here
-      goto loop;
+      loop:
+      if(num>=10)
+      {
+        num = num/10;
+        power = power*10;
+        goto loop;
+      }
+      printf("power = %d\n", power);
+      last = x/power;
+      printf("last = %d\n",last);
+      middle = (x%power)/10;
+      printf("middle = %d\n",middle);
+      first = (x%10)*power;
+      printf("first = %d\n",first);
+      result = first+ (middle*10) + last;
+      printf("%d",result);
+      break;
     }
 }
