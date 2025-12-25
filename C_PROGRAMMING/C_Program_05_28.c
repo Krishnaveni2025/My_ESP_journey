@@ -1,4 +1,4 @@
-/* C LEVEL 05 Problem 27
+/* C LEVEL 05 Problem 28
   Question: Write a program to get ttwo numbers from the user and print the LCM of those numbers
   Answer:
   Input: 20 40 Output: 40
