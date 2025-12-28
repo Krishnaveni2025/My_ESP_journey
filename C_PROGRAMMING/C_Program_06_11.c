@@ -1,4 +1,4 @@
-/* C LEVEL 05 Problem 11
+/* C LEVEL 06 Problem 11
   Question: Get a number from the user print the total number of digits in that number.
   Answer:
   Input:123456   Output:6
