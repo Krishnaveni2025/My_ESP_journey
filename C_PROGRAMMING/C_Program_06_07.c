@@ -1,5 +1,5 @@
 /*C LEVEL 06 Problem 07
-  Question: Write a loop program to print to two digit odd numbers whose sum of digits are 7
+  Question: Write a loop program to print two digit odd numbers whose sum of digits are 7
   Answer:
   25
   43
