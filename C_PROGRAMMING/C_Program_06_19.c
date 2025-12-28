@@ -1,6 +1,6 @@
-/* C LEVEL 06 Problem 18
-  Question: Write a program to get a number from the user and print whether the first two digits(1's & ten's) of that number is prime or not.
+/* C LEVEL 06 Problem 19
+  Question: Write a program to get a four digit number from the user and print whether the middle two digits(10's & 100's) of that number is prime or not.
   Answer:
-Input: 359 - Output: Prime
-Input: 3577 - Output: Not prime
+Input: 6359 - Output: Not Prime
+Input: 3537 - Output: Prime
 */
