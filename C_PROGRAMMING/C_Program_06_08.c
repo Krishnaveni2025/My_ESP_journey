@@ -1,4 +1,4 @@
-/* C LEVEL 06 Problem
+/* C LEVEL 06 Problem 08
 Question: write a loop program to print the two digit even numbers, who's sum of digits are 6
 Answer:
 24
