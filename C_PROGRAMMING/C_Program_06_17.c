@@ -6,3 +6,14 @@ Input: 77 - Output: Not prime but sum of digits is 14
 Input: 13 - Output: Prime & sum of digits is not 14
 Input: 27 - Output: Not prime & sum of digits is not 14
 */
+#include<stdio.h>
+int main()
+{
+  int x;
+  //your code here
+  while()
+    {
+      //your code here
+      goto loop;
+    }
+}
