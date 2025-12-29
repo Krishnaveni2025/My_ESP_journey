@@ -4,3 +4,14 @@
   Input: 12345678 Output: 4
   Input: 987531   Output:5
   */
+#include<stdio.h>
+int main()
+{
+  int x;
+  //your code here
+  while()
+    {
+      //your code here
+      goto loop;
+    }
+}
