@@ -4,3 +4,14 @@
 Input: 6359 - Output: Not Prime
 Input: 3537 - Output: Prime
 */
+#include<stdio.h>
+int main()
+{
+  int x;
+  //your code here
+  while()
+    {
+      //your code here
+      goto loop;
+    }
+}
