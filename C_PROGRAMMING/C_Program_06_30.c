@@ -4,3 +4,14 @@
   Input: 20 40  Output: 20
   Input: 15 78  Output: 3
   */
+#include<stdio.h>
+int main()
+{
+  int x;
+  //your code here
+  while()
+    {
+      //your code here
+      goto loop;
+    }
+}
