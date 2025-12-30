@@ -9,9 +9,27 @@ int main()
 {
   int x;
   //your code here
-  while()
+  printf("Enter a number: ");
+  scanf("%d",&x);
+  int is_prime = 1, i  =  2;
+  while(1)
     {
       //your code here
+      loop:
+      if((i>=x)||(is_prime == 0))
+      {
+        break;
+      }
+      if(!(x%i))
+      {
+        is_prime = 0;
+      }
+      i++;
       goto loop;
     }
+  if(is_prime)
+      printf("Prime");
+  else
+      printf("Not Prime");
+  return 0;
 }
