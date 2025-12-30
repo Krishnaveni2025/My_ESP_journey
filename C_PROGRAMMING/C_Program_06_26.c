@@ -8,9 +8,22 @@ int main()
 {
   int x;
   //your code here
-  while()
+  x = 1000;
+   int big = 0;
+  while(1)
     {
       //your code here
-      goto loop;
+      loop:
+      if(x<10000)
+      {
+        if((!(x%7))&&(!(x%9)))
+        {
+          big = x;
+        }
+        x++;
+        goto loop;
+      }
+      printf("%d",big);
+      break;
     }
 }
