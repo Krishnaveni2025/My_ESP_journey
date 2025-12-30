@@ -9,9 +9,32 @@ int main()
 {
   int x;
   //your code here
-  while()
+  int y,z;
+  int max;
+  printf("Enter a number: ");
+  scanf("%d %d %d",&x,&y,&z);
+  if((x>y)&&(x>z))
+  {
+    max = x;
+  }
+  else if((y>x)&&(y>z))
+  {
+    max = y;
+  }
+  else
+  {
+    max = z;
+  }
+  while(1)
     {
       //your code here
+      loop:
+      if((!(max%x))&&(!(max%y))&&(!(max%z)))
+      {
+        printf("%d",max);
+        break;
+      }
+      max++;
       goto loop;
     }
 }
