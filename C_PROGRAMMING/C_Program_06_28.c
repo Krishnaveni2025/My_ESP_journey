@@ -9,9 +9,28 @@ int main()
 {
   int x;
   //your code here
-  while()
+  int y;
+  printf("Enter two numbers: ");
+  scanf("%d %d",&x,&y);
+  int max;
+  if(x>y)
+  {
+    max = x;
+  }
+  else
+  {
+    max = y;
+  }
+  while(1)
     {
       //your code here
+      loop:
+      if(((max%x)==0)&&((max%y)==0))
+      {
+        printf("%d",max);
+        break;
+      }
+      max++;
       goto loop;
     }
 }
