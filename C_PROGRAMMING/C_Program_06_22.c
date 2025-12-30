@@ -9,9 +9,27 @@ int main()
 {
   int x;
   //your code here
-  while()
+  printf("Enter a number: ");
+  scanf("%d",&x);
+  int count = 0;
+  while(1)
     {
       //your code here
+      if(x<10)
+      {
+        break;
+      }
+      loop:
+      if(x>10)
+      {
+          if((x%100)%2)
+          {
+              count++;
+          }
+      x /= 10;
       goto loop;
+      }
     }
+    printf("%d",count);
+    return 0;
 }
