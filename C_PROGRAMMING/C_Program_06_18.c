@@ -12,6 +12,7 @@ int main()
   printf("Enter a number: ");
   scanf("%d",&x);
   int is_prime = 1, i  =  2;
+  x = x%100;
   while(1)
     {
       //your code here
