@@ -8,9 +8,31 @@ int main()
 {
   int x;
   //your code here
-  while()
+  int count = 0, num, sum = 0;
+  x = 10;
+  while(1)
     {
       //your code here
-      goto loop;
+      loop:
+      if(x<100000)
+      {
+        sum = 0;
+        num = x;
+        sloop:
+        if(num)
+        {
+          sum += (num%10);
+          num /= 10;
+          goto sloop;
+        }
+        if(sum == 14)
+        {
+          count++;
+        }
+        x++;
+        goto loop;
+      }
+      printf("%d",count);
+      break;
     }
 }
