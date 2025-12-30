@@ -11,9 +11,52 @@ int main()
 {
   int x;
   //your code here
-  while()
+  printf("Enter a Number: ");
+  scanf("%d",&x);
+  int is_prime = 1,i = 2, sum = 0,temp = x;
+  if(x<2)
+  {
+    is_prime = 0;
+  }
+  while(1)
     {
-      //your code here
-      goto loop;
+       Ploop:
+      if((i>=x)||(is_prime==0))
+        {
+          break;
+        }
+     
+        if((x%i)==0)
+        {
+          is_prime = 0;
+        }
+      
+      i++;
+      goto Ploop;
     }
+    Sloop:
+      if(temp!=0)
+      {
+        sum = sum + (temp%10);
+        temp = temp/10;
+        goto Sloop;
+      }
+      
+  if((is_prime == 1)&&(sum==14))
+  {
+    printf("Prime & sum of digits is 14");
+  }
+  else if((is_prime == 1)&&(sum != 14))
+  {
+    printf("Prime & sum of digits is not 14");
+  }
+  else if((is_prime == 0) && (sum == 14))
+  {
+    printf("Not Prime but sum of digits is 14");
+  }
+  else
+  {
+    printf("Not Prime & sum of digits is not 14");
+  }
+  return 0;
 }
