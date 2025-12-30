@@ -9,9 +9,24 @@ int main()
 {
   int x;
   //your code here
-  while()
+  printf("Enter a number: ");
+  scanf("%d",&x);
+  int count = 0;
+  while(1)
     {
       //your code here
-      goto loop;
+      loop:
+      if(x)
+      {
+        if(((x%100)==16)||((x%100)==25)||((x%100)==36)||((x%100)==49)||((x%100)==64)||((x%100)==81))
+        {
+          count++;
+        }
+        x /= 10;
+        goto loop;
+      }
+      printf("%d",count);
+      break;
     }
+  return 0;
 }
