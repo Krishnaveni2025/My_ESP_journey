@@ -9,9 +9,25 @@ int main()
 {
   int x;
   //your code here
-  while()
-    {
-      //your code here
-      goto loop;
+  int y;
+  printf("Enter two numbers: ");
+  scanf("%d %d",&x,&y);
+  while(1)
+  {
+ loop:
+      if(x!=y)
+      {
+        if(x>y)
+        {
+        x -= y;
+        }
+        else
+        {
+        y-=x;
+        }
+        goto loop;
+      }
+      printf("%d",x);
+      break;
     }
 }
