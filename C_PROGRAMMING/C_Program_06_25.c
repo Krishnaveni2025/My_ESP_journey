@@ -9,9 +9,23 @@ int main()
 {
   int x;
   //your code here
-  while()
+  printf("Enter a number: ");
+  scanf("%d",&x);
+  int count = 0;
+  while(1)
     {
       //your code here
-      goto loop;
+      loop:
+      if(x)
+      {
+        if(((x%10)==2)||((x%10)==3)||((x%10)==5)||((x%10)==7))
+        {
+          count++;
+        }
+        x /= 10;
+        goto loop;
+      }
+      printf("%d",count);
+      break;
     }
 }
