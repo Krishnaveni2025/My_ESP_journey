@@ -9,14 +9,18 @@ Answer:
 5
 */
 #include<stdio.h>
-void function_name(int);
+void disp_assend(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 1;
+disp_assend(x);
 }
-void function_name(int x)
+void disp_assend(int x)
 {
 //your code here
+  for(x = 1; x<6; x++)
+    {
+      printf("%d\n",x);
+    }
 }
