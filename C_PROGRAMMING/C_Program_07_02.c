@@ -9,14 +9,18 @@ Answer:
 1
 */
 #include<stdio.h>
-void function_name(int);
+void disp_descend(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 5;
+disp_descend(x);
 }
-void function_name(int x)
+void disp_descend(int x)
 {
 //your code here
+for(x = 5; x>0; x--)
+  {
+    printf("%d\n",x);
+  }
 }
