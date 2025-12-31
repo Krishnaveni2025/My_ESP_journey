@@ -5,14 +5,20 @@ Answer:
 21
 */
 #include<stdio.h>
-void function_name(int);
+void disp_rsum(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 6;
+disp_rsum(x);
 }
-void function_name(int x)
+void disp_rsum(int x)
 {
 //your code here
+  int sum = 0;
+  for(x = 6; x>0; x--)
+    {
+      sum += x;
+    }
+  printf("%d",sum);
 }
