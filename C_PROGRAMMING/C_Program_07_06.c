@@ -9,14 +9,21 @@ Answer:
 19
 */
 #include<stdio.h>
-void function_name(int);
+void disp_2digit_odd_below20(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 11;
+disp_2digit_odd_below20(x);
 }
-void function_name(int x)
+void disp_2digit_odd_below20(int x)
 {
 //your code here
+  for(x = 11; x<20; x++)
+    {
+      if(x%2)
+      {
+        printf("%d\n",x);
+      }
+    }
 }
