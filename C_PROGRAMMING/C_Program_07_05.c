@@ -9,14 +9,21 @@ Answer:
 9
 */
 #include<stdio.h>
-void function_name(int);
+void disp_odd(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 1;
+disp_odd(x);
 }
-void function_name(int x)
+void disp_odd(int x)
 {
 //your code here
+  for(x = 1; x<10; x++)
+    {
+      if(x%2)
+      {
+        printf("%d\n",x);
+      }
+    }
 }
