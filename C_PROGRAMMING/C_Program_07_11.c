@@ -7,14 +7,21 @@ Input:76895439 Output:8
 Input:675      Output:3
 */
 #include<stdio.h>
-void function_name(int);
+void count_total_digits(int,int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-function_name(x);
+y = 0;
+count_total_digits(x,y);
 }
-void function_name(int x)
+void count_total_digits(int x,int y)
 {
 //your code here
+  while(x)
+    {
+      y++;
+      x /= 10;
+    }
+  printf("%d",y);
 }
