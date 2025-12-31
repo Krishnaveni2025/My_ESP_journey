@@ -5,14 +5,26 @@ Answer:
 375
 */
 #include<stdio.h>
-void function_name(int);
+void disp_2digit_odd_sum_tens7(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 0;
+disp_2digit_odd_sum_tens7(x);
 }
-void function_name(int x)
+void disp_2digit_odd_sum_tens7(int x)
 {
 //your code here
+  int i;
+  for(i = 70; i<80; i++)
+    {
+      if(i%2)
+      {
+        if((i/10)==7)
+        {
+          x += i;
+        }
+      }
+    }
+  printf("%d",x);
 }
