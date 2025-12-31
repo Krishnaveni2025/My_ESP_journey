@@ -5,14 +5,23 @@ Answer:
 495
 */
 #include<stdio.h>
-void function_name(int);
+void disp_2digit_ones5(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 0;
+disp_2digit_ones5(x);
 }
-void function_name(int x)
+void disp_2digit_ones5(int x)
 {
 //your code here
+  int i;
+  for(i = 15; i<96; i++)
+    {
+      if((i%10)==5)
+      {
+        x += i;
+      }
+    }
+  printf("%d",x);
 }
