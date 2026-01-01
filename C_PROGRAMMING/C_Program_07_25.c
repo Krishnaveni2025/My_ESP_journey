@@ -7,14 +7,24 @@
   */
 
 #include<stdio.h>
-void function_name(int);
+void disp_single_digit_prime(int);
 int main()
 {
-int x,y;
+int x;
 scanf("%d",&x);
-function_name(x);
+disp_single_digit_prime(x);
 }
-void function_name(int x)
+void disp_single_digit_prime(int x)
 {
 //your code here
+  int count = 0;
+  while(x)
+    {
+      if(((x%10)==2)||((x%10)==3)||((x%10)==5)||((x%10)==7))
+      {
+        count++;
+      }
+      x /= 10;
+    }
+  printf("%d",count);
 }
