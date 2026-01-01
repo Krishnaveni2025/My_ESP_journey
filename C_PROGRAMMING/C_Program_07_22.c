@@ -6,14 +6,24 @@
   Input: 987531   Output: 4
   */
 #include<stdio.h>
-void function_name(int);
+void disp_total_2digit_odd(int);
 int main()
 {
-int x,y;
+int x;
 scanf("%d",&x);
-function_name(x);
+disp_total_2digit_odd(x);
 }
-void function_name(int x)
+void disp_total_2digit_odd(int x)
 {
 //your code here
+  int count = 0;
+  while(x>10)
+    {
+      if((x%100)%2)
+      {
+        count++;
+      }
+      x /= 10;
+    }
+  printf("%d",count);
 }
