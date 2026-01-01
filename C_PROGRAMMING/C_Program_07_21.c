@@ -6,14 +6,22 @@
   Input: 987531   Output:5
   */
 #include<stdio.h>
-void function_name(int);
+void disp_total_odd_digits(int);
 int main()
 {
-int x,y;
+int x;
 scanf("%d",&x);
-function_name(x);
+disp_total_odd_digits(x);
 }
-void function_name(int x)
+void disp_total_odd_digits(int x)
 {
 //your code here
+  int count = 0;
+  while(x)
+    {
+      if((x%10)%2)
+            count++;
+      x /= 10;
+    }
+  printf("%d",count);
 }
