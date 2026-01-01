@@ -6,14 +6,32 @@ Input: 359 - Output: Prime
 Input: 3577 - Output: Not prime
 */
 #include<stdio.h>
-void function_name(int);
+void check_first_2digits_prime(int);
 int main()
 {
-int x,y;
+int x;
 scanf("%d",&x);
-function_name(x);
+check_first_2digits_prime(x);
 }
-void function_name(int x)
+void check_first_2digits_prime(int x)
 {
 //your code here
+  x %= 100;
+  int i = 2, is_prime = 1;
+  for(i = 2; i<x; i++)
+    {
+      if((x%i)==0)
+      {
+        is_prime = 0;
+        break;
+      }
+    }
+  if(is_prime)
+  {
+    printf("Prime");
+  }
+  else
+  {
+    printf("Not Prime");
+  }
 }
