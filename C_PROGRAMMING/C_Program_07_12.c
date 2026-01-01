@@ -7,14 +7,21 @@
   Input:675      Output:18
   */
 #include<stdio.h>
-void function_name(int);
+void disp_sum_all_digits(int, int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-function_name(x);
+y = 0;
+disp_sum_all_digits(x,y);
 }
-void function_name(int x)
+void disp_sum_all_digits(int x, int sum)
 {
 //your code here
+  while(x)
+    {
+      sum += (x%10);
+      x /= 10;
+    }
+  printf("%d",sum);
 }
