@@ -5,14 +5,32 @@
   4
 */
 #include<stdio.h>
-void function_name(int);
+void disp_count_single_digit_prime(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 2;
+disp_count_single_digit_prime(x);
 }
-void function_name(int x)
+void disp_count_single_digit_prime(int x)
 {
 //your code here
+  int i  = 2, is_prime, count = 0;
+  while(x<10)
+    {
+        is_prime = 1;
+        for(i = 2; i<x; i++)
+        {
+            if(!(x%i))
+            {
+                is_prime = 0;
+            }
+        }
+        if(is_prime)
+        {
+            count++;
+        }
+      x++;
+    }
+    printf("%d",count);
 }
