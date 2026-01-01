@@ -7,14 +7,24 @@
   */
 
 #include<stdio.h>
-void function_name(int);
+void disp_single_digit_square(int);
 int main()
 {
-int x,y;
+int x;
 scanf("%d",&x);
-function_name(x);
+disp_single_digit_square(x);
 }
-void function_name(int x)
+void disp_single_digit_square(int x)
 {
 //your code here
+  int count = 0;
+  while(x)
+    {
+      if(((x%10)==1)||((x%10)==4)||((x%10)==9))
+      {
+        count++;
+      }
+      x /= 10;
+    }
+  printf("%d",count);
 }
