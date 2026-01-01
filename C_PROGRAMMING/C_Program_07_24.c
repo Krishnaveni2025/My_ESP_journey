@@ -6,14 +6,24 @@
   Input: 364925    Output: 4
   */
 #include<stdio.h>
-void function_name(int);
+void disp_two_digit_square(int);
 int main()
 {
-int x,y;
+int x;
 scanf("%d",&x);
-function_name(x);
+disp_two_digit_square(x);
 }
-void function_name(int x)
+void disp_two_digit_square(int x)
 {
 //your code here
+  int count = 0;
+  while(x)
+    {
+      if(((x%100)==16)||((x%100)==25)||((x%100)==36)||((x%100)==49)||((x%100)==64)||((x%100)==81))
+      {
+        count++;
+      }
+      x /= 10;
+    }
+  printf("%d",count);
 }
