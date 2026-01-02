@@ -7,14 +7,26 @@
   */
 
 #include<stdio.h>
-void function_name(int);
+void disp_count_HCF2(int, int);
 int main()
 {
 int x,y;
-scanf("%d",&x);
-function_name(x);
+scanf("%d %d",&x, &y);
+disp_count_HCF2(x,y);
 }
-void function_name(int x)
+void disp_count_HCF2(int x, int y)
 {
 //your code here
+  while(x!=y)
+    {
+      if(x>y)
+      {
+        x -= y;
+      }
+      else
+      {
+        y -= x;
+      }
+    }
+  printf("%d",x);
 }
