@@ -5,16 +5,28 @@ Answer:
 375
 */
 #include<stdio.h>
-int function_name(int);
+int disp_2digit_odd_sum_tens7(int);
 int main()
 {
 int x,y;
-scanf("%d",&x);
-y = function_name(x);
+x = 71;
+y = disp_2digit_odd_sum_tens7(x);
+printf("%d",y);
 }
-int function_name(int a)
+int disp_2digit_odd_sum_tens7(int a)
 {
-int a;
+int y = 0;
 //your code here
+  while(a<80)
+    {
+      if(a%2)
+      {
+        if((a/10)==7)
+        {
+          y += a;
+        }
+      }
+      a++;
+    }
 return (y);
 }
