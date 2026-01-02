@@ -6,16 +6,28 @@ Input: 31 - Output: Prime
 Input: 27 - Output: Not prime
 */
 #include<stdio.h>
-int function_name(int);
+int check_prime(int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-y = function_name(x);
+y = check_prime(x);
+  if(y)
+    printf("Prime");
+  else
+    printf("Not Prime");
 }
-int function_name(int a)
+int check_prime(int a)
 {
-int a;
+int y = 1;
 //your code here
+  for(int i = 2; i <a; i++)
+    {
+      if(!(a%i))
+      {
+        y = 0;
+        break;
+      }
+    }
 return (y);
 }
