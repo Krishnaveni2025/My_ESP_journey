@@ -1,5 +1,5 @@
 /*
-  C LEVEL 09 Problem 06
+  C LEVEL 09 Problem 08
   Use only int variables
   Use ont decimals
   use arrays
