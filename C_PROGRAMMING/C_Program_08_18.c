@@ -6,16 +6,37 @@
   Input: 15 78 Output:390
   */
 #include<stdio.h>
-int function_name(int);
+int disp_LCM2(int, int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = function_name(x);
+int x,y,lcm;
+scanf("%d %d",&x,&y);
+lcm = disp_LCM2(x,y);
+  printf("%d",lcm);
 }
-int function_name(int a)
+int disp_LCM2(int a, int b)
 {
-int a;
+int lcm;
 //your code here
-return (y);
-}
+  if(a>b)
+  {
+    lcm = a;
+  }
+    else
+    {
+      lcm = b;
+    }
+    while(1)
+      {
+        if(!(lcm%a))
+        {
+          if(!(lcm%b))
+          {
+            return (lcm);
+            break;
+          }
+        }
+        lcm++;
+      }
+  }
+
