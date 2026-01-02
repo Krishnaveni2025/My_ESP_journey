@@ -7,16 +7,28 @@
   Input:675      Output:576
   */
 #include<stdio.h>
-int function_name(int);
+int disp_interchange_first_last_digit(int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-y = function_name(x);
+y = disp_interchange_first_last_digit(x);
+printf("%d",y);
 }
-int function_name(int a)
+int disp_interchange_first_last_digit(int a)
 {
-int a;
+int y = 0;
 //your code here
-return (y);
+int first, last , temp,middle, power = 1;
+  first = a%10;
+  temp = a;
+  while(temp>10)
+    {
+      power *= 10;
+      temp /= 10;
+    }
+  last = temp;
+  middle = (a%power)/10;
+  y = (first*power)+(middle*10)+last;
+  return (y);
 }
