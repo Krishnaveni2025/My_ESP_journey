@@ -5,16 +5,31 @@
   2710
   */
 #include<stdio.h>
-int function_name(int);
+int disp_count_sum14(int);
 int main()
 {
 int x,y;
-scanf("%d",&x);
-y = function_name(x);
+x = 10;
+y = disp_count_sum14(x);
+printf("%d",y);
 }
-int function_name(int a)
+int disp_count_sum14(int a)
 {
-int a;
+int y, temp, count = 0;
 //your code here
-return (y);
+  while(a<100000)
+    {
+      temp = a, y = 0;
+      while(temp)
+        {
+          y += (temp%10);
+          temp /= 10;
+        }
+      if(y==14)
+      {
+        count++;
+      }
+        a++;
+    }
+return (count);
 }
