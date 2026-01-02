@@ -5,16 +5,28 @@
   9954
   */
 #include<stdio.h>
-int function_name(int);
+int disp_biggest_4digit_div7_9(int);
 int main()
 {
 int x,y;
-scanf("%d",&x);
-y = function_name(x);
+x = 1000;
+y = disp_biggest_4digit_div7_9(x);
+  printf("%d",y);
 }
-int function_name(int a)
+int disp_biggest_4digit_div7_9(int a)
 {
-int a;
+int y = 0;
 //your code here
+  while(a<10000)
+    {
+      if(!(a%7))
+      {
+        if(!(a%9))
+        {
+          y = a;
+        }
+      }
+      a++;
+    }
 return (y);
 }
