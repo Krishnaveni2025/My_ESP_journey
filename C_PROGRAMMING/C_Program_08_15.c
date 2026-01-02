@@ -5,17 +5,27 @@
   Input: 163496481 Output: 1
   Input: 364925    Output: 3
   */
+
 #include<stdio.h>
-int function_name(int);
+int disp_single_digit_prime(int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-y = function_name(x);
+y = disp_single_digit_prime(x);
+printf("%d",y);
 }
-int function_name(int a)
+int disp_single_digit_prime(int a)
 {
-int a;
+int y = 0;
 //your code here
-return (y);
+  while(a)
+    {
+  if(((a%10)==2)||((a%10)==3)||((a%10)==5)||((a%10)==7))
+  {
+    y++;
+  }
+      a /= 10;
+    }
+return(y);
 }
