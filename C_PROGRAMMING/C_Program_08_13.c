@@ -6,15 +6,25 @@
   Input: 987531    Output: 2
   */
 #include<stdio.h>
-int function_name(int);
+int disp_single_digit_square(int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-y = function_name(x);
+y = disp_single_digit_square(x);
+printf("%d",y);
 }
-int function_name(int a)
+int disp_single_digit_square(int a)
 {
-int a;
+int y = 0;
 //your code here
-retu
+  while(a)
+    {
+  if(((a%10)==1)||((a%10)==4)||((a%10)==9))
+  {
+    y++;
+  }
+      a /= 10;
+    }
+return(y);
+}
