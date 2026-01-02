@@ -5,16 +5,22 @@ Answer:
 15
 */
 #include<stdio.h>
-int function_name(int);
+int disp_sum(int);
 int main()
 {
 int x,y;
-scanf("%d",&x);
-y = function_name(x);
+x = 1;
+y = disp_sum(x);
+printf("%d",y);
 }
-int function_name(int a)
+int disp_sum(int a)
 {
-int a;
+int y = 0;
 //your code here
+  while(a<6)
+    {
+      y += a;
+      a++;
+    }
 return (y);
 }
