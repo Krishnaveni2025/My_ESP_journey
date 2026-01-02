@@ -6,14 +6,30 @@
   */
 
 #include<stdio.h>
-void function_name(int);
+void disp_count_sum14(int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x;
+x = 10;
+disp_count_sum14(x);
 }
-void function_name(int x)
+void disp_count_sum14(int x)
 {
 //your code here
+  int count = 0, sum = 0, num;
+  while(x<100000)
+    {
+      num = x,sum = 0;
+      while(num)
+        {
+          sum += (num%10);
+          num /= 10;
+        }
+      if(sum==14)
+      {
+        count++;
+      }
+      x++;
+    }
+  printf("%d",count);
 }
