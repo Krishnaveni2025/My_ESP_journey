@@ -2,19 +2,53 @@
   Question: Write a program to get three numbers from the user and print the LCM of those numbers
   Function Name: disp_LCM3
   Answer:
-  Input: 20 40 80 Output: 40
+  Input: 20 40 80 Output: 80
   Input: 15 78 63 Output: 8190
   */
-
 #include<stdio.h>
-void function_name(int);
+void disp_LCM3(int, int, int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-function_name(x);
+int x,y,z;
+scanf("%d %d %d",&x, &y, &z);
+disp_LCM3(x,y,z);
 }
-void function_name(int x)
+void disp_LCM3(int x, int y, int z)
 {
 //your code here
+  int max = 0;
+  if(x>y)
+  {
+    if(x>z)
+    {
+      max = x;
+    }
+  }
+  else
+  {
+    if(y>z)
+    {
+      max = y;
+    }
+    else
+    {
+      max = z;
+    }
+  }
+  while(1)
+  {
+      if(!(max%x))
+      {
+          if(!(max%y))
+          {
+              if(!(max%z))
+              {
+                printf("%d",max);
+                break;
+              }
+          }
+      }
+      max++;
+  }
 }
+
