@@ -7,16 +7,22 @@
   Input:675      Output:576
   */
 #include<stdio.h>
-int function_name(int);
+int disp_reverse_number(int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-y = function_name(x);
+y = disp_reverse_number(x);
+  printf("%d",y);
 }
-int function_name(int a)
+int disp_reverse_number(int a)
 {
-int a;
+int y = 0;
 //your code here
+  while(a)
+    {
+      y = (y*10)+(a%10);
+      a /= 10;
+    }
 return (y);
 }
