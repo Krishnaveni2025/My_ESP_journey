@@ -8,16 +8,32 @@
   Input:675      Output:675 (last digit = 6)
   */
 #include<stdio.h>
-int function_name(int);
+int check_last_digit_odd(int);
 int main()
 {
 int x,y;
 scanf("%d",&x);
-y = function_name(x);
+y = check_last_digit_odd(x);
+  printf("%d",y);
 }
 int function_name(int a)
 {
-int a;
+int y = 0;
 //your code here
+  int temp = a,last, power = 1;
+  while(temp>10)
+    {
+      power *= 10;
+      temp /= 10;
+    }
+  last = temp;
+  if(last%2)
+  {
+    y = ((last-1)*power)+(a%power);
+  }
+  else
+  {
+    y = a;
+  }
 return (y);
 }
