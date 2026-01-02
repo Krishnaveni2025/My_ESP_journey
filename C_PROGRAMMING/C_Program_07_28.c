@@ -6,14 +6,35 @@
   Input: 15 78 Output:390
   */
 #include<stdio.h>
-void function_name(int);
+void disp_LCM2(int,int);
 int main()
 {
 int x,y;
-scanf("%d",&x);
-function_name(x);
+scanf("%d %d",&x, &y);
+disp_LCM2(x,y);
 }
-void function_name(int x)
+void disp_LCM2(int x, int y)
 {
 //your code here
-}l
+  int max;
+  if(x>y)
+  {
+    max = x;
+  }
+  else
+  {
+    max = y;
+  }
+  while(1)
+  {
+      if(!(max%x))
+      {
+          if(!(max%y))
+          {
+              printf("%d",max);
+              break;
+          }
+      }
+      max++;
+  }
+}
