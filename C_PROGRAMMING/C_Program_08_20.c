@@ -6,16 +6,27 @@
   Input: 15 78  Output: 3
   */
 #include<stdio.h>
-int function_name(int);
+int disp_count_HCF2(int, int);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = function_name(x);
+int x,y,hcf;
+scanf("%d %d",&x, &y);
+hcf = disp_count_HCF2(x,y);
+  printf("%d",hcf);
 }
-int function_name(int a)
+int disp_count_HCF2(int a, int b)
 {
-int a;
 //your code here
-return (y);
+  while(a!=b)
+    {
+      if(a>b)
+      {
+        a -= b;
+      }
+      else
+      {
+        b -= a;
+      }
+    } 
+return (b);//a
 }
