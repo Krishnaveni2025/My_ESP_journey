@@ -1,5 +1,5 @@
 /* C LEVEL 11 Problem 06
   Use Pointers
-Question: Write a function to copy integers from one location to another location
-Function Name: memcopy(src,dst,size)
+Question: Write a function to copy a string to another
+Function Name: strcopy(src,dst)
 */
