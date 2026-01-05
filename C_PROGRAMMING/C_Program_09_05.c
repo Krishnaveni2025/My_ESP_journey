@@ -11,19 +11,24 @@ int main()
   int n = 5,i = 0, arr[n], temp, j = 1;
   for(i=0; i<n; i++)
     {
-      printf("Enter %d Element:\n");
+      printf("Enter %d Element:\n",i);
       scanf("%d",&arr[i]);
     }
   i = 0;
-  for(i = 0; i<n; i++)
+  for(i = 0; i<n-1; i++)
     {
-      for(j=1; j<n; j++)
+      int min = i;
+      for(j=i+1; j<n; j++)
         {
           temp = arr[i];
-          if(temp>arr[j])
+          if(arr[j]<arr[min])
           {
-            arr[j] = arr[i];
-            arr[j] = temp;
+             min = j;
+          }
+          if(min!=i){
+            int temp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = temp;
           }
         }
     }
