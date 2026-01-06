@@ -4,3 +4,4 @@
   Use ont decimals
   use arrays
 Question: Get 5 numbers from the user and remove the odd  numbersand crea a new array and then  print the same*/
+#include<stdio.h>
