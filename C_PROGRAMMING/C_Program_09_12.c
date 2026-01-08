@@ -4,3 +4,10 @@
   Use ont decimals
   use arrays
 Question: Get multiple numbers from the user and store them in an array . Stop when the number is 0. Print the total numbers entered by the user and print the sum of numbers*/
+#include<stdio.h>
+int main()
+{
+  int i = 0, arr[];
+  scanf("%d",&arr[i]);
+  while(!(arr[i]));
+}
