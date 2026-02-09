@@ -194,22 +194,25 @@ int main()
         result = x;}
      printf("Result: %d\n",result);
      Problem 15*/
-    int i = 2;
+    int i = 2,isPrime = 1;//we can start checking for factors from 2, because 1 is a factor of every number and we can ignore it
     loop:
     if(i<x)
     {
         if(!(x%i))
         {
-            printf("not prime ");
-            goto end;//if we find any factor other than 1 and the number itself, we can conclude that the number is not prime and we can exit the loop immediately
+            isPrime = 0;//if we find any factor, we can conclude that the number is not prime
         }
+        i = i + 1;
+        goto loop;
     }
-     printf("prime");
-     end://if we exit the loop without finding any factor, we can conclude that the number is prime
-     //end: is a label that we can use to jump to the end of the program after we have determined whether the number is prime or not
-     //we can use goto statement to jump to the end of the program after we have determined whether the number is prime or not, 
-     //this way we can avoid unnecessary iterations and improve the efficiency of the program
-     //Problem 16 and 17 same*/
+     if(isPrime)
+     {
+        printf("prime");
+     }
+     else
+     {
+        printf("not prime");
+     }
      return 0;
 
 }
