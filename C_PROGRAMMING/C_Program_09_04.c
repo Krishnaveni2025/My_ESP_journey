@@ -9,24 +9,22 @@ Question: Get 5 numbers from the user and print the biggest number
 
 int main()
 {
-    int i = 0,n;
-    printf("Enter the size of the array: ");
-    scanf("%d",&n);
-    int arr[n],big = 0;
-    for(i = 0; i<n; i++)
+    int size,arr[size],i,big;
+    printf("Enter the size: ");
+    scanf("%d",&size);
+    for(i = 0; i<size; i++)
     {
-        printf("Enter %d Element\n",i);
+        printf("Enter %d Element: ",i);
         scanf("%d",&arr[i]);
+        
     }
-    i = 0;
-  big = arr[i];
-  for(i = 1; i<n; i++)
+    big = arr[0];
+    for(i = 1; i<size; i++)
     {
-      if(big<arr[i])
-      {
-        big = arr[i];
-      }
+        if(big<arr[i])
+        {
+            big = arr[i];
+        }
     }
-  printf("%d",big);
-    return 0;
+    printf("Big = %d",big);
 }
