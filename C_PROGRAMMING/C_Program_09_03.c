@@ -9,24 +9,23 @@ Question: Get 5 numbers from the user and print the smallest number
 
 int main()
 {
-    int i = 0,n;
-    printf("Enter the size of the array: ");
-    scanf("%d",&n);
-    int arr[n],small = 0;
-    for(i = 0; i<n; i++)
+    int size,arr[size],i,small;
+    printf("Enter the size: ");
+    scanf("%d",&size);
+    for(i = 0; i<size; i++)
     {
-        printf("Enter %d Element\n",i);
+        printf("Enter %d Element: ",i);
         scanf("%d",&arr[i]);
+        
     }
-    i = 0;
-  small = arr[i];
-  for(i = 1; i<n; i++)
+    small = arr[0];//assume first element is small
+    for(i = 1; i<size; i++)
     {
-      if(small>arr[i])
-      {
-        small = arr[i];
-      }
+        if(small>arr[i])
+        {
+            small = arr[i];
+        }
     }
-  printf("%d",small);
+    printf("small = %d",small);
     return 0;
 }
