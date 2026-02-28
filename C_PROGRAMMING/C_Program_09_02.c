@@ -10,8 +10,9 @@ Question: Get 5 numbers from user and print average of all numbers
 int main()
 {
     int i = 0,n;
-    printf("Enter the size of the array: ");
-    scanf("%d",&n);
+    n = 5;
+    //printf("Enter the size of the array: ");
+   // scanf("%d",&n);
     int arr[n],avg = 0;
     for(i = 0; i<n; i++)
     {
@@ -19,7 +20,7 @@ int main()
         scanf("%d",&arr[i]);
         avg += arr[i];
     }
-  avg /= n;
-    printf("%d",avg);
+ // avg /= n;
+    printf("%d",avg/n);
     return 0;
 }
