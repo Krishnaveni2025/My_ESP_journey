@@ -4,36 +4,37 @@
   Use ont decimals
   use arrays
 Question: Get 5 numbers from the user and arrange in descending order and print the same*/
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-  int n = 5,i = 0, arr[n],temp,j = 1,k=0;
-  for(i=0; i<n; i++)
+    int size = 5, arr1[size],i,temp,j;
+    for(i = 0; i<size; i++)
     {
-      printf("Enter %d Element:\n",i);
-      scanf("%d",&arr[i]);
+        printf("Enter Array %d Element: ",i);
+        scanf("%d",&arr1[i]);
     }
-  i = 0;
-  for(i = 0; i<n-1; i++)
+    printf("Array Before Arrangement\n");
+    for(i = 0; i<size; i++)
     {
-      int max = i;
-      for(j=i+1; j<n; j++)
+        printf("%d ",arr1[i]);
+    }
+    printf("\nArray After Arrangement\n");
+    for(i = 0; i<size; i++)
+    {
+        for(j=i+1;j<size;j++)
         {
-          temp = arr[i];
-          if(arr[j]>arr[max])
-          {
-             max = j;
-          }
-          if(max!=i){
-            int temp = arr[max];
-            arr[max] = arr[i];
-            arr[i] = temp;
-          }
+            if(arr1[i]<arr1[j])
+            {
+                temp = arr1[j];
+                arr1[j] = arr1[i];
+                arr1[i] = temp;
+            }
         }
     }
-  
-  for(k = 0; k<n; k++)
+    for(i = 0; i<size; i++)
     {
-      printf("%d ",arr[k]);
+        printf("%d ",arr1[i]);
     }
+    
 }
