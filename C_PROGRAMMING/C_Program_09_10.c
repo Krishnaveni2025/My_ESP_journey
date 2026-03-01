@@ -1,4 +1,9 @@
-
+/*
+  C LEVEL 09 Problem 10
+  Use only int variables
+  Use ont decimals
+  use arrays
+Question: Get 5 numbers from the user and remove the prime  numbers and create a new array and then  print the same*/
 
 
 #include<stdio.h>
@@ -15,7 +20,7 @@ int main()
     {
         printf("%d ",input[i]);
     }
-    //  Filtering Logic
+    // Filtering Logic
     for(i = 0; i < size; i++) {
         int isComposite = 0; // This is our flag
 
@@ -33,7 +38,7 @@ int main()
             isComposite = 1;
         }
 
-        // 3. Add to output only if it was flagged as non-prime
+        // Add to output only if it was flagged as non-prime
         if(isComposite) {
             output[nonprime] = input[i];
             nonprime++;
