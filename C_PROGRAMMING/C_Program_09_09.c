@@ -4,24 +4,40 @@
   Use ont decimals
   use arrays
 Question: Get 5 numbers from the user and remove the even  numbers and create a new array and then  print the same*/
-
 #include<stdio.h>
 int main()
 {
-  int n = 5, arr[5], i = 0, j = 0, odd[j], k =0;
-  for(i = 0; i<n; i++)
+    int size = 5, input[size],output[size],i,oddcount=0;
+    for(i = 0; i<size; i++)
     {
-      printf("Enter %d Element: ",i);
-      scanf("%d",&arr[i]);
-      if(arr[i]%2)
-      {
-          odd[j] = arr[i];
-          j++;
-      }
+        printf("Enter Array %d Element: ",i);
+        scanf("%d",&input[i]);
     }
-    for(k = 0; k<j; k++)
+    printf("Array Before Removing EVEN Numbers\n");
+    for(i = 0; i<size; i++)
     {
-        printf("%d ",odd[k]);
+        printf("%d ",input[i]);
     }
-  
+    for(i = 0; i<size; i++)
+    {
+        if(input[i]%2)
+        {
+            output[oddcount] = input[i];
+            oddcount++;
+        }
+    }
+    if(!(oddcount))
+    {
+        printf("All are EVEN Numbers");
+    }
+    else
+    {
+        printf("\nArray After Removing EVEN Numbers\n");
+        for(i = 0; i<oddcount; i++)
+        {
+            printf("%d ",output[i]);
+        }
+    }
+    
 }
+
