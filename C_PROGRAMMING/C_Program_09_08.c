@@ -3,21 +3,7 @@
   Use only int variables
   Use ont decimals
   use arrays
-Question: Get 5 numbers from the user and remove the odd  numbers and create a new array and then  print the same*/
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-/*
-  C LEVEL 09 Problem 07
-  Use only int variables
-  Use ont decimals
-  use arrays
-Question: Get 5 numbers from the user and arrange in descending order and print the same*/
+Question: Get 5 numbers from the user and remove the odd  numbers and create a new array and then  print the same*
 #include <stdio.h>
 
 int main()
