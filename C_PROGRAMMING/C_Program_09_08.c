@@ -3,7 +3,7 @@
   Use only int variables
   Use ont decimals
   use arrays
-Question: Get 5 numbers from the user and remove the odd  numbers and create a new array and then  print the same*
+Question: Get 5 numbers from the user and remove the odd  numbers and create a new array and then  print the same*/
 #include <stdio.h>
 
 int main()
