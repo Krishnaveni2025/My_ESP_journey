@@ -1,37 +1,55 @@
-#include <stdio.h>
 
-// Function to check if a number is prime
-int isPrime(int x) {
-    if (x <= 1) return 0; // 0 and 1 are not prime
-    for (int i = 2; i <= x/2; i++) {
-        if (x % i == 0) return 0; // divisible → not prime
+
+
+#include<stdio.h>
+int main()
+{
+    int size = 5, input[size],output[size],i,p=2,nonprime=0;
+    for(i = 0; i<size; i++)
+    {
+        printf("Enter Array %d Element: ",i);
+        scanf("%d",&input[i]);
     }
-    return 1; // prime
-}
-
-int main() {
-    int n = 5;
-    int arr[5], result[5];
-    int i, j = 0;
-
-    // Input 5 numbers
-    for (i = 0; i < n; i++) {
-        printf("Enter %d Element: ", i);
-        scanf("%d", &arr[i]);
+    printf("Array Before Removing Prime Numbers\n");
+    for(i = 0; i<size; i++)
+    {
+        printf("%d ",input[i]);
     }
+    //  Filtering Logic
+    for(i = 0; i < size; i++) {
+        int isComposite = 0; // This is our flag
 
-    // Filter out primes
-    for (i = 0; i < n; i++) {
-        if (!isPrime(arr[i])) {   // if not prime
-            result[j] = arr[i];
-            j++;
+        // Numbers less than 2 are not prime, but usually 
+        // handled separately. We check for divisors here:
+        if (input[i] > 1) {
+            for(p = 2; p * p <= input[i]; p++) { // Efficiency: only check up to square root
+                if(input[i] % p == 0) {
+                    isComposite = 1; // Found a divisor! It's not prime.
+                    break;           // Stop checking other divisors
+                }
+            }
+        } else if (input[i] <= 1) {
+            // 0 and 1 are not prime numbers
+            isComposite = 1;
+        }
+
+        // 3. Add to output only if it was flagged as non-prime
+        if(isComposite) {
+            output[nonprime] = input[i];
+            nonprime++;
         }
     }
-
-    // Print the new array
-    for (i = 0; i < j; i++) {
-        printf("%d ", result[i]);
+    if(!(nonprime))
+    {
+        printf("All are PRIME Numbers");
     }
-
-    return 0;
+    else
+    {
+        printf("\nArray After Removing PRIME Numbers\n");
+        for(i = 0; i<nonprime; i++)
+        {
+            printf("%d ",output[i]);
+        }
+    }
+    
 }
