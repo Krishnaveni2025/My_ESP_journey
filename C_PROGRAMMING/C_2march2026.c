@@ -1,5 +1,5 @@
 /*
-==================== C LEVEL 5 =======================================================================================
+==================== C LEVEL 6 =======================================================================================
 1. Use 'int' variables
 2. Use only decimals
 3. Use 'for' statements to solve problems. "if" also can be used to decision making but not for loop
