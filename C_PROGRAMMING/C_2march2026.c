@@ -211,6 +211,15 @@ int main()
     x++;
     }
     printf("SUM = %d",sum); Problem 10*/
+    /*
+        scanf("%d",&x);
+    int count = 0;
+    while(x)
+    {
+        count++;
+        x /= 10;
+    }
+    printf("%d",count); Problem 11*/
     
     return 0;
 }
