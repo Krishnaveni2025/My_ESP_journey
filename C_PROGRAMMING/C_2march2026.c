@@ -2,7 +2,7 @@
 ==================== C LEVEL 6 =======================================================================================
 1. Use 'int' variables
 2. Use only decimals
-3. Use 'for' statements to solve problems. "if" also can be used to decision making but not for loop
+3. Use 'while' statements to solve problems. "if" also can be used to decision making but not for loop
 4. Do not use arrays, pointers, strings, etc.
 Template:
 #include<stdio.h>
@@ -62,7 +62,7 @@ int main()
     60
     9. Write a loop program to print the sum of two digit numbers whose one's digit is 5
     answer: 495
-    10. Write a loop program ro print sum of two digit odd numbers whose ten's digit is 7
+    10. Write a loop program to print sum of two digit odd numbers whose ten's digit is 7
     answer: 375
     11. Write a program to get a number from the user and print the total number of digits in that number
     answer:
@@ -106,3 +106,111 @@ int main()
 28. Write a program to get two numbers from the user and print LCM of those numbers
 29. Write a program to get three numbers from the user and print LCM of those numbers
 30. Write a program to get two numbers from the user and print HCF of those numbers*/
+#include<stdio.h>
+int main()
+{
+    int x;
+    // Your Code Here
+   /* x = 1;
+    while(x<6)
+    {
+    //your code here
+    printf("%d\n",x);
+    x++;
+    }   Problem 01*/
+    /*x = 5;
+    while(x>0)
+    {
+    //your code here
+    printf("%d\n",x);
+    x--;
+    }    Problem 02*/
+    /*int sum = 0;
+    // Your Code Here
+    x = 1;
+    while(x<6)
+    {
+    //your code here
+    sum+=x;
+    x++;
+    }
+    printf("Sum = %d",sum);Problem 03*/
+    /*
+    x = 6;
+    int sum = 0;
+    while(x>0)
+    {
+    //your code here
+    sum+=x;
+    x--;
+    }
+    printf("Sum = %d",sum); Problem 04*/
+    /*x = 1;
+    while(x<10)
+    {
+    //your code here
+    if(x%2)
+            printf("%d\n",x);
+    x++;
+    }Problem 05*/
+    /*x = 11;
+    while(x<20)
+    {
+    //your code here
+    if(x%2)
+            printf("%d\n",x);
+    x++;
+    } Problem 06*/
+    /*x = 11;
+    while(x<100)
+    {
+    //your code here
+    if(x%2)
+    {
+        if(((x/10)+(x%10))==7)
+            printf("%d\n",x);
+    }
+    x++;
+    }Problem 07*/
+    /*
+        x = 11;
+    while(x<100)
+    {
+    //your code here
+    if(!(x%2))
+    {
+        if(((x/10)+(x%10))==6)
+            printf("%d\n",x);
+    }
+    x++;
+    }Problem 08*/
+    /*x = 11;
+    int sum = 0;
+    while(x<100)
+    {
+    //your code here
+    if((x%10)==5)
+    {
+        sum+=x;
+    }
+    x++;
+    }
+    printf("SUM = %d",sum);
+    Problem 09*/
+    
+    /*x = 11;
+    int sum = 0;
+    while(x<100)
+    {
+    //your code here
+    if(x%2)
+    {
+        if((x/10)==7)
+            sum+=x;
+    }
+    x++;
+    }
+    printf("SUM = %d",sum); Problem 10*/
+    
+    return 0;
+}
