@@ -9,7 +9,7 @@ Question: Add two integer arrays upto 50 digits and store the result in an 51 di
 int input1[50], input2[50], output[51];
 
 int main() {
-    int i, carry = 0;
+    int i;
 
     printf("Enter first Array (50 digits):\n");
     for (i = 0; i < 50; i++) {
@@ -25,13 +25,9 @@ int main() {
 
     // Add from rightmost digit
     for (i = 49; i >= 0; i--) {
-        int sum = input1[i] + input2[i] + carry;
-        output[i + 1] = sum % 10;   // store single digit
-        carry = sum / 10;           // update carry
+        output[i + 1]  = input1[i] + input2[i] ;
     }
-
-    // Handle final carry
-    output[0] = carry;
+    output[0] = 0;
 
     // Print result
     printf("Result = ");
