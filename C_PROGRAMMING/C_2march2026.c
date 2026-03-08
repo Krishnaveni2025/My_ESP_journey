@@ -84,7 +84,7 @@ int main()
     Input: 123456    - Output- 623451
     Input: 76895439  - Output- 96895437
     Input: 675       - Output- 576
-    15. Write a program to get a number from the uer and if the last digit of the number is even print the same number.
+    15. Write a program to get a number from the user and if the last digit of the number is even print the same number.
     If the last digit of the number is odd subtract 1 from the number and print the number(last digit- MSB).
     Answer:
     Input:654324    - Output- 654324
@@ -106,6 +106,157 @@ int main()
 28. Write a program to get two numbers from the user and print LCM of those numbers
 29. Write a program to get three numbers from the user and print LCM of those numbers
 30. Write a program to get two numbers from the user and print HCF of those numbers*/
+#if 0
+#include <stdio.h>
+int primecheck(int numb);
+int main()
+{
+    int number, is_prime;
+    printf("Enter a 4 digit Number: ");
+    scanf("%d",&number);
+    number = (number%1000)/10;//middle two numbers 100's 10's
+  
+    is_prime = primecheck(number);
+    if(is_prime)
+    {
+        printf("Prime");
+    }
+    else
+    {
+        printf("Not Prime");
+    }
+    return 0;
+} 
+int primecheck(int numb)
+{
+    int is_prime = 1, i = 2;
+    while(i<numb)
+    {
+        if(!(numb%i))
+        {
+            is_prime = 0;
+            break;
+        }
+        i++;
+    }  
+    return is_prime;
+}
+Problem 19
+#endif
+#if 0
+#include <stdio.h>
+int primecheck(int numb);
+int main()
+{
+    int number, is_prime;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    number %= 100;
+    is_prime = primecheck(number);
+    if(is_prime)
+    {
+        printf("Prime");
+    }
+    else
+    {
+        printf("Not Prime");
+    }
+    return 0;
+} 
+int primecheck(int numb)
+{
+    int is_prime = 1, i = 2;
+    while(i<numb)
+    {
+        if(!(numb%i))
+        {
+            is_prime = 0;
+            break;
+        }
+        i++;
+    }  
+    return is_prime;
+}
+Problem 18
+#endif
+
+#if 0
+#include <stdio.h>
+int sumofdigits(int numb);
+int primecheck(int numb);
+int main()
+{
+    int number, is_prime, sum;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    sum = sumofdigits(number);
+    is_prime = primecheck(number);
+    if(is_prime)
+    {
+        if(sum==14)
+            printf("Prime & sum is 14");
+        else
+            printf("Prime but Sum is not 14");
+    }
+    else
+    {
+        if(sum==14)
+            printf("Not prime but sum is 14");
+        else
+            printf("Not prime & sum is not 14");
+    }
+    return 0;
+} 
+int primecheck(int numb)
+{
+    int is_prime = 1, i = 2;
+    while(i<numb)
+    {
+        if(!(numb%i))
+        {
+            is_prime = 0;
+            break;
+        }
+        i++;
+    }  
+    return is_prime;
+}
+int sumofdigits(int numb)
+{
+    int sum = 0;
+    while(numb)
+    {
+        sum += numb%10;
+        numb /= 10;
+    }
+    return sum;
+} Problem 17
+#endif
+
+#if 0
+#include <stdio.h>
+
+int main()
+{
+    int number, is_prime = 1, i = 2;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    while(i<number)
+    {
+        if(!(number%i))
+        {
+            is_prime = 0;
+            printf("Not Prime");
+            break;
+        }
+        i++;
+    }
+    if(is_prime)
+        printf("Prime");
+    return 0;
+} Problem 16
+#endif
+
 #include<stdio.h>
 int main()
 {
@@ -220,6 +371,81 @@ int main()
         x /= 10;
     }
     printf("%d",count); Problem 11*/
-    
+    #if 0
+    #include <stdio.h>
+    int main()
+    {
+    int number, noofdigits = 0;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    while(number)
+    {
+        noofdigits++;
+        number/=10;
+    }
+    printf("Number of Digits = %d",noofdigits);
+    return 0;
+    } Problem 12
+    #endif 
+        #if 0
+#include <stdio.h>
+
+int main()
+{
+    int number, reverse = 0;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    while(number)
+    {
+        reverse = (reverse*10)+(number%10);
+        number/=10;
+    }
+    printf("Number of Digits = %d",reverse);
+    return 0;
+} Problem 13
+#endif
+#if 0
+#include <stdio.h>
+
+int main()
+{
+    int number, power = 1,middle, first, last, num;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    num = number;
+    first = num%10;
+    while(num>9)
+    {
+        power *= 10;
+        num/=10;
+    }
+    last = num;
+    middle = (number%power)/10;
+    printf("Result = %d",((first*power)+(middle*10)+(last)));
+    return 0;
+} Problem 14
+#endif
+    #if 0
+    #include <stdio.h>
+
+   int main()
+   {
+    int number, power = 1, last, num;
+    printf("Enter a Number: ");
+    scanf("%d",&number);
+    num = number;
+    while(num>9)
+    {
+        power *= 10;
+        num/=10;
+    }
+    last = num;
+    if(last%2)
+        printf("Result = %d",(((last-1)*power)+(number%power)));
+    else
+        printf("Result = %d",number);
+    return 0;
+  } Problem 15
+  #endif
     return 0;
 }
