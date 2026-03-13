@@ -5,15 +5,14 @@
 #include <stdio.h>
 int main()
 {
-    int size,i;
-    char numstr[size];
-    printf("Enter Size of String: ");
-    scanf("%d",&size);
+    char str[100];
+    int i, value;
     printf("Enter Number String: ");
-    scanf("%s",numstr);
-    for(i = 0; i<size; i++)
+    scanf("%99s",str);
+    for(i=0; str[i]!= '\0'; i++)
     {
-      printf("%d ",numstr[i]);   
+        printf("%d",str[i]);
     }
+
     return 0;
 }
