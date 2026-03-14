@@ -6,7 +6,7 @@
 int main()
 {
     char numbstr[51];
-    int number[50],i = 0,j = 0, digit;
+    int number[50],i = 0,j = 0;
     printf("Enter Number string:");
     scanf("%s",numbstr);
     while(numbstr[i]!='\0')
