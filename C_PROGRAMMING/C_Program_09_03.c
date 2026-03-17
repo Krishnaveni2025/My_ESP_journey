@@ -5,27 +5,20 @@
   use arrays
 Question: Get 5 numbers from the user and print the smallest number
 */
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-    int size,arr[size],i,small;
-    printf("Enter the size: ");
-    scanf("%d",&size);
-    for(i = 0; i<size; i++)
+    int numbers[5], i,j, small, temp;
+    for(i = 0; i<5; i++)
     {
         printf("Enter %d Element: ",i);
-        scanf("%d",&arr[i]);
-        
+        scanf("%d",&numbers[i]);
     }
-    small = arr[0];//assume first element is small
-    for(i = 1; i<size; i++)
+    small = numbers[0];
+    for(i=1;i<5;i++)
     {
-        if(small>arr[i])
-        {
-            small = arr[i];
-        }
+        if(small>numbers[i])
+            small = numbers[i];
     }
-    printf("small = %d",small);
-    return 0;
+    printf("Smallest Element: %d",small);
 }
