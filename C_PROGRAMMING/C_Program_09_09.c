@@ -1,43 +1,29 @@
 /*
   C LEVEL 09 Problem 09
   Use only int variables
-  Use ont decimals
+  Use only decimals
   use arrays
-Question: Get 5 numbers from the user and remove the even  numbers and create a new array and then  print the same*/
+Question: Get 5 numbers from the user and 
+remove the even numbers and 
+create a new array and 
+then  print the same*/
 #include<stdio.h>
 int main()
 {
-    int size = 5, input[size],output[size],i,oddcount=0;
-    for(i = 0; i<size; i++)
+    int input[5], output[5], oddcount = 0, i;
+    for(i=0; i<5; i++)
     {
-        printf("Enter Array %d Element: ",i);
+        printf("Enter Number %d: ",i+1);
         scanf("%d",&input[i]);
-    }
-    printf("Array Before Removing EVEN Numbers\n");
-    for(i = 0; i<size; i++)
-    {
-        printf("%d ",input[i]);
-    }
-    for(i = 0; i<size; i++)
-    {
         if(input[i]%2)
         {
             output[oddcount] = input[i];
             oddcount++;
         }
     }
-    if(!(oddcount))
+    for(i=0; i<oddcount; i++)
     {
-        printf("All are EVEN Numbers");
-    }
-    else
-    {
-        printf("\nArray After Removing EVEN Numbers\n");
-        for(i = 0; i<oddcount; i++)
-        {
-            printf("%d ",output[i]);
-        }
+        printf("%d ",output[i]);
     }
     
 }
-
