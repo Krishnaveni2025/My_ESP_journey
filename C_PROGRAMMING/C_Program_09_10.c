@@ -1,60 +1,46 @@
 /*
   C LEVEL 09 Problem 10
   Use only int variables
-  Use ont decimals
+  Use only decimals
   use arrays
-Question: Get 5 numbers from the user and remove the prime  numbers and create a new array and then  print the same*/
-
+Question: Get 5 numbers from the user and 
+remove the prime numbers and 
+create a new array and 
+then  print the same*/
 
 #include<stdio.h>
+int prime_check(int n);
 int main()
 {
-    int size = 5, input[size],output[size],i,p=2,nonprime=0;
-    for(i = 0; i<size; i++)
+    int input[5], output[5], compositecount = 0, i;
+    for(i=0; i<5; i++)
     {
-        printf("Enter Array %d Element: ",i);
+        printf("Enter Number %d: ",i+1);
         scanf("%d",&input[i]);
-    }
-    printf("Array Before Removing Prime Numbers\n");
-    for(i = 0; i<size; i++)
-    {
-        printf("%d ",input[i]);
-    }
-    // Filtering Logic
-    for(i = 0; i < size; i++) {
-        int isComposite = 0; // This is our flag
-
-        // Numbers less than 2 are not prime, but usually 
-        // handled separately. We check for divisors here:
-        if (input[i] > 1) {
-            for(p = 2; p * p <= input[i]; p++) { // Efficiency: only check up to square root
-                if(input[i] % p == 0) {
-                    isComposite = 1; // Found a divisor! It's not prime.
-                    break;           // Stop checking other divisors
-                }
-            }
-        } else if (input[i] <= 1) {
-            // 0 and 1 are not prime numbers
-            isComposite = 1;
-        }
-
-        // Add to output only if it was flagged as non-prime
-        if(isComposite) {
-            output[nonprime] = input[i];
-            nonprime++;
-        }
-    }
-    if(!(nonprime))
-    {
-        printf("All are PRIME Numbers");
-    }
-    else
-    {
-        printf("\nArray After Removing PRIME Numbers\n");
-        for(i = 0; i<nonprime; i++)
+        if(!(prime_check(input[i])))
         {
-            printf("%d ",output[i]);
+            output[compositecount] = input[i];
+            compositecount++;
         }
     }
-    
+    for(i=0; i<compositecount; i++)
+    {
+        printf("%d ",output[i]);
+    }
+}
+int prime_check(int n)
+{
+    int i= 2, is_prime = 1;
+    for(i=2; i<n; i++)
+    {
+        if(!(n%i))
+        {
+            is_prime = 0;
+            break;
+        }
+    }
+    if(is_prime)
+        return 1;
+    else
+        return 0;
 }
