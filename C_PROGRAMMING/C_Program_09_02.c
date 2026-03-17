@@ -5,22 +5,16 @@
   use arrays
 Question: Get 5 numbers from user and print average of all numbers
 */
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-    int i = 0,n;
-    n = 5;
-    //printf("Enter the size of the array: ");
-   // scanf("%d",&n);
-    int arr[n],avg = 0;
-    for(i = 0; i<n; i++)
+    int numbers[5], i, avrg = 0;
+    for(i = 0; i<5; i++)
     {
-        printf("Enter %d Element\n",i);
-        scanf("%d",&arr[i]);
-        avg += arr[i];
+        printf("Enter %d Element: ",i);
+        scanf("%d",&numbers[i]);
+        avrg+=numbers[i];
     }
- // avg /= n;
-    printf("%d",avg/n);
-    return 0;
+    avrg /= 5;
+    printf("Average = %d",avrg);
 }
