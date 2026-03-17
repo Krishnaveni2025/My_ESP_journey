@@ -5,26 +5,20 @@
   use arrays
 Question: Get 5 numbers from the user and print the biggest number
 */
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-    int size,arr[size],i,big;
-    printf("Enter the size: ");
-    scanf("%d",&size);
-    for(i = 0; i<size; i++)
+    int numbers[5], i,biggest;
+    for(i = 0; i<5; i++)
     {
         printf("Enter %d Element: ",i);
-        scanf("%d",&arr[i]);
-        
+        scanf("%d",&numbers[i]);
     }
-    big = arr[0];
-    for(i = 1; i<size; i++)
+    biggest = numbers[0];
+    for(i=1;i<5;i++)
     {
-        if(big<arr[i])
-        {
-            big = arr[i];
-        }
+        if(biggest<numbers[i])
+            biggest = numbers[i];
     }
-    printf("Big = %d",big);
+    printf("Biggest Element: %d",biggest);
 }
