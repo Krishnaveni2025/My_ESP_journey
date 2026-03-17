@@ -1,40 +1,35 @@
 /*
   C LEVEL 09 Problem 07
   Use only int variables
-  Use ont decimals
+  Use only decimals
   use arrays
-Question: Get 5 numbers from the user and arrange in descending order and print the same*/
-#include <stdio.h>
+Question: Get 5 numbers from the user and arrange in descending order and print the same
+*/
+#include<stdio.h>
 
 int main()
 {
-    int size = 5, arr1[size],i,temp,j;
-    for(i = 0; i<size; i++)
+    int numbers[5], i = 0, j = 0,temp;
+    for(i=0; i<5; i++)
     {
-        printf("Enter Array %d Element: ",i);
-        scanf("%d",&arr1[i]);
+        printf("Enter Number %d: ",i+1);
+        scanf("%d",&numbers[i]);
     }
-    printf("Array Before Arrangement\n");
-    for(i = 0; i<size; i++)
+    for(i = 0; i<5; i++)
     {
-        printf("%d ",arr1[i]);
-    }
-    printf("\nArray After Arrangement\n");
-    for(i = 0; i<size; i++)
-    {
-        for(j=i+1;j<size;j++)
+        for(j=i+1; j<5; j++)
         {
-            if(arr1[i]<arr1[j])
+            if(numbers[i]<numbers[j])
             {
-                temp = arr1[j];
-                arr1[j] = arr1[i];
-                arr1[i] = temp;
+                temp = numbers[j];
+                numbers[j] = numbers[i];
+                numbers[i] = temp;
             }
         }
     }
-    for(i = 0; i<size; i++)
+    for(i=0; i<5; i++)
     {
-        printf("%d ",arr1[i]);
+        printf("%d ",numbers[i]);
     }
-    
+    return 0;
 }
