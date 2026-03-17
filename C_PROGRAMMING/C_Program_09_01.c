@@ -5,18 +5,15 @@
   use arrays
 Question: Get 5 numbers from the user and print all the sum of all numbers
 */
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int i = 0,n;
-    n = 5;
-    int arr[n],sum = 0;
-    for(i = 0; i<n; i++)
+    int numbers[5], i, sum = 0;
+    for(i = 0; i<5; i++)
     {
-        printf("Enter %d Element\n",i);
-        scanf("%d",&arr[i]);
-        sum += arr[i];
+        printf("Enter %d Element: ",i);
+        scanf("%d",&numbers[i]);
+        sum+=numbers[i];
     }
-    printf("%d",sum);
-    return 0;
+    printf("Sum = %d",sum);
 }
