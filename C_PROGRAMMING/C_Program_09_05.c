@@ -1,40 +1,35 @@
 /*
   C LEVEL 09 Problem 05
   Use only int variables
-  Use ont decimals
+  Use only decimals
   use arrays
 Question: Get 5 numbers from the user and arrange in ascending order and print the same
 */
 #include<stdio.h>
+
 int main()
 {
-  int n = 5,i = 0, arr[n], temp, j = 1;
-  for(i=0; i<n; i++)
+    int numbers[5], i = 0, j = 0,temp;
+    for(i=0; i<5; i++)
     {
-      printf("Enter %d Element:\n",i);
-      scanf("%d",&arr[i]);
+        printf("Enter Number %d: ",i+1);
+        scanf("%d",&numbers[i]);
     }
-  i = 0;
-  for(i = 0; i<n-1; i++)
+    for(i = 0; i<5; i++)
     {
-      int min = i;
-      for(j=i+1; j<n; j++)
+        for(j=i+1; j<5; j++)
         {
-          temp = arr[i];
-          if(arr[j]<arr[min])
-          {
-             min = j;
-          }
-          if(min!=i){
-            int temp = arr[min];
-            arr[min] = arr[i];
-            arr[i] = temp;
-          }
+            if(numbers[i]>numbers[j])
+            {
+                temp = numbers[j];
+                numbers[j] = numbers[i];
+                numbers[i] = temp;
+            }
         }
     }
-  i = 0;
-  for(i = 0; i<n; i++)
+    for(i=0; i<5; i++)
     {
-      printf("%d ",arr[i]);
+        printf("%d ",numbers[i]);
     }
+    return 0;
 }
