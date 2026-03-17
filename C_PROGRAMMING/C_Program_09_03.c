@@ -8,7 +8,7 @@ Question: Get 5 numbers from the user and print the smallest number
 #include<stdio.h>
 int main()
 {
-    int numbers[5], i,j, small, temp;
+    int numbers[5], i,j, small;
     for(i = 0; i<5; i++)
     {
         printf("Enter %d Element: ",i);
