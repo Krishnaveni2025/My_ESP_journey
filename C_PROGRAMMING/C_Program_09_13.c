@@ -3,32 +3,27 @@
   Use only int variables
   Use ont decimals
   use arrays
-Question: Get multiple numbers from the user and store them in an array . Stop when the number is 0. If  numbers entered  if first and last numbers are equal, print "Success" else "Failure"*/
+Question: Get multiple numbers from the user and 
+store them in an array . 
+Stop when the number is 0. 
+If  numbers entered  if first and last numbers are equal, 
+print "Success" else "Failure"*/
 #include<stdio.h>
 int main()
 {
-    int input[200],i=0,number,count=0;
+    int numbers[100], number, i=0, total = 0;
     while(1)
     {
-        printf("Enter %d Element: ",i);
+        printf("Enter %d Element: ",i+1);
         scanf("%d",&number);
-        input[i] = number;
-        i++;
-        count++;
-        if(!(number))
+        if(!number)
             break;
+        numbers[i] = number;
+        total++;
+        i++;
     }
-    printf("Entered Array :\n");
-    for(i=0; i<count; i++)
-    {
-        printf("%d ",input[i]);
-    }
-    if(input[0]==input[count-2])
-    {
-        printf("\nSuccess");
-    }
+    if(numbers[0]==numbers[total-1])
+        printf("Success");
     else
-    {
-        printf("\nFailure");
-    }
+        printf("Failure");
 }
