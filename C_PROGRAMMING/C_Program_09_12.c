@@ -3,27 +3,26 @@
   Use only int variables
   Use only decimals
   use arrays
-Question: Get multiple numbers from the user and store them in an array . Stop when the number is 0. Print the total numbers entered by the user and print the sum of numbers*/
-#include <stdio.h>
+Question: Get multiple numbers from the user and 
+store them in an array . 
+Stop when the number is 0. 
+Print the total numbers entered by the user and 
+print the sum of numbers*/
+#include<stdio.h>
 int main()
 {
-    int input[200],num,i=0,count=0,sum = 0;
+    int numbers[100], i = 0, number, total = 0, sum = 0;
     while(1)
     {
-        printf("Enter %d Element: ",i);
-        scanf("%d",&num);
-        input[i]=num;
-        i++;
-        count++;
-        if(num==0)
+        printf("Enter %d Number: ",i+1);
+        scanf("%d",&number);
+        if(!number)
             break;
+        numbers[i] = number;
+        sum += numbers[i];
+        i++;
+        total++;
     }
-    printf("Entered Array Elements are:\n");
-    for(i=0; i<count; i++)
-    {
-        printf("%d ",input[i]);
-       sum += input[i];
-    }
-    printf("\nSum of array Elements: %d",sum);
-    return 0;
+    printf("Total Numbers: %d",total);
+    printf("\nSum of Numbers: %d",sum);
 }
