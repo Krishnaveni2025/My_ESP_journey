@@ -1,15 +1,18 @@
 /* C LEVEL 01 Problem 03
-Question: Get a number from the user and  multiply 3 to that number and  print the result
+Question: 
+    Get a number from the user and  
+    multiply 3 to that number and  
+    print the result
 Example: 
-Input: 45, Output: 135
-Input: 1200, Output: 3600
+    Input: 45, Output: 135
+    Input: 1200, Output: 3600
 */
 #include<stdio.h>
 int main()
 {
-  int x,y;
-  scanf("%d",&x);
-  y = x*5;
-  printf("%d",y);
+  int number;
+  printf("Input: ");
+  scanf("%d",&number);
+  printf("Output: %d",number*3);
   return 0;
 }
