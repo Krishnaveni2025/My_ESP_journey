@@ -12,7 +12,7 @@ If you're a beginner or in your first year of engineering, here’s how I'd reco
 
 - **Start early** — the earlier you explore embedded systems, the better.
 - **Master C programming**:  
-  Begin with the basics and build your foundation:
+  Begin with the basics and build your foundation:  https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/C_PROGRAMMING
   - Data types  
   - Conditional statements  
   - Loops and functions  
@@ -25,10 +25,10 @@ If you're a beginner or in your first year of engineering, here’s how I'd reco
 
 To truly understand what you're building in code, also learn:
 
-- Number systems & binary logic  
-- Analog electronics  
-- Digital electronics  
-- Microprocessor memory mapping  
+- Number systems & binary logic    https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/NUMBER_SYSTEMS
+- Analog electronics               https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/ANALOG_ELECTRONICS
+- Digital electronics              https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/DIGITAL_ELECTRONICS
+- Microprocessor memory mapping    https://github.com/Krishnaveni2025/My_ESP_journey/tree/main/MemoryMap_up
 - Microcontroller architecture
 
 This dual knowledge (software + electronics) makes embedded magic possible.
