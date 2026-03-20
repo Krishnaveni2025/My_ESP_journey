@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 01
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +, -, /, *, %, ==, !=, <, >, <=, >=
+        Do not use any other operations
   Question: Get a number from thte user and check if the number is equals to 50. If yes then print 1, otherwise print 0.
 Example:
 Input:50    Output:1
