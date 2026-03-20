@@ -1,5 +1,8 @@
-/*
-Question: Get a number from the user and add 2 to that number and  print the result
+/* C LEVEL 01 Problem 01
+Question: 
+Get a number from the user and 
+add 2 to that number and  
+print the result
 Example: 
 Input: 45, Output: 47
 Input:56789, Output: 56791
@@ -7,9 +10,8 @@ Input:56789, Output: 56791
 #include<stdio.h>
 int main()
 {
-    int x,y;
-    scanf("%d",&x);
-    y = x+2;
-    printf("%d\n",y);
-    return 0;
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output:%d",number+2);
 }
