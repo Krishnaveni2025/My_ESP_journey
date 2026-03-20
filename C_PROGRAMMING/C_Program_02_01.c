@@ -1,22 +1,25 @@
-/* C LEVEL 01 Program 01
+/* C LEVEL 02 Program 01
         Use only int variables
         Use only Decimals
         Use the following operations only
         +, -, /, *, %, ==, !=, <, >, <=, >=
         Do not use if, for, while, arrays, pointers, strings, etc.
-  Question: Get a number from thte user and check if the number is equals to 50. If yes then print 1, otherwise print 0.
-Example:
-Input:50    Output:1
-Input:56789 Output:0
-  */
+   Question: 
+        Get a number from thte user and 
+        check if the number is equals to 50. 
+        If yes then print 1, 
+        otherwise print 0.
+   Example:
+        Input:50    Output:1
+        Input:56789 Output:0
+ */
 #include<stdio.h>
 int main()
 {
-  int x,y;
+  int number;
   printf("Enter a number: ");
-  scanf("%d",&x);
+  scanf("%d",&number);
   //your code here
-  y = x==50;
-  printf("Result = %d",y);
+  printf("Result = %d",number==50);
   return 0;
 }
