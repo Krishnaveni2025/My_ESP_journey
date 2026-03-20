@@ -4,19 +4,20 @@
         Use the following operations only
         +,-,/,*,%
         Do not use any other operations
-  Question: Write a program to get a four digit number from the user and only reverse the first two digits of the number then print the number
-Example:
-Input:9561 Output:9516
-Input:3859 Output:3895
+   Question: 
+        Write a program to get a four digit number from the user and 
+        only reverse the first two digits of the number (10's and 1's) then print the number
+   Example:
+        Input:9561 Output:9516
+        Input:3859 Output:3895
 */
 #include<stdio.h>
 int main()
 {
-  int x,y;
+  int number;
   //your code here
   printf("Enter a four digit number: ");
-  scanf("%d",&x);
-  y = ((x/100)*100)+((x%10)*10)+((x/10)%10);
-  printf("Result = %d",y);
+  scanf("%d",&number);
+  printf("Result = %d",(((number/100)*100)+(((number%10)*10))+((number/10)%10)));
   return 0;
 }
