@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 11
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
   Question: Write a program to get a two digit number from the user and print it's sum of digits
 Example:
 Input:56 Output:11
