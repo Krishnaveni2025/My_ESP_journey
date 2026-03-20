@@ -1,4 +1,9 @@
 /* C LEVEL 02 Program 10
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +, -, /, *, %, ==, !=, <, >, <=, >=
+        Do not use if, for, while, arrays, pointers, strings, etc.
   Question: Get a two digit number from the user and check if the digit 0 is greater than digit 1. If yes then print 1, Otherwise print 0.
 Example:
 Input: 45    Output: 1
