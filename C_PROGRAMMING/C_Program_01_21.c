@@ -4,19 +4,23 @@
         Use the following operations only
         +,-,/,*,%
         Do not use any other operations
-Question: Get a number from the user and subtract 5 from that number if the number is odd, then print the result. Do not use "if".
-Example:
-Input:695 Output:690
-Input:182 Output:182
+   Question: 
+        Get a number from the user and 
+        subtract 5 from that number 
+        if the number is odd, 
+        then print the result. 
+        Do not use "if".
+   Example:
+        Input:695 Output:690
+        Input:182 Output:182
 */
 #include<stdio.h>
 int main()
 {
-  int x,y;
+  int number;
   //your code here
   printf("Enter a number: ");
-  scanf("%d',&x);
-  y = (x - 5*(x%2));
-  printf("Result = %d",y);
+  scanf("%d",&number);
+  printf("Result = %d",(number - 5*(number%2)));
   return 0;
 }
