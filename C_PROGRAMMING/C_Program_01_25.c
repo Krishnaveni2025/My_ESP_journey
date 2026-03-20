@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 25
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
   Question: Get a three digit number from the user. If the sum of the digits is less than 10, print the same, otherwise add the digits of sum. 
   If the sum of the digits is less than 10 then print the sum, otherwise add the digits of the sum, and print the sum.
   Note: the result of the sum should always be single digit only
