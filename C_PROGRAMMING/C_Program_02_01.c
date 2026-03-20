@@ -3,7 +3,7 @@
         Use only Decimals
         Use the following operations only
         +, -, /, *, %, ==, !=, <, >, <=, >=
-        Do not use any other operations
+        Do not use if, for, while, arrays, pointers, strings, etc.
   Question: Get a number from thte user and check if the number is equals to 50. If yes then print 1, otherwise print 0.
 Example:
 Input:50    Output:1
