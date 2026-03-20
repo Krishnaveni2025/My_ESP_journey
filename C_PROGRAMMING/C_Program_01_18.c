@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 18
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
   Question: Get a two - digit number from the user, make the ten's digit 1 and print the number
   Example:
 Input:95 Output:15
