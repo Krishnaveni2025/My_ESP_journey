@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 15
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
   Question: Write a program to get a four digit number from the user and only reverse the first two digits of the number then print the number
 Example:
 Input:9561 Output:9516
