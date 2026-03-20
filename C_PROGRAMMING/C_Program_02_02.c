@@ -1,4 +1,9 @@
 /* C LEVEL 02 Program 02
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +, -, /, *, %, ==, !=, <, >, <=, >=
+        Do not use any other operations
   Question: Get a number froom the user and check if the number is not equals to 50. If yes print 1, otherwise 0.
   Example:
   Input:50    Output:0
