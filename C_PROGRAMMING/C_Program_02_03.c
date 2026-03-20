@@ -1,4 +1,9 @@
 /* C LEVEL 02 Program 03
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +, -, /, *, %, ==, !=, <, >, <=, >=
+        Do not use any other operations
 Question: Get a number from the user and chceck if the number is less than 50. If yes then print 1, otherwise print 0
 Example: 
 Input: 45    Output:1
