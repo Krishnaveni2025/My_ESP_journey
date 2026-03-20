@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 14
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
   Question: Write a program to get a number from the user and print the reverse of the number.
   Example:
 Input:561 Output:165
