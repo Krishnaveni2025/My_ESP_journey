@@ -1,4 +1,9 @@
 /* C LEVEL 01 Problem 05
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
 Question: 
     Get a number from the user and 
     the number by 8 and  
