@@ -1,4 +1,9 @@
 /* C LEVEL 01 Program 23
+        Use only int variables
+        Use only Decimals
+        Use the following operations only
+        +,-,/,*,%
+        Do not use any other operations
   Question: Get a two digit number from the user and subtract 5 from that number, if the sum of the digits of the number is odd, then print the result.
 Example:
 Input:95 Output:95
