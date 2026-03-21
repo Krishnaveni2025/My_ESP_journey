@@ -1,4 +1,8 @@
 /* C LEVEL 04 Program 14
+        Use only int variables
+        Use only Decimals
+        Use only "if/else", goto statements. Don't use  "for/while"
+        Don't use arrays, pointers, strings, etc.
 Question: Write a program to get a number from the user and interchange the first and last digits and print the result
 Answer:
 Input:123456   Output:623451
