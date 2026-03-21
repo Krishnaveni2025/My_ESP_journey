@@ -1,34 +1,34 @@
 /* C LEVEL 05 Problem 09
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a loop program to print sum of two digit numbers, who's one's digit is 5.
-  Answer:
-  495
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a loop program to print sum of two digit numbers, who's one's digit is 5.
+   Answer:
+        495
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x  = 11;
+  number  = 11;
   int sum = 0;
   for(;;)
     {
       //your code here
       loop:
-      if(x<100)
+      if(number<100)
       {
-        if((x%10)==5)
+        if((number%10)==5)
         {
-           sum = sum + x;
+           sum = sum + number;
         }
-        x++;
+        number++;
         goto loop;
       }
       break;
     }
   printf("%d",sum);
 }
-
