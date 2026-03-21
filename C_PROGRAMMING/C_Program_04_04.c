@@ -3,24 +3,25 @@
         Use only Decimals
         Use only "if/else", goto statements. Don't use  "for/while"
         Don't use arrays, pointers, strings, etc.
-  Question: Write a loop program to print sum of 6 to 1
-  Answer:
-  21
+   Question: 
+        Write a loop program to print sum of 6 to 1
+   Answer:
+        21
   */
 #include<stdio.h>
 int main()
 {
-  int x,y;
+  int number,sum;
   //your code here
-  x = 6;
-  y = 0;
-  loop:if(x>=0)
+  number = 6;
+  sum = 0;
+  loop:if(number>=0)
   {
-    y = x+y;
-    x--;
+    sum += number;
+    number--;
     goto loop;
   }
-  printf("Sum = %d",y);
+  printf("Sum = %d",sum);
   return 0;
 }
 
