@@ -3,24 +3,25 @@
         Use only Decimals
         Use only "if/else", goto statements. Don't use  "for/while"
         Don't use arrays, pointers, strings, etc.
-  Question: Write a loop program to print 5 to 1 on one by one
-  Answer:
-  5
-  4
-  3
-  2
-  1
+   Question: 
+        Write a loop program to print 5 to 1 on one by one
+   Answer:
+        5
+        4
+        3
+        2
+        1
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x = 5;
-  loop:if(x>0)
+  number = 5;
+  loop:if(number>0)
   {
-    printf("%d\n",x);
-    x--;
+    printf("%d\n",number);
+    number--;
     goto loop;
   }
   return 0;
