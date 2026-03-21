@@ -1,4 +1,7 @@
 /* C LEVEL 03 Program 07
+      Use int variables
+      Use only Decimals
+      Use "if/else" statements 
   Question: Get a two digit number from the user and check if the digit 0 and digit 1 are identical. If yes then print "Success", otherwise "Failure".
   Example:
   Input:55 Output:"Success"
