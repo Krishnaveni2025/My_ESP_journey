@@ -3,29 +3,30 @@
         Use only Decimals
         Use only "if/else", goto statements. Don't use  "for/while"
         Don't use arrays, pointers, strings, etc.
-Question: Write a loop program to print sum of two digit odd numbers whose ten's digit is 7
-Answer:
-375
+   Question: 
+        Write a loop program to print sum of two digit odd numbers whose ten's digit is 7
+   Answer:
+        375
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x = 11;
-  int y = 0;
-  loop:if(x<100)
+  number = 11;
+  int sum = 0;
+  loop:if(number<100)
   {
-    if(x%2){
-    if((x/10)==7)
+    if(number%2){
+    if((number/10)==7)
     {
-      y = y+x;
+      sum += number;
     }
   }
-    x++;
+    number++;
     goto loop;
   }
-  printf("Sum = %d\n",y);
+  printf("Sum = %d",sum);
   return 0;
 }
 
