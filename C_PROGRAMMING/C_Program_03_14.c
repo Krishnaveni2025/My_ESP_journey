@@ -1,4 +1,7 @@
 /* C LEVEL 03 Program 14
+      Use int variables
+      Use only Decimals
+      Use "if/else" statements 
   Question: Get a four digit number from the user and check if the first two digits and last two digits are same. If yes then print "Success", otherwise "Failure".
   Example:
   Input:1919 Output:"Success"
