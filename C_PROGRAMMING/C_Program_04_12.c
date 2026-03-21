@@ -1,4 +1,8 @@
 /* C LEVEL 04 Program 12
+        Use only int variables
+        Use only Decimals
+        Use only "if/else", goto statements. Don't use  "for/while"
+        Don't use arrays, pointers, strings, etc.
 Question: Write a program to get a number from the user and print the sum of all digits 
 Answer:
 Input:123456   Output:21
