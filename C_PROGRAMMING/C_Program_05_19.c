@@ -1,4 +1,8 @@
 /* C LEVEL 05 Problem 19
+    Use only int variables
+    Use only Decimals
+    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+    Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a four digit number from the user and print whether the middle two digits(10's & 100's) of that number is prime or not.
   Answer:
 Input: 6359 - Output: Not Prime
