@@ -2,19 +2,22 @@
       Use int variables
       Use only Decimals
       Use "if/else" statements 
-  Question: Get a two digit number from the user and check if the digit 0 is less than digit 1. If yes then print "Success", otherwise "Failure".
-  Example:
-  Input:54 Output:"Success"
-  Input:45 Output:"Failure"
+   Question: 
+      Get a two digit number from the user and 
+      check if the digit 0 is less than digit 1. 
+      If yes then print "Success", otherwise "Failure".
+   Example:
+      Input:54 Output:"Success"
+      Input:45 Output:"Failure"
 */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   printf("Enter a two digit number: ");
-  scanf("%d",&x);
+  scanf("%d",&number);
   //your code here
-  if(((x%10)<(x/10)))
+  if(((number%10)<(number/10)))
   {
     printf("\"Success\"");
   }
