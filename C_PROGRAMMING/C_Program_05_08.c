@@ -1,35 +1,35 @@
 /* C LEVEL 05 Problem 08
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a loop program to print two digit even numbers, who's sum of digits are 6.
-  Answer:
-  24
-  42
-  60
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a loop program to print two digit even numbers, who's sum of digits are 6.
+   Answer:
+        24
+        42
+        60
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x  = 11;
+  number  = 11;
   for(;;)
     {
       //your code here
       loop:
-      if(x<100)
+      if(number<100)
       {
-        if(!(x%2))
+        if(!(number%2))
         {
-         if((x/10)+(x%10)==6)
-           printf("%d\n",x);
+         if((number/10)+(number%10)==6)
+           printf("%d\n",number);
         }
-        x++;
+        number++;
         goto loop;
       }
       break;
     }  
 }
-
