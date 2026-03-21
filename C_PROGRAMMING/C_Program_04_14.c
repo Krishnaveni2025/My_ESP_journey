@@ -3,22 +3,24 @@
         Use only Decimals
         Use only "if/else", goto statements. Don't use  "for/while"
         Don't use arrays, pointers, strings, etc.
-Question: Write a program to get a number from the user and interchange the first and last digits and print the result
-Answer:
-Input:123456   Output:623451
-Input:76895439 Output:73459869
-Input:675      Output:576
+   Question: 
+        Write a program to get a number from the user and 
+        interchange the first and last digits and print the result
+   Answer:
+        Input:123456   Output:623451
+        Input:76895439 Output:73459869
+        Input:675      Output:576
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
   printf("Enter a number: ");
-  scanf("%d",&x);
+  scanf("%d",&number);
   int first, last = 0, temp, multiplier = 1, middle, result;
-  first = (x % 10);
-  temp = x;
+  first = (number % 10);
+  temp = number;
     loop:
         if (temp > 10)
         {
@@ -27,8 +29,8 @@ int main()
             goto loop;
         }
         last = temp;
-        middle = (x % multiplier) / 10;
-        result = first * multiplier + middle * 10 + last;
+        middle = (number % multiplier) / 10;
+        result = (first * multiplier) + (middle * 10) + last;
         printf("%d", result);
   return 0;
 }
