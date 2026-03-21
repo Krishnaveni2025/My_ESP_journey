@@ -1,4 +1,8 @@
 /* C LEVEL 05 Problem 21
+    Use only int variables
+    Use only Decimals
+    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+    Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and print the total number of digits which are odd in that number
   Answer:
   Input: 12345678 Output: 4
