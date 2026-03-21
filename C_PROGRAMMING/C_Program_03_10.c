@@ -1,4 +1,7 @@
 /* C LEVEL 03 Program 10
+      Use int variables
+      Use only Decimals
+      Use "if/else" statements 
   Question: Get a two digit number from the user and check if the digit 0 is greater than digit 1. If yes then print "Success", otherwise "Failure".
   Example:
   Input:45 Output:"Success"
