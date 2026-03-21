@@ -1,42 +1,39 @@
 /* C LEVEL 05 Problem 14
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and interchange the first and last digits and print the result .
-  Answer:
-  Input:123456   Output:623451
-  Input:76895439 Output:96895437
-  Input:675      Output:576
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a program to get a number from the user and interchange the first and last digits and print the result .
+   Answer:
+        Input:123456   Output:623451
+        Input:76895439 Output:96895437
+        Input:675      Output:576
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
   printf("Enter a Number: ");
-  scanf("%d",&x);
-  int middle, first, last, power = 1, result = 0,num; 
-  num = x;
+  scanf("%d",&number);
+  int middle, first, last, multiplier = 1, result = 0,temp; 
+  temp = number;
   for(;;)
     {
       //your code here
       loop:
-      if(num>=10)
+      if(temp>10)
       {
-        num = num/10;
-        power = power*10;
+        temp = temp/10;
+        multiplier *= 10;
         goto loop;
       }
-      printf("power = %d\n", power);
-      last = x/power;
-      printf("last = %d\n",last);
-      middle = (x%power)/10;
-      printf("middle = %d\n",middle);
-      first = (x%10)*power;
-      printf("first = %d\n",first);
-      result = first+ (middle*10) + last;
-      printf("%d",result);
       break;
     }
+    last = temp;
+    middle = (number%multiplier)/10;
+    first = (number%10)*multiplier;
+    result = first+ (middle*10) + last;
+    printf("%d",result);
 }
