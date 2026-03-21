@@ -3,26 +3,28 @@
         Use only Decimals
         Use only "if/else", goto statements. Don't use  "for/while"
         Don't use arrays, pointers, strings, etc.
-Question: Write a loop program to print odd number between 1 and 9
-  Answer:
-  1
-  3 
-  5
-  7
-  9
+   Question: 
+        Write a loop program to print odd number between 1 and 9
+   Answer:
+        1
+        3
+        5
+        7
+        9
+        
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x = 1;
-  loop:if(x<10)
+  number = 1;
+  loop:if(number<10)
   {
-    if(x%2){
-    printf("%d\n",x);
+    if(number%2){
+    printf("%d\n",number);
   }
-    x++;
+    number++;
     goto loop;
   }
   return 0;
