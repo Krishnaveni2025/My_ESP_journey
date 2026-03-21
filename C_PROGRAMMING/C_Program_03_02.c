@@ -1,4 +1,7 @@
 /* C LEVEL 03 Program 02
+      Use int variables
+      Use only Decimals
+      Use "if/else" statements 
   Question: Get a number from the user and check if the number is not equals to 50. If yes then print "Success", otherwise print "Failure".
 Example:
 Input:50    Output: Failure
