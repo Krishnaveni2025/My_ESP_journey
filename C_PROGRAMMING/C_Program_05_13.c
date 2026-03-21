@@ -1,33 +1,34 @@
 /* C LEVEL 05 Problem 13
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user print the reverse of the number.
-  Answer:
-  Input:123456   Output:654321
-  Input:76895439 Output:93453867
-  Input:675      Output:576
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a program to get a number from the user print the reverse of the number.
+   Answer:
+        Input:123456   Output:654321
+        Input:76895439 Output:93453867
+        Input:675      Output:576
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
   printf("Entner a Number: ");
-  scanf("%d",&x);
-  int rev = 0;
+  scanf("%d",&number);
+  int reverse = 0;
   for(;;)
     {
       //your code here
       loop:
-      if(x)
+      if(number)
       {
-        rev = (rev*10)+(x%10);
-        x = x/10;
+        reverse = (reverse*10)+(number%10);
+        number /= 10;
         goto loop;
       }
       break;
     }
-  printf("%d",rev);
+  printf("%d",reverse);
 }
