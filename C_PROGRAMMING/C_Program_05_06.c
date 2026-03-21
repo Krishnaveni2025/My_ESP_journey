@@ -1,30 +1,36 @@
 /* C LEVEL 05 Problem 06
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a loop program to print two digit odd numbers, below 20.
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a loop program to print two digit odd numbers, below 20.
+   Answer: 
+        11
+        13
+        15
+        17
+        19
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x  = 11;
+  number  = 11;
   for(;;)
     {
       //your code here
       loop:
-      if(x<20)
+      if(number<20)
       {
-        if(x%2)
+        if(number%2)
         {
-         printf("%d\n",x);
+         printf("%d\n",number);
         }
-        x++;
+        number++;
         goto loop;
       }
       break;
     }  
 }
-
