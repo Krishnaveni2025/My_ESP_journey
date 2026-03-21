@@ -1,4 +1,7 @@
 /* C LEVEL 03 Program 13
+      Use int variables
+      Use only Decimals
+      Use "if/else" statements 
   Question: Get a three digit number from the user and check if the digit 1 and digit 0 are identical and digit 1 and digit 2 are different . If yes then print "Success", otherwise "Failure".
   Example:
   Input:988 Output:"Success"
