@@ -1,4 +1,8 @@
 /* C LEVEL 04 Program 15
+        Use only int variables
+        Use only Decimals
+        Use only "if/else", goto statements. Don't use  "for/while"
+        Don't use arrays, pointers, strings, etc.
 Question: Write a program to get a number from the userif the last digit of the number is even print the same number. If the last digit of the number is odd subtract 1 from the last digit and print the number
 
 Answer:
