@@ -13,16 +13,16 @@ int main()
 {
   int number;
   //your code here
-  number  = 5;
+  number  = 1;
   int sum = 0;
   for(;;)
     {
       //your code here
       loop:
-      if(number>0)
+      if(number<6)
       {
         sum = sum + number;
-        number--;
+        number++;
         goto loop;
       }
       break;
