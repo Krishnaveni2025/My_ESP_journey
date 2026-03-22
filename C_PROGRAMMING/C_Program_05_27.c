@@ -1,42 +1,37 @@
 /* C LEVEL 05 Problem 27
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to print the total count of numbers which are less than 100000 and whose sum of digits is 14
-  Answer:
-  2710
+         Use only int variables
+         Use only Decimals
+         Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+         Don't use Arrays, pointers, strings,etc.
+   Question: 
+         Write a program to print the total count of numbers 
+         which are less than 100000 and whose sum of digits is 14
+   Answer:
+         2710
   */
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  x = 59;
-  int sum = 0, count = 0;
-  for(;;)
+    int number = 11, count = 0, sum, temp;
+    for(;;)
     {
-      //your code here
-      loop:
-      if(x<100000)
-      {
-        int num = x;
-        sum = 0;
-        sloop:
-        if(num!=0)
-        {
-          sum += (num%10);
-          num = num/10;
-          goto sloop;
-        }
-        if(sum == 14)
-        {
-          count++;
-        }
-        x++;
-        goto loop;
-      }
-      break;
+        loop:
+            if(number<100000)
+            {
+                temp = number, sum = 0;
+                sloop:
+                    if(temp)
+                    {
+                        sum += temp%10;
+                        temp /= 10;
+                        goto sloop;
+                    }
+                if(sum==14)
+                        count++;
+                number++;
+                goto loop;
+            }
+        break;
     }
-    printf("%d",count);
+    printf("Output: %d",count);
 }
