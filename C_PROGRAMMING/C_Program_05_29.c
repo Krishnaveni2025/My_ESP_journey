@@ -1,44 +1,51 @@
 /* C LEVEL 05 Problem 29
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get three numbers from the user and print the LCM of those numbers
-  Answer:
-  Input: 20 40 80 Output: 80
-  Input: 15 78 63 Output: 8190
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a program to get three numbers from the user and 
+        print the LCM of those numbers
+   Answer:
+        Input: 20 40 80 Output: 80
+        Input: 15 78 63 Output: 8190
   */
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  int y,z,max;
-  printf("Enter three numbers: ");
-  scanf("%d %d %d",&x,&y,&z);
-  if((x>y)&&(x>z))
-      {
-        max = x;
-      }
-  if((z>y)&&(z>x))
-      {
-        max = z;
-      }
-  else
-      {
-        max = y;
-      }
-  
-  for(;;)
+    int number1, number2, number3, lcm;
+    printf("Enter three Numbers: ");
+    scanf("%d %d %d",&number1, &number2, &number3);
+    if(number1>number2)
     {
-      //your code here
-      loop:
-      if(((max%x)==0)&&((max%y)==0)&&((max%z)==0))
-      {
-        printf("%d",max);
-        break;
-      }
-      ++max;
-      goto loop;
+        if(number1>number3)
+        {
+            lcm = number1;
+        }
+        else
+        {
+            lcm = number3;
+        }
     }
+    else
+    {
+        lcm = number2;
+    }
+    for(;;)
+    {
+        loop:
+            if(!(lcm%number1))
+            {
+               if(!(lcm%number2))
+               {
+                   if(!(lcm%number3))
+                   {
+                       break;
+                   }
+               }
+            }
+            lcm++;
+            goto loop;
+    }
+    printf("Output: %d",lcm);
 }
