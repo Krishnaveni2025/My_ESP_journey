@@ -1,35 +1,43 @@
 /* C LEVEL 05 Problem 24
-    Use only int variables
-    Use only Decimals
-    Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-    Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and print the total number of two digit perfect square numbers in the number
-  Answer:
-  Input: 163496481 Output: 4
-  Input: 364925    Output: 4
+        Use only int variables
+        Use only Decimals
+        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+        Don't use Arrays, pointers, strings,etc.
+   Question: 
+        Write a program to get a number from the user and 
+        print the total number of two digit perfect square numbers in the number
+   Answer:
+        Input: 163496481 Output: 4
+        Input: 364925    Output: 4
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number,i = 1;
   //your code here
   printf("Enter a number: ");
-  scanf("%d",&x);
+  scanf("%d",&number);
   int ps_count = 0;
   for(;;)
-    {
-      //your code her
+  {
       loop:
-      if(x>10)
+      if(number>10)
       {
-        if(((x%100)==16)||((x%100)==25)||((x%100)==64)||((x%100)==36)||((x%100)==49)||((x%100)==81))
-        {
-          ps_count++;
-        }
-        x= x/10;
-        goto loop;
+          i = 1;
+          loop1:
+            if(i<10)
+            {
+                if((number%100)==(i*i))
+                {
+                    ps_count++;
+                }
+                i++;
+                goto loop1;
+            }
+            number /= 10;
+            goto loop;
       }
-      printf("%d",ps_count);
       break;
-    }
+  }
+  printf("Output: %d",ps_count);
 }
