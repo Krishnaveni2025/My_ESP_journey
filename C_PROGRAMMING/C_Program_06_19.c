@@ -3,33 +3,35 @@
          Use only Decimals
          Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a four digit number from the user and print whether the middle two digits(10's & 100's) of that number is prime or not.
-  Answer:
-Input: 6359 - Output: Not Prime
-Input: 3537 - Output: Prime
+   Question: 
+         Write a program to get a four digit number from the user and 
+         print whether the middle two digits of that number is prime or not.
+   Answer:
+         Input: 3537 - Output: Prime
+         Input: 6359 - Output: Not prime
 */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  printf("Enter a Four digit number: ");
-  scanf("%d",&x);
-  int i = 2, is_prime = 1;
-  x = (x%1000)/10;
+  printf("Enter a four digit number: ");
+  scanf("%d",&number);
+  int is_prime = 1, divider  =  2;
+  number = (number/10)%100;
   while(1)
     {
       //your code here
       loop:
-      if((i>=x)||(is_prime == 0))
+      if((divider>=number)||(is_prime == 0))
       {
         break;
       }
-      if(!(x%i))
+      if(!(number%divider))
       {
         is_prime = 0;
       }
-      i++;
+      divider++;
       goto loop;
     }
   if(is_prime)
