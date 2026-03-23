@@ -11,34 +11,39 @@
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  int y,z;
-  int max;
-  printf("Enter a number: ");
-  scanf("%d %d %d",&x,&y,&z);
-  if((x>y)&&(x>z))
-  {
-    max = x;
-  }
-  else if((y>x)&&(y>z))
-  {
-    max = y;
-  }
-  else
-  {
-    max = z;
-  }
-  while(1)
+    int number1, number2, number3, lcm;
+    printf("Enter three Numbers: ");
+    scanf("%d %d %d",&number1, &number2, &number3);
+    if(number1>number2)
     {
-      //your code here
-      loop:
-      if((!(max%x))&&(!(max%y))&&(!(max%z)))
-      {
-        printf("%d",max);
-        break;
-      }
-      max++;
-      goto loop;
+        if(number1>number3)
+        {
+            lcm = number1;
+        }
+        else
+        {
+            lcm = number3;
+        }
     }
+    else
+    {
+        lcm = number2;
+    }
+    for(;;)
+    {
+        loop:
+            if(!(lcm%number1))
+            {
+               if(!(lcm%number2))
+               {
+                   if(!(lcm%number3))
+                   {
+                       break;
+                   }
+               }
+            }
+            lcm++;
+            goto loop;
+    }
+    printf("Output: %d",lcm);
 }
