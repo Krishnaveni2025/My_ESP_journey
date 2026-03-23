@@ -11,35 +11,65 @@
         Input: 364925    Output: 3
   */
 #include<stdio.h>
+
 int main()
 {
-  int number;
-  //your code here
-  printf("Enter a number: ");
-  scanf("%d",&number);
-  int p_count = 0, i , is_prime;
-  for(;;)
-  {
-      loop1:
-      i = 2, is_prime = 1;
-      if(number>=2)
-      {
-       loop:
-            if(i<=(number%10))
+    int number, sprime_count = 0, divider, is_prime, digit;
+    
+    printf("Enter Number: ");
+    scanf("%d", &number);
+
+    while(number > 0)
+    {
+        loop:
+            // 1. Extract the specific digit we want to check
+            digit = number % 10;
+            divider = 2;
+            is_prime = 1;
+
+            // 2. Prime check logic for the single digit
+            if(digit < 2) 
             {
-                if(!((number%10)%i))
-                {
-                    is_prime = 0;
-                }
-                i++;
+                is_prime = 0; // 0 and 1 are not prime
+            }
+            else 
+            {
+                pcheck:
+                    if(divider < digit)
+                    {
+                        if(digit % divider == 0)
+                        {
+                            is_prime = 0;
+                            // We found a factor, no need to check more for this digit
+                        }
+                        else 
+                        {
+                            divider++;
+                            goto pcheck;
+                        }
+                    }
+            }
+
+            // 3. Increment count if the digit was prime
+            if(is_prime)
+            {
+                sprime_count++;
+            }
+
+            // 4. Move to the next digit
+            number /= 10;
+            
+            // If there are more digits, go back to the top
+            if(number > 0)
+            {
                 goto loop;
             }
-            if(is_prime)
-                 {   p_count++; }
-            number /= 10;
-            goto loop1;          
-       }
-      break;
-  }
-  printf("Output: %d",p_count);
+            else
+            {
+                break; 
+            }
+    }
+
+    printf("Output: %d", sprime_count);
+    return 0;
 }
