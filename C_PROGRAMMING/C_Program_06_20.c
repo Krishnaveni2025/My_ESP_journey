@@ -11,32 +11,30 @@
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  x=2;
-  int i, is_prime, count = 0;
-  while(1)
+    int number = 2, single_pcount = 0, divider = 2, is_prime;
+    while(1)
     {
-      //your code here
-      if(x>10)
-          break;
-      i = 2, is_prime = 1;
-      loop:
-      if(i<x)
-      {
-        if(!(x%i))
-        {
-          is_prime = 0;
-        }
-        i++;
-        goto loop;
-      }
-      if(is_prime)
-      {
-        count++;
-      }
-      x++;
+        loop:
+        divider = 2, is_prime = 1;
+                if(number<9)
+                {
+                    check:
+                            if(divider<number)
+                            {
+                                if(!(number%divider))
+                                {
+                                    is_prime = 0;
+                                }
+                                divider++;
+                                goto check;
+                            }
+                            if(is_prime)
+                                    single_pcount++;
+                    number++;
+                    goto loop;
+                }
+        break;
     }
-  printf("%d",count);
+    printf("Ouput: %d",single_pcount);
   return 0;
 }
