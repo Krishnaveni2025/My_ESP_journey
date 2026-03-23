@@ -3,31 +3,33 @@
          Use only Decimals
          Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to print the biggest 4-digit number which is divisible by 7 and 9
-  Answer:
-  9954
+   Question: 
+         Write a program to print the biggest 4-digit number which is divisible by 7 and 9
+   Answer:
+         9954
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
-  x = 1000;
+  number = 1000;
    int big = 0;
   while(1)
     {
       //your code here
       loop:
-      if(x<10000)
+      if(number<10000)
       {
-        if((!(x%7))&&(!(x%9)))
+        if(!(number%7))
         {
-          big = x;
+            if(!(number%9))
+                    big = number;
         }
-        x++;
+        number++;
         goto loop;
       }
-      printf("%d",big);
       break;
     }
+    printf("%d",big);
 }
