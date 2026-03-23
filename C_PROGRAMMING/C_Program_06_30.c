@@ -11,27 +11,25 @@
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  int y;
-  printf("Enter two numbers: ");
-  scanf("%d %d",&x,&y);
-  while(1)
-  {
- loop:
-      if(x!=y)
-      {
-        if(x>y)
+    int number1, number2, hcf;
+    printf("Enter Two Numbers: ");
+    scanf("%d %d",&number1, &number2);
+    for(;;)
+    {
+        loop:
+        if(number2!=number1)
         {
-        x -= y;
+            if(number1>number2)
+            {
+                number1 -= number2;
+            }
+            else
+            {
+                number2 -= number1;
+            }
+            goto loop;
         }
-        else
-        {
-        y-=x;
-        }
-        goto loop;
-      }
-      printf("%d",x);
-      break;
+        break;
     }
+    printf("Output: %d",number1);
 }
