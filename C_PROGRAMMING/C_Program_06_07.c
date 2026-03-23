@@ -1,4 +1,8 @@
 /*C LEVEL 06 Problem 07
+         Use only int variables
+         Use only Decimals
+         Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a loop program to print to two digit odd numbers whose sum of digits are 7
   Answer:
   25
