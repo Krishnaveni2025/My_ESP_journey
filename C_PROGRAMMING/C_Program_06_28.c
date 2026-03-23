@@ -11,30 +11,29 @@
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  int y;
-  printf("Enter two numbers: ");
-  scanf("%d %d",&x,&y);
-  int max;
-  if(x>y)
-  {
-    max = x;
-  }
-  else
-  {
-    max = y;
-  }
-  while(1)
+    int number1, number2, lcm;
+    printf("Enter two numbers: ");
+    scanf("%d %d",&number1, &number2);
+    if(number1<number2)
     {
-      //your code here
-      loop:
-      if(((max%x)==0)&&((max%y)==0))
-      {
-        printf("%d",max);
-        break;
-      }
-      max++;
-      goto loop;
+        lcm = number2;
     }
+    else
+    {
+        lcm = number1;
+    }
+    while(1)
+    {
+        loop:
+            if(!(lcm%number1))
+            {
+                if(!(lcm%number2))
+                {
+                        break;
+                }
+            }
+        lcm++;
+        goto loop;
+     }
+    printf("Output: %d",lcm);
 }
