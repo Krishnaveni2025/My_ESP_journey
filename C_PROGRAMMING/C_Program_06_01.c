@@ -3,30 +3,28 @@
          Use only Decimals
          Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a loop program to print 1 to 5 on one by one
+  Question: 
+         Write a loop program to print 1 to 5 on one by one
   Answer:
-  1
-  2
-  3
-  4
-  5
+         1
+         2
+         3
+         4
+         5
 */
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  x= 1;
+  int number = 1;
   while(1)
-    {
-      //your code here
-     loop: 
-     if(x<6)
+  {
+      loop:
+      if(number<6)
       {
-        printf("%d\n",x);
-        x++;
-        goto loop;
+          printf("%d\n",number);
+          number++;
+          goto loop;
       }
       break;
-    }
+  }
 }
