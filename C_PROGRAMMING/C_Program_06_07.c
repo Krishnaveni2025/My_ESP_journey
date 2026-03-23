@@ -3,40 +3,31 @@
          Use only Decimals
          Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a loop program to print to two digit odd numbers whose sum of digits are 7
+  Question: 
+         Write a loop program to print to two digit odd numbers whose sum of digits are 7
   Answer:
-  25
-  43
-  61
+         25
+         43
+         61
 
 */
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  x= 11;
-  while(1)
+    int number = 25, sum = 0;
+    while(1)
     {
-      //your code here
-     loop: 
-     if(x<100)
-     {
-         if(x%2)
-         {
-             if(((x%10)+(x/10))==7)
-             {
-               printf("%d\n",x);
-             }
-         }
-         x++;
-         goto loop;
-     }
-     break;     
+        loop:
+                if(number<100)
+                {
+                    if(number%2)
+                    {
+                        if(((number%10)+(number/10))==7)
+                                printf("%d\n",number);
+                    }
+                    number++;
+                    goto loop;
+                }
+            break;
     }
 }
-
-
-
-
-
