@@ -3,25 +3,27 @@
          Use only Decimals
          Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to print the total count of numbers which are less than 100000 and whose sum of digits is 14
+  Question: 
+         Write a program to print the total count of numbers which are less than 100000 and 
+         whose sum of digits is 14
   Answer:
-  2710
+         2710
   */
 #include<stdio.h>
 int main()
 {
-  int x;
+  int number;
   //your code here
   int count = 0, num, sum = 0;
-  x = 10;
+  number = 59;
   while(1)
     {
       //your code here
       loop:
-      if(x<100000)
+      if(number<100000)
       {
         sum = 0;
-        num = x;
+        num = number;
         sloop:
         if(num)
         {
@@ -33,10 +35,10 @@ int main()
         {
           count++;
         }
-        x++;
+        number++;
         goto loop;
       }
-      printf("%d",count);
       break;
     }
+    printf("%d",count);
 }
