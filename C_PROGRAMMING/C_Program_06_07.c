@@ -14,7 +14,7 @@
 #include<stdio.h>
 int main()
 {
-    int number = 25, sum = 0;
+    int number = 25;
     while(1)
     {
         loop:
