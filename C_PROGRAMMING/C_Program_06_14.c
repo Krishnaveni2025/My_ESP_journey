@@ -1,4 +1,8 @@
 /* C LEVEL 06 Problem 14
+         Use only int variables
+         Use only Decimals
+         Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and interchange the first and last digits and print the result .
   Answer:
   Input:123456   Output:623451
