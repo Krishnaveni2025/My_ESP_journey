@@ -3,36 +3,32 @@
          Use only Decimals
          Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
          Don't use Arrays, pointers, strings,etc.
-Question: write a loop program to print the two digit even numbers, who's sum of digits are 6
-Answer:
-24
-42
-60
+   Question: 
+         write a loop program to print the two digit even numbers, 
+         who's sum of digits are 6
+   Answer:
+         24
+         42
+         60
   */
 
 #include<stdio.h>
 int main()
 {
-  int x;
-  //your code here
-  x= 10;
-  while(1)
+    int number = 24;
+    while(1)
     {
-      //your code here
-     loop: 
-     if(x<100)
-     {
-         if(!(x%2))
-         {
-             if(((x%10)+(x/10))==6)
-             {
-               printf("%d\n",x);
-             }
-         }
-         x++;
-         goto loop;
-     }
-     break;
-      
+        loop:
+            if(number<100)
+            {
+                if(!(number%2))
+                {
+                    if(( (number%10)+(number/10) )==6)
+                            printf("%d\n",number);
+                }
+                number++;
+                goto loop;
+            }
+        break;
     }
 }
