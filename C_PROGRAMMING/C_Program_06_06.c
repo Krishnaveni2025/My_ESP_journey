@@ -1,4 +1,8 @@
-/*C LEVEL 06 Problem 06
+/*C LEVEL 06 Problem 
+         Use only int variables
+         Use only Decimals
+         Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a loop program to print to two digit odd numbers below 20
   Answer:
   11
