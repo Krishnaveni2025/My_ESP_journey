@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 24
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and print the total number of two digit perfect square numbers in the number
   Function Name: disp_two_digit_square
   Answer:
