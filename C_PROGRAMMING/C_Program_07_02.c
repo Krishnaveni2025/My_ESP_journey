@@ -3,28 +3,30 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-Question: Write a loop program to print 5 to 1 on one by one
-Function Name: disp_descend
-Answer:
-5
-4
-3
-2
-1
+   Question: 
+         Write a loop program to print 5 to 1 on one by one
+   Function Name: 
+         disp_descend
+   Answer:
+         5
+         4
+         3
+         2
+         1
 */
 #include<stdio.h>
-void disp_descend(int);
+void disp_descend(int n);
 int main()
 {
-int x;
-x = 5;
-disp_descend(x);
+    int number = 5;
+    while(number)
+    {
+        disp_descend(number);
+        number--;
+    }
 }
-void disp_descend(int x)
+void disp_descend(int n)
 {
-//your code here
-for(x = 5; x>0; x--)
-  {
-    printf("%d\n",x);
-  }
+    if(n)
+            printf("%d\n",n);
 }
