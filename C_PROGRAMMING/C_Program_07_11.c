@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 11
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
 Question: Write a loop program to get a number from the user and print the total digits in the number
 Function Name: count_total_digits
 Answer:
