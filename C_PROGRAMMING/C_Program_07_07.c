@@ -11,24 +11,22 @@ Answer:
 61
 */
 #include<stdio.h>
-void disp_2digit_odd_sum7(int);
+void disp_2digit_odd_sum7(int n);
 int main()
 {
-int x;
-x = 11;
-disp_2digit_odd_sum7(x);
-}
-void disp_2digit_odd_sum7(int x)
-{
-//your code here
-  for(x = 11; x<100; x++)
+    int number = 25;
+    while(number<100)
     {
-      if(x%2)
-      {
-        if((x/10)+(x%10)==7)
-        {
-          printf("%d\n",x);
-        }
-      }
+        disp_2digit_odd_sum7(number);
+        number++;
+    }
+}
+void disp_2digit_odd_sum7(int n)
+{
+    if(n%2)
+    {
+        int sum = (n%10)+(n/10);
+        if(sum==7)
+                printf("%d\n",n);
     }
 }
