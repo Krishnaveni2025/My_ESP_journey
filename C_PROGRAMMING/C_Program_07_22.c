@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 22
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and print the total number of two-digit odd numbers in the number
   Function Name: disp_total_2digit_odd
   Answer:
