@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 15
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and if the last digit of the number is even print the same number. 
   If the last digit of the number is odd subtract 1 from the last digit and print the number.(Note: Last Digit - MSB)
   Function Name: check_last_digit_odd
