@@ -3,29 +3,28 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-Question: Write a loop program to print the sum of two digit numbers whose one's digit is 5
-Function Name: disp_2digit_ones5
-Answer:
-495
+   Question: 
+         Write a loop program to print the sum of two digit numbers whose one's digit is 5
+   Function Name: 
+         disp_2digit_ones5
+   Answer:
+         495
 */
 #include<stdio.h>
-void disp_2digit_ones5(int);
+void disp_2digit_ones5(int n);
 int main()
 {
-int x;
-x = 0;
-disp_2digit_ones5(x);
+    int number = 15; 
+    disp_2digit_ones5(number);
 }
-void disp_2digit_ones5(int x)
+void disp_2digit_ones5(int n)
 {
-//your code here
-  int i;
-  for(i = 15; i<96; i++)
+    int sum = 0;
+    while(n<=95)
     {
-      if((i%10)==5)
-      {
-        x += i;
-      }
+        if((n%10)==5)
+                sum+=n;
+        n++;
     }
-  printf("%d",x);
+    printf("%d",sum); 
 }
