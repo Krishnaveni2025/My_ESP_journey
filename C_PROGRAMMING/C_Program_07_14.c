@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 14
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and interchange the first and last digits and print the result 
   Function Name: disp_interchange_first_last_digit
   Answer:
