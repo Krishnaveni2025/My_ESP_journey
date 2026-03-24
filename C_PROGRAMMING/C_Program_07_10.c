@@ -3,32 +3,31 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-Question: Write a loop program to print the sum of two digit odd numbers, whose ten's digit is 7
-Function Name: disp_2digit_odd_sum_tens7
-Answer:
-375
+   Question: 
+         Write a loop program to print the sum of two digit odd numbers, whose ten's digit is 7
+   Function Name: 
+         disp_2digit_odd_sum_tens7
+   Answer:
+         375
 */
 #include<stdio.h>
-void disp_2digit_odd_sum_tens7(int);
+void disp_2digit_odd_sum_tens7(int n);
 int main()
 {
-int x;
-x = 0;
-disp_2digit_odd_sum_tens7(x);
+    int number = 71; 
+    disp_2digit_odd_sum_tens7(number);
 }
-void disp_2digit_odd_sum_tens7(int x)
+void disp_2digit_odd_sum_tens7(int n)
 {
-//your code here
-  int i;
-  for(i = 70; i<80; i++)
+    int sum = 0;
+    while(n<80)
     {
-      if(i%2)
-      {
-        if((i/10)==7)
+        if(n%2)
         {
-          x += i;
+            if((n/10)==7)
+                sum+=n;
         }
-      }
+        n++;
     }
-  printf("%d",x);
+    printf("%d",sum);
 }
