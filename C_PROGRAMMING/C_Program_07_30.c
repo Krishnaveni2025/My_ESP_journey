@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 30
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get two numbers from the user and print the HCF of those numbers
   Function Name: disp_count_HCF2
   Answer:
