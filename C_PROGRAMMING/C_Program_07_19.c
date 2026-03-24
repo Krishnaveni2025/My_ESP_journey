@@ -1,4 +1,8 @@
 `/* C LEVEL 07 Problem 19
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a four digit number from the user and print whether the middle two digits(10's & 100's) of that number is prime or not.
   Function Name: middle_2digits_prime
   Answer:
