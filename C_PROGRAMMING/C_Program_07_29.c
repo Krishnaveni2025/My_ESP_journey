@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 29
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get three numbers from the user and print the LCM of those numbers
   Function Name: disp_LCM3
   Answer:
