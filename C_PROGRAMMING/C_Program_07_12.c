@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 12
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Get a number from the user print the sum of all digits.
   Function Name: disp_sum_all_digits
   Answer:
