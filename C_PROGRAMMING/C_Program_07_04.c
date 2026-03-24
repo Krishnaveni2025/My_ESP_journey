@@ -3,26 +3,27 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-Question: Write loop program to print sum from 6 to 1 
-Function Name: disp_rsum
-Answer:
-21
+   Question: 
+         Write loop program to print sum from 6 to 1 
+   Function Name: 
+         disp_rsum
+   Answer:
+         21
 */
 #include<stdio.h>
-void disp_rsum(int);
+void disp_rsum(int n);
 int main()
 {
-int x;
-x = 6;
-disp_rsum(x);
+    int number = 6;
+    disp_rsum(6);
 }
-void disp_rsum(int x)
+void disp_rsum(int n)
 {
-//your code here
-  int sum = 0;
-  for(x = 6; x>0; x--)
+    int rsum = 0;
+    while(n)
     {
-      sum += x;
+        rsum += n;
+        n--;
     }
-  printf("%d",sum);
+    printf("%d\n",rsum);
 }
