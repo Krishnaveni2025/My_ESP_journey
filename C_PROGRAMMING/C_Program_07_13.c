@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 13
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user print the reverse of the number.
   Function Name: disp_reverse_number
   Answer:
