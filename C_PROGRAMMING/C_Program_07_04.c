@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 04
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
 Question: Write loop program to print sum from 6 to 1 
 Function Name: disp_rsum
 Answer:
