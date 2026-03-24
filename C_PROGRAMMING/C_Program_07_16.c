@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 16
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and print whether that number is prime or not.
   Function Name: check_prime
   Answer:
