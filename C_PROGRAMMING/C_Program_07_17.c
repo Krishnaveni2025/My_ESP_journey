@@ -1,4 +1,8 @@
 /* C LEVEL 07 Problem 17
+         Use only int variables
+         Use only Decimals
+         Use functions with not return value.
+         Don't use Arrays, pointers, strings,etc.
   Question: Write a program to get a number from the user and print whether that number is prime or not and sum of the digits equal to 14.
   Function Name: check_prime_and_sum14
   Answer:
