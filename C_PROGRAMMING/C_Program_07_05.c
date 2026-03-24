@@ -3,31 +3,30 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-Question: Write a loop program to print odd numbers between 1 and 9
-Function Name: disp_odd
-Answer:
-1
-3
-5
-7
-9
+   Question: 
+         Write a loop program to print odd numbers between 1 and 9
+   Function Name: 
+         disp_odd
+   Answer:
+         1
+         3
+         5
+         7
+         9
 */
 #include<stdio.h>
-void disp_odd(int);
+void disp_odd(int n);
 int main()
 {
-int x;
-x = 1;
-disp_odd(x);
-}
-void disp_odd(int x)
-{
-//your code here
-  for(x = 1; x<10; x++)
+    int number = 1;
+    while(number<10)
     {
-      if(x%2)
-      {
-        printf("%d\n",x);
-      }
+        disp_odd(number);
+        number++;
     }
+}
+void disp_odd(int n)
+{
+    if(n%2)             
+        printf("%d\n",n);
 }
