@@ -3,42 +3,42 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get ttwo numbers from the user and print the LCM of those numbers
-  Function Name: disp_LCM2
+  Question: 
+         Write a program to get two numbers from the user and 
+         print the LCM of those numbers
+  Function Name: 
+         disp_LCM2
   Answer:
-  Input: 20 40 Output: 40
-  Input: 15 78 Output:390
+         Input: 20 40 Output: 40
+         Input: 15 78 Output:390
   */
 #include<stdio.h>
-void disp_LCM2(int,int);
+void disp_LCM2(int n1,int n2);
 int main()
 {
-int x,y;
-scanf("%d %d",&x, &y);
-disp_LCM2(x,y);
+    int number1, number2;
+    printf("Enter Number 1: ");
+    scanf("%d",&number1);
+    printf("Enter Number 2: ");
+    scanf("%d",&number2);
+    disp_LCM2(number1,number2);
+    return 0;
 }
-void disp_LCM2(int x, int y)
+void disp_LCM2(int n1, int n2)
 {
-//your code here
-  int max;
-  if(x>y)
-  {
-    max = x;
-  }
-  else
-  {
-    max = y;
-  }
-  while(1)
-  {
-      if(!(max%x))
-      {
-          if(!(max%y))
-          {
-              printf("%d",max);
-              break;
-          }
-      }
-      max++;
-  }
+    int l;
+    if(n2>n1)
+        l = n2;
+    else
+        l = n1;
+    while(1)
+    {
+        if(!(l%n1))
+        {
+            if(!(l%n2))
+                 break;
+        }
+        l++;
+    }
+    printf("%d",l);
 }
