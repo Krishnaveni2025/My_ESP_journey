@@ -3,37 +3,36 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to print the total count of numbers which are less than 100000 and whose sum of digits is 14
-  Function Name: disp_count_sum14
-  Answer:
-  2710
+   Question: 
+         Write a program to print the total count of numbers 
+         which are less than 100000 and whose sum of digits is 14
+   Function Name: 
+         disp_count_sum14
+   Answer:
+         2710
   */
 
 #include<stdio.h>
-void disp_count_sum14(int);
+void disp_count_sum14(int n);
 int main()
 {
-int x;
-x = 10;
-disp_count_sum14(x);
+    disp_count_sum14(59);
 }
-void disp_count_sum14(int x)
+void disp_count_sum14(int n)
 {
-//your code here
-  int count = 0, sum = 0, num;
-  while(x<100000)
+    int count = 0, sum,temp;
+    while(n<100000)
     {
-      num = x,sum = 0;
-      while(num)
+        sum = 0;
+        temp = n;
+        while(temp)
         {
-          sum += (num%10);
-          num /= 10;
+            sum += (temp%10);
+            temp/=10;
         }
-      if(sum==14)
-      {
-        count++;
-      }
-      x++;
+        if(sum==14)
+                count++;
+        n++;
     }
-  printf("%d",count);
+    printf("%d",count);
 }
