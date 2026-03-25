@@ -3,31 +3,35 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and print the total number of two digit perfect square numbers in the number
-  Function Name: disp_two_digit_square
-  Answer:
-  Input: 163496481 Output: 4
-  Input: 364925    Output: 4
+   Question: 
+         Write a program to get a number from the user 
+         and print the total number of two digit perfect square numbers in the number
+   Function Name: 
+         disp_two_digit_square
+   Answer:
+         Input: 163496481 Output: 4
+         Input: 364925    Output: 4
   */
 #include<stdio.h>
-void disp_two_digit_square(int);
+void disp_two_digit_square(int n);
 int main()
 {
-int x;
-scanf("%d",&x);
-disp_two_digit_square(x);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    disp_two_digit_square(number);
 }
-void disp_two_digit_square(int x)
+void disp_two_digit_square(int n)
 {
-//your code here
-  int count = 0;
-  while(x)
+    int tps_count = 0,i;
+    while(n>9)
     {
-      if(((x%100)==16)||((x%100)==25)||((x%100)==36)||((x%100)==49)||((x%100)==64)||((x%100)==81))
-      {
-        count++;
-      }
-      x /= 10;
+        for(i=4; i<10; i++)
+        {
+            if((n%100)==(i*i))
+                    tps_count++;
+        }
+        n/=10;
     }
-  printf("%d",count);
+    printf("%d",tps_count);
 }
