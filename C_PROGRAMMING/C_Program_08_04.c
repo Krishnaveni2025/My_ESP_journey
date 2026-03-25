@@ -1,32 +1,32 @@
 /* C LEVEL 08 Problem 04
-Question: Write a program to print the sum of the two digit odd numbers whose tens digit is 7
-Function Name: disp_2digit_odd_sum_tens7
-Answer:
-375
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to print the sum of the two digit odd numbers whose tens digit is 7
+   Function Name: 
+        disp_2digit_odd_sum_tens7
+   Answer:
+        375
 */
 #include<stdio.h>
-int disp_2digit_odd_sum_tens7(int);
+int disp_2digit_odd_sum_tens7(int n);
 int main()
 {
-int x,y;
-x = 71;
-y = disp_2digit_odd_sum_tens7(x);
-printf("%d",y);
+    printf("%d",disp_2digit_odd_sum_tens7(70));
 }
-int disp_2digit_odd_sum_tens7(int a)
+int disp_2digit_odd_sum_tens7(int n)
 {
-int y = 0;
-//your code here
-  while(a<80)
+    int sum = 0;
+    while(n<80)
     {
-      if(a%2)
-      {
-        if((a/10)==7)
+        if(n%2)
         {
-          y += a;
+            if((n/10)==7)
+                sum += n;
         }
-      }
-      a++;
+        n++;
     }
-return (y);
+    return sum;
 }
