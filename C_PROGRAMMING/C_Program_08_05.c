@@ -1,28 +1,34 @@
 /* C LEVEL 08 Problem 05
-Question: Write a program to get a number from the user and print the total number of digits in that number
-Function Name: count_total_digits
-Answer:
-Input:123456   Output:6
-Input:76895439 Output:8
-Input:675      Output:3
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to get a number from the user and 
+        print the total number of digits in that number
+   Function Name: 
+        count_total_digits
+   Answer:
+        Input:123456   Output:6
+        Input:76895439 Output:8
+        Input:675      Output:3
 */
 #include<stdio.h>
-int count_total_digits(int);
+int count_total_digits(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = count_total_digits(x);
-printf("%d",y);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    printf("%d",count_total_digits(number));
 }
-int count_total_digits(int a)
+int count_total_digits(int n)
 {
-int y = 0;
-//your code here
-  while(a)
+    int count = 0;
+    while(n)
     {
-      y++;
-      a /= 10;
+        count++;
+        n /= 10;
     }
-return (y);
+    return count;
 }
