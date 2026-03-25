@@ -1,29 +1,29 @@
 /* C LEVEL 08 Problem 03
-Question: Write a loop program to print the sum of two digit numbers whose one's digits is 5
-Function Name: disp_2digit_ones5
-Answer:
-495
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a loop program to print the sum of two digit numbers whose one's digits is 5
+   Function Name: 
+        disp_2digit_ones5
+   Answer:
+        495
 */
 #include<stdio.h>
-int disp_2digit_ones5(int);
+int disp_2digit_ones5(int n);
 int main()
 {
-int x,y;
-x = 15;
-y = disp_2digit_ones5(x);
-  printf("%d",y);
+    printf("%d",disp_2digit_ones5(15));
 }
-int disp_2digit_ones5(int a)
+int disp_2digit_ones5(int n)
 {
-int y = 0;
-//your code here
-  while(a<100)
+    int sum = 0;
+    while(n<96)
     {
-      if((a%10)==5)
-      {
-        y += a;
-      }
-      a++;
+        if((n%10)==5)
+                sum += n;
+        n++;
     }
-return (y);
+    return sum;
 }
