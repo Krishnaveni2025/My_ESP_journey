@@ -3,32 +3,42 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and print the total number of single digit prime numbers in the number
-  Function Name: disp_single_digit_prime
-  Answer:
-  Input: 163496481 Output: 1
-  Input: 364925    Output: 3
+   Question: 
+         Write a program to get a number from the user and 
+         print the total number of single digit prime numbers in the number
+   Function Name: 
+         disp_single_digit_prime
+   Answer:
+         Input: 163496481 Output: 1
+         Input: 364925    Output: 3
   */
 
 #include<stdio.h>
-void disp_single_digit_prime(int);
+void disp_single_digit_prime(int n);
 int main()
 {
-int x;
-scanf("%d",&x);
-disp_single_digit_prime(x);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    disp_single_digit_prime(number);
 }
-void disp_single_digit_prime(int x)
+void disp_single_digit_prime(int n)
 {
-//your code here
-  int count = 0;
-  while(x)
+    int prime_count = 0, is_prime = 1, divider = 2;
+    while(n)
     {
-      if(((x%10)==2)||((x%10)==3)||((x%10)==5)||((x%10)==7))
-      {
-        count++;
-      }
-      x /= 10;
+        is_prime = 1;
+        for(divider=2; divider<(n%10); divider++)
+        {
+            if(!((n%10)%divider))
+            {
+                is_prime = 0;
+                break;
+            }
+        }
+        if(is_prime)
+                prime_count++;
+        n/=10;
     }
-  printf("%d",count);
+    printf("%d",prime_count);
 }
