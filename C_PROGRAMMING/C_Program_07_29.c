@@ -3,56 +3,54 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get three numbers from the user and print the LCM of those numbers
-  Function Name: disp_LCM3
-  Answer:
-  Input: 20 40 80 Output: 80
-  Input: 15 78 63 Output: 8190
+   Question: 
+         Write a program to get three numbers from the user and 
+         print the LCM of those numbers
+   Function Name: 
+         disp_LCM3
+   Answer:
+         Input: 20 40 80 Output: 80
+         Input: 15 78 63 Output: 8190
   */
 #include<stdio.h>
-void disp_LCM3(int, int, int);
+void disp_LCM3(int n1, int n2, int n3);
 int main()
 {
-int x,y,z;
-scanf("%d %d %d",&x, &y, &z);
-disp_LCM3(x,y,z);
+    int number1, number2, number3;
+    printf("Enter Number 1: ");
+    scanf("%d",&number1);
+    printf("Enter Number 2: ");
+    scanf("%d",&number2);
+    printf("Enter Number 3: ");
+    scanf("%d",&number3);
+    disp_LCM3(number1,number2,number3);
+    return 0;
 }
-void disp_LCM3(int x, int y, int z)
+void disp_LCM3(int n1, int n2, int n3)
 {
-//your code here
-  int max = 0;
-  if(x>y)
-  {
-    if(x>z)
+    int l;
+    if(n1>n2)
     {
-      max = x;
-    }
-  }
-  else
-  {
-    if(y>z)
-    {
-      max = y;
+        if(n1>n3)
+            l = n1;
+        else
+            l = n3;
     }
     else
     {
-      max = z;
+        l = n2;
     }
-  }
-  while(1)
-  {
-      if(!(max%x))
-      {
-          if(!(max%y))
-          {
-              if(!(max%z))
-              {
-                printf("%d",max);
-                break;
-              }
-          }
-      }
-      max++;
-  }
+    while(1)
+    {
+        if(!(l%n1))
+        {
+            if(!(l%n2))
+            {
+                if(!(l%n3))
+                        break;
+            }
+        }
+        l++;
+    }
+    printf("%d",l);
 }
-
