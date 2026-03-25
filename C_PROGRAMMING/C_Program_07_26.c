@@ -3,33 +3,30 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to print the biggest 4-digit number which is divisible by 7 and 9
-  Function Name: disp_biggest_4digit_div7_9 
-  Answer:
-  9954
+   Question: 
+         Write a program to print the biggest 4-digit number which is divisible by 7 and 9
+   Function Name: 
+         disp_biggest_4digit_div7_9 
+   Answer:
+         9954
   */
 #include<stdio.h>
-void disp_biggest_4digit_div7_9(int);
+void disp_biggest_4digit_div7_9(int n);
 int main()
 {
-int x;
-x = 1000;
-disp_biggest_4digit_div7_9(x);
+    disp_biggest_4digit_div7_9(1000);
 }
-void disp_biggest_4digit_div7_9(int x)
+void disp_biggest_4digit_div7_9(int n)
 {
-//your code here
-  int big = 0;
-  while(x<10000)
+    int big;
+    while(n<10000)
     {
-      if(!(x%7))
-      {
-        if(!(x%9))
+        if(!(n%7))
         {
-          big = x;
+            if(!(n%9))
+                    big = n;
         }
-      }
-      x++;
+        n++;
     }
-  printf("%d",big);
+    printf("%d",big);
 }
