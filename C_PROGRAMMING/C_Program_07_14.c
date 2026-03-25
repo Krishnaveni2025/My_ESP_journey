@@ -3,36 +3,37 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and interchange the first and last digits and print the result 
-  Function Name: disp_interchange_first_last_digit
-  Answer:
-  Input:123456   Output:623451
-  Input:76895439 Output:96895437
-  Input:675      Output:576
+   Question: 
+         Write a program to get a number from the user and 
+         interchange the first and last digits and print the result 
+   Function Name: 
+         disp_interchange_first_last_digit
+   Answer:
+         Input:123456   Output:623451
+         Input:76895439 Output:96895437
+         Input:675      Output:576
   */
 #include<stdio.h>
-void disp_interchange_first_last_digit(int,int);
+void disp_interchange_first_last_digit(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = 0;
-disp_interchange_first_last_digit(x,y);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    disp_interchange_first_last_digit(number);
 }
-void disp_interchange_first_last_digit(int num,int result)
+void disp_interchange_first_last_digit(int n)
 {
-//your code here
-  int first,last,power = 1,middle,temp;
-  temp = num;
-  while(temp)
+    int result, num, last, first, middle,multiplier = 1;
+    first = n%10;
+    num = n;
+    while(num>9)
     {
-      power *= 10;
-      temp /= 10;
+        multiplier *= 10;
+        num /= 10;
     }
-  power /= 10;
-  last = num /power;
-  first = num %10;
-  middle = (num%power)/10;
-  result = (first*power)+(middle*10)+last;
-  printf("%d",result);
+    last = num;
+    middle = (n%multiplier)/10;
+    result = (first*multiplier)+(middle*10)+last;
+    printf("%d",result);
 }
