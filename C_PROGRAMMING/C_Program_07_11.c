@@ -3,29 +3,32 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-Question: Write a loop program to get a number from the user and print the total digits in the number
-Function Name: count_total_digits
-Answer:
-Input:123456   Output:6
-Input:76895439 Output:8
-Input:675      Output:3
+   Question: 
+         Write a loop program to get a number from the user and 
+         print the total digits in the number
+   Function Name: 
+         count_total_digits
+   Answer:
+         Input:123456   Output:6
+         Input:76895439 Output:8
+         Input:675      Output:3
 */
 #include<stdio.h>
-void count_total_digits(int,int);
+void count_total_digits(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = 0;
-count_total_digits(x,y);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    count_total_digits(number);
 }
-void count_total_digits(int x,int y)
+void count_total_digits(int n)
 {
-//your code here
-  while(x)
+    int digits = 0;
+    while(n)
     {
-      y++;
-      x /= 10;
+        digits++;
+        n /= 10;
     }
-  printf("%d",y);
+    printf("%d",digits);
 }
