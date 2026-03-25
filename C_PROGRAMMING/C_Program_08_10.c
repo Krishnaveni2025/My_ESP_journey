@@ -4,36 +4,34 @@
         Use Functions with a return value
         Do not use arrays, strings, pointers, etc.
    Question: 
-        Write a program to get a number from the user and 
-        print whether that number is prime or not.
+        Write a program to print total number of single digit prime numbers
    Function Name: 
-        check_prime
+        single_prime_count
    Answer:
-        Input: 31 - Output: Prime
-        Input: 27 - Output: Not prime
+        4
 */
 #include<stdio.h>
-int check_prime(int n);
+int single_prime_count(int n);
 int main()
 {
-    int number;
-    printf("Enter Number: ");
-    scanf("%d",&number);
-    if(check_prime(number))
-            printf("Prime");
-    else
-            printf("Not Prime");
+    printf("%d",single_prime_count(2));
 }
-int check_prime(int n)
+int single_prime_count(int n)
 {
-    int  divider = 2;
-    while(divider<n)
-        {
+    int is_prime , divider, count = 0;
+    for(n=2; n<9; n++)
+    {
+        is_prime = 1;
+       for(divider = 2; divider<n; divider++)
+         {
             if(!(n%divider))
                 {
-                    return 0;
+                    is_prime = 0;
+                    break;
                 }
-            divider++;
-        }
-    return 1;
+         }
+         if(is_prime)
+                count++;
+    }
+    return count;
 }
