@@ -1,26 +1,30 @@
 /* C LEVEL 08 Problem 01
-Question: Weite a loop program to print sum of 1 to 5
-Function Name: disp_sum
-Answer:
-15
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a loop program to print sum of 1 to 5
+   Function Name: 
+        disp_sum
+   Answer:
+        15
 */
 #include<stdio.h>
-int disp_sum(int);
+int disp_sum(int n);
 int main()
 {
-int x,y;
-x = 1;
-y = disp_sum(x);
-printf("%d",y);
+    // int sum1to5;
+    // sum1to5 = disp_sum(1);
+    printf("%d",disp_sum(1));
 }
-int disp_sum(int a)
+int disp_sum(int n)
 {
-int y = 0;
-//your code here
-  while(a<6)
+    int sum = 0;
+    while(n<6)
     {
-      y += a;
-      a++;
+        sum += n;
+        n++;
     }
-return (y);
+    return sum;
 }
