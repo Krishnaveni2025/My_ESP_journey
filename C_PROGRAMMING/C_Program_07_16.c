@@ -3,34 +3,38 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and print whether that number is prime or not.
-  Function Name: check_prime
-  Answer:
-Input: 31 - Output: Prime
-Input: 27 - Output: Not prime
+   Question: 
+         Write a program to get a number from the user and 
+         print whether that number is prime or not.
+   Function Name: 
+         check_prime
+   Answer:
+         Input: 31 - Output: Prime
+         Input: 27 - Output: Not prime
 */
 #include<stdio.h>
-void check_prime(int);
+void check_prime(int n);
 int main()
 {
-int x;
-scanf("%d",&x);
-check_prime(x);
+   int number;
+   printf("Enter Number: ");
+   scanf("%d",&number);
+   check_prime(number);
 }
-void check_prime(int x)
+void check_prime(int n)
 {
-//your code here
-  int is_prime = 1, i = 2;
-  for(i = 2; i<x; i++)
+    int is_prime = 1, divider = 2;
+    while(divider<n)
     {
-      if((x%i)==0)
-      {
-        is_prime = 0;
-        break;
-      }
+        if(!(n%divider))
+        {
+            is_prime = 0;
+            break;
+        }
+        divider++;
     }
-  if(is_prime)
-        printf("Prime");
-  else
-        printf("Not Prime");
+    if(is_prime)
+            printf("Prime");
+    else    
+            printf("Not Prime");
 }
