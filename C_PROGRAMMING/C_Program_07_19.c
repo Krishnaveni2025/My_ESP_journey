@@ -1,31 +1,33 @@
-`/* C LEVEL 07 Problem 19
+/* C LEVEL 07 Problem 19
          Use only int variables
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a four digit number from the user and print whether the middle two digits(10's & 100's) of that number is prime or not.
-  Function Name: middle_2digits_prime
-  Answer:
-Input: 6359 - Output: Not Prime
-Input: 3537 - Output: Prime
+   Question: 
+         Write a program to get a four digit number from the user and 
+         print whether the middle two digits(10's & 100's) of that number is prime or not.
+   Function Name: 
+         middle_2digits_prime
+   Answer:
+         Input: 6359 - Output: Not Prime
+         Input: 3537 - Output: Prime
 */
 #include<stdio.h>
-void middle_2digits_prime(int);
+void middle_2digits_prime(int n);
 int main()
 {
-int x;
-scanf("%d",&x);
-middle_2digits_prime(x);
+    int number;
+    scanf("%d",&number);
+    middle_2digits_prime(number);
 }
-void middle_2digits_prime(int x)
+void middle_2digits_prime(int n)
 {
 //your code here
-  x = (x/10)%100;
-  printf("%d\n",x);
-  int i = 2, is_prime = 1;
-  for(i = 2; i<x; i++)
+  n = (n/10)%100;
+  int divider = 2, is_prime = 1;
+  for(divider = 2; divider<n ; divider++)
     {
-      if(!(x%i))
+      if(!(n%divider))
       {
         is_prime = 0;
         break;
