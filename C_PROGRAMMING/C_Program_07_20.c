@@ -3,38 +3,38 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to print total number single digit prime numbers.
-  Function Name: disp_count_single_digit_prime
-  Answer:
-  4
+   Question: 
+         Write a program to print total number single digit prime numbers.
+   Function Name: 
+         disp_count_single_digit_prime
+   Answer:
+           4
 */
 #include<stdio.h>
-void disp_count_single_digit_prime(int);
+void disp_count_single_digit_prime(int n);
 int main()
 {
-int x;
-x = 2;
-disp_count_single_digit_prime(x);
+    int number = 2;
+    disp_count_single_digit_prime(number);
 }
-void disp_count_single_digit_prime(int x)
+void disp_count_single_digit_prime(int n)
 {
-//your code here
-  int i  = 2, is_prime, count = 0;
-  while(x<10)
+    int count = 0, divider,  is_prime;
+    while(n<9)
     {
-        is_prime = 1;
-        for(i = 2; i<x; i++)
+        divider = 2, is_prime = 1;
+        while(divider<n)
         {
-            if(!(x%i))
+            if(!(n%divider))
             {
                 is_prime = 0;
+                break;
             }
+            divider++;
         }
         if(is_prime)
-        {
-            count++;
-        }
-      x++;
+             count++;
+        n++;
     }
     printf("%d",count);
 }
