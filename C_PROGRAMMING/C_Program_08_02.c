@@ -1,26 +1,28 @@
 /* C LEVEL 08 Problem 02
-Question: Write a loop program to print sum of 6 to 1
-Function Name: disp_rsum
-Answer:
-21
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a loop program to print sum of 6 to 1
+   Function Name: 
+        disp_rsum
+   Answer:
+        21
 */
 #include<stdio.h>
-int disp_rsum(int);
+int disp_rsum(int n);
 int main()
 {
-int x,y;
-x = 6;
-y = disp_rsum(x);
-printf("%d",y);
+    printf("%d",disp_rsum(6));
 }
-int disp_rsum(int a)
+int disp_rsum(int n)
 {
-int y = 0;
-//your code here
-  while(a>0)
+    int rsum = 0;
+    while(n>0)
     {
-      y += a;
-      a--;
+        rsum += n;
+        n--;
     }
-return (y);
+    return rsum;
 }
