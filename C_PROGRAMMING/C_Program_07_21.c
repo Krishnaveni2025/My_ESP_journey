@@ -3,29 +3,34 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and print the total number of digits which are odd in that number
-  Function Name: disp_total_odd_digits
-  Answer:
-  Input: 12345678 Output: 4
-  Input: 987531   Output:5
+   Question: 
+         Write a program to get a number from the user and 
+         print the total number of digits which are odd in that number
+   Function Name: 
+         disp_total_odd_digits
+   Answer:
+         Input: 12345678 Output: 4
+         Input: 987531   Output:5
   */
 #include<stdio.h>
-void disp_total_odd_digits(int);
+void disp_total_odd_digits(int n);
 int main()
 {
-int x;
-scanf("%d",&x);
-disp_total_odd_digits(x);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    disp_total_odd_digits(number);
 }
-void disp_total_odd_digits(int x)
+void disp_total_odd_digits(int n)
 {
-//your code here
-  int count = 0;
-  while(x)
+    int sodd_count = 0;
+    while(n)
     {
-      if((x%10)%2)
-            count++;
-      x /= 10;
+        if((n%10)%2)
+        {
+            sodd_count++;
+        }
+        n /= 10;
     }
-  printf("%d",count);
+    printf("%d",sodd_count);
 }
