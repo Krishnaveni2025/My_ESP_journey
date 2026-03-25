@@ -3,38 +3,42 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user and print whether that number is prime or not and sum of the digits equal to 14.
-  Function Name: check_prime_and_sum14
-  Answer:
-Input: 59 - Output: Prime & sum of the digits is 14
-Input: 77 - Output: Not prime but sum of digits is 14
-Input: 13 - Output: Prime & sum of digits is not 14
-Input: 27 - Output: Not prime & sum of digits is not 14
+   Question: 
+         Write a program to get a number from the user and 
+         print whether that number is prime or not and sum of the digits equal to 14.
+   Function Name: 
+         check_prime_and_sum14
+   Answer:
+         Input: 59 - Output: Prime & sum of the digits is 14
+         Input: 77 - Output: Not prime but sum of digits is 14
+         Input: 13 - Output: Prime & sum of digits is not 14
+         Input: 27 - Output: Not prime & sum of digits is not 14
 */
 #include<stdio.h>
-void check_prime_and_sum14(int);
+void check_prime_and_sum14(int n);
 int main()
 {
-int x;
-scanf("%d",&x);
-check_prime_and_sum14(x);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    check_prime_and_sum14(number);
 }
-void check_prime_and_sum14(int x)
+void check_prime_and_sum14(int n)
 {
-//your code here
-  int i = 2, is_prime = 1, sum = 0;
-  for(i = 2; i<x; i++)
+    int sum = 0,divider = 2, is_prime = 1;
+    while(divider<n)
     {
-      if((x%i)==0)
-      {
-        is_prime = 0;
-        break;
-      }
+        if(!(n%divider))
+        {
+            is_prime = 0;
+            break;
+        }
+        divider++;
     }
-  while(x)
+    while(n)
     {
-      sum += (x%10);
-      x /= 10;
+       sum+=(n%10);
+       n /= 10;
     }
   if(is_prime)
   {
