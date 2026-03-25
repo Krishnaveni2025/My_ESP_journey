@@ -3,29 +3,31 @@
          Use only Decimals
          Use functions with not return value.
          Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get a number from the user print the reverse of the number.
-  Function Name: disp_reverse_number
-  Answer:
-  Input:123456   Output:654321
-  Input:76895439 Output:93453867
-  Input:675      Output:576
+   Question: 
+         Write a program to get a number from the user print the reverse of the number.
+   Function Name: 
+         disp_reverse_number
+   Answer:
+         Input:123456   Output:654321
+         Input:76895439 Output:93453867
+         Input:675      Output:576
   */
 #include<stdio.h>
-void disp_reverse_number(int,int);
+void disp_reverse_number(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-  y = 0;
-disp_reverse_number(x,y);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    disp_reverse_number(number);
 }
-void disp_reverse_number(int num, int rev)
+void disp_reverse_number(int n)
 {
-//your code here
-  while(num)
+    int reverse = 0;
+    while(n)
     {
-      rev = (rev*10)+(num%10);
-      num /= 10;
+        reverse = (reverse*10) + (n%10);
+        n /= 10;
     }
-  printf("%d",rev);
+    printf("%d",reverse);
 }
