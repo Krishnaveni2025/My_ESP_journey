@@ -1,34 +1,36 @@
 /* C LEVEL 08 Problem 08
-  Question: Write a program to get a number from the user and interchange the first and last digits and print the result 
-  Function Name: disp_interchange_first_last_digit
-  Answer:
-  Input:123456   Output:623451
-  Input:76895439 Output:96895437
-  Input:675      Output:576
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to get a number from the user and 
+        interchange the first and last digits and print the result 
+   Function Name: 
+        disp_interchange_first_last_digit
+   Answer:
+        Input:123456   Output:623451
+        Input:76895439 Output:96895437
+        Input:675      Output:576
   */
 #include<stdio.h>
-int disp_interchange_first_last_digit(int);
+int disp_interchange_first_last_digit(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = disp_interchange_first_last_digit(x);
-printf("%d",y);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    printf("%d",disp_interchange_first_last_digit(number));
 }
-int disp_interchange_first_last_digit(int a)
+int disp_interchange_first_last_digit(int n)
 {
-int y = 0;
-//your code here
-int first, last , temp,middle, power = 1;
-  first = a%10;
-  temp = a;
-  while(temp>10)
+    int last, first, multiplier = 1;
+    first = n%10;
+    last = n;
+    while(last>9)
     {
-      power *= 10;
-      temp /= 10;
+        multiplier *= 10;
+        last /= 10;
     }
-  last = temp;
-  middle = (a%power)/10;
-  y = (first*power)+(middle*10)+last;
-  return (y);
+    return ((first*multiplier)+(((n%multiplier)/10)*10)+last);
 }
