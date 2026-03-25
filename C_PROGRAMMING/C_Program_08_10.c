@@ -1,33 +1,39 @@
 /* C LEVEL 08 Problem 10
-  Question: Write a program to get a number from the user and print whether that number is prime or not.
-  Function Name: check_prime
-  Answer:
-Input: 31 - Output: Prime
-Input: 27 - Output: Not prime
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to get a number from the user and 
+        print whether that number is prime or not.
+   Function Name: 
+        check_prime
+   Answer:
+        Input: 31 - Output: Prime
+        Input: 27 - Output: Not prime
 */
 #include<stdio.h>
-int check_prime(int);
+int check_prime(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = check_prime(x);
-  if(y)
-    printf("Prime");
-  else
-    printf("Not Prime");
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    if(check_prime(number))
+            printf("Prime");
+    else
+            printf("Not Prime");
 }
-int check_prime(int a)
+int check_prime(int n)
 {
-int y = 1;
-//your code here
-  for(int i = 2; i <a; i++)
-    {
-      if(!(a%i))
-      {
-        y = 0;
-        break;
-      }
-    }
-return (y);
+    int  divider = 2;
+    while(divider<n)
+        {
+            if(!(n%divider))
+                {
+                    return 0;
+                }
+            divider++;
+        }
+    return 1;
 }
