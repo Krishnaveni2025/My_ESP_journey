@@ -6,19 +6,30 @@
 Question: Get 5 numbers from the user and print the biggest number
 */
 #include<stdio.h>
+void get5numbers(int a[]);
+void print_biggest(int a[]);
 int main()
 {
-    int numbers[5], i,biggest;
-    for(i = 0; i<5; i++)
+    int numbers[5];
+    get5numbers(numbers);
+    print_biggest(numbers);
+}
+void print_biggest(int a[])
+{
+    int i = 0, big = a[0];
+    for(i=1; i<5; i++)
     {
-        printf("Enter %d Element: ",i);
-        scanf("%d",&numbers[i]);
+        if(big<a[i])
+                big =  a[i];
     }
-    biggest = numbers[0];
-    for(i=1;i<5;i++)
+    printf("%d",big);
+}
+void get5numbers(int a[])
+{
+    int i = 0;
+    for(i=0; i<5; i++)
     {
-        if(biggest<numbers[i])
-            biggest = numbers[i];
+        printf("Enter %d Number: ",i);
+        scanf("%d",&a[i]);
     }
-    printf("Biggest Element: %d",biggest);
 }
