@@ -1,30 +1,34 @@
 /* C LEVEL 08 Problem 11
-  Question: Write a program to get a number from the user and print the total number of digits which are odd in that number
-  Function Name: disp_total_odd_digits
-  Answer:
-  Input: 12345678 Output: 4
-  Input: 987531   Output:5
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to get a number from the user and 
+        print the total number of digits which are odd in that number
+   Function Name: 
+        disp_total_odd_digits
+   Answer:
+        Input: 12345678 Output: 4
+        Input: 987531   Output:5
   */
 #include<stdio.h>
-int disp_total_odd_digits(int);
+int disp_total_odd_digits(int n);
 int main()
 {
-int x,y;
-scanf("%d",&x);
-y = disp_total_odd_digits(x);
-printf("%d",y);
+    int number;
+    printf("Enter Number: ");
+    scanf("%d",&number);
+    printf("%d",disp_total_odd_digits(number));
 }
-int disp_total_odd_digits(int a)
+int disp_total_odd_digits(int n)
 {
-int y = 0;
-//your code here
-  while(a)
+    int count = 0;
+    while(n)
     {
-      if((a%10)%2)
-      {
-        y++;
-      }
-      a /= 10;
+        if((n%10)%2)
+             count++;
+        n /= 10;
     }
-return (y);
+    return count;
 }
