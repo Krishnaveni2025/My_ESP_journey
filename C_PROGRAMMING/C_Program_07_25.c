@@ -36,6 +36,8 @@ void disp_single_digit_prime(int n)
                 break;
             }
         }
+         if((n%10)<2)
+                  is_prime = 0;
         if(is_prime)
                 prime_count++;
         n/=10;
