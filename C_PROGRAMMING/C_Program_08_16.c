@@ -1,32 +1,32 @@
 /* C LEVEL 08 Problem 16
-  Question: Write a program to print the biggest 4-digit number which is divisible by 7 and 9
-  Function Name: disp_biggest_4digit_div7_9 
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+  Question: 
+        Write a program to print the biggest 4-digit number which is divisible by 7 and 9
+  Function Name: 
+        disp_biggest_4digit_div7_9 
   Answer:
-  9954
+        9954
   */
 #include<stdio.h>
-int disp_biggest_4digit_div7_9(int);
+int disp_biggest_4digit_div7_9(int n);
 int main()
 {
-int x,y;
-x = 1000;
-y = disp_biggest_4digit_div7_9(x);
-  printf("%d",y);
+    printf("%d",disp_biggest_4digit_div7_9(1000));
 }
-int disp_biggest_4digit_div7_9(int a)
+int disp_biggest_4digit_div7_9(int n)
 {
-int y = 0;
-//your code here
-  while(a<10000)
+    int biggest;
+    while(n<10000)
     {
-      if(!(a%7))
-      {
-        if(!(a%9))
+        if(!(n%7))
         {
-          y = a;
+            if(!(n%9))
+                biggest = n;
         }
-      }
-      a++;
+        n++;
     }
-return (y);
+    return biggest;
 }
