@@ -1,57 +1,56 @@
 /* C LEVEL 08 Problem 19
-  Question: Write a program to get three numbers from the user and print the LCM of those numbers
-  Function Name: disp_LCM3
-  Answer:
-  Input: 20 40 80 Output: 80
-  Input: 15 78 63 Output: 8190
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to get three numbers from the user and 
+        print the LCM of those numbers
+   Function Name:
+        disp_LCM3
+   Answer:
+        Input: 20 40 80 Output: 80
+        Input: 15 78 63 Output: 8190
   */
 
 #include<stdio.h>
-int disp_LCM3(int,int, int);
+int disp_LCM3(int n1,int n2, int n3);
 int main()
 {
-int x,y,z,lcm;
-scanf("%d %d %d",&x,&y, &z);
-lcm = disp_LCM3(x,y,z);
-  printf("%d",lcm);
+    int number1, number2, number3;
+    printf("Enter Number: ");
+    scanf("%d",&number1);
+    printf("Enter Number: ");
+    scanf("%d",&number2);
+    printf("Enter Number: ");
+    scanf("%d",&number3);
+    printf("%d",disp_LCM3(number1, number2, number3));
 }
-int disp_LCM3(int a, int b, int c)
+int disp_LCM3(int n1,int n2, int n3)
 {
-int lcm;
-//your code here
-  if(a>b)
-  {
-    if(a>c)
+    int lcm;
+    if(n1>n2)
     {
-      lcm = a;
+        if(n1>n3)
+            lcm = n1;
+        else
+            lcm = n3;
     }
-  }
     else
     {
-      if(b>c)
-      {
-        lcm = b;
-      }
-      else
-      {
-        lcm = c;
-      }
+        lcm = n2;
     }
     while(1)
-      {
-        if(!(lcm%a))
+    {
+        if(!(lcm%n1))
         {
-          if(!(lcm%b))
-          {
-            if(!(lcm%c))
+            if(!(lcm%n2))
             {
-              return lcm;
-              break;
+                if(!(lcm%n3))
+                        break;
             }
-          }
         }
         lcm++;
-      }
-  }
-
-
+    }
+    return lcm;
+}
