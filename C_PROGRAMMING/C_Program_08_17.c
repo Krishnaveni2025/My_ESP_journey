@@ -1,35 +1,37 @@
 /* C LEVEL 08 Problem 17
-  Question: Write a program to print the total count of numbers which are less than 100000 and whose sum of digits is 14
-  Function Name: disp_count_sum14
-  Answer:
-  2710
+        Use only int variables
+        Use only Decimals
+        Use Functions with a return value
+        Do not use arrays, strings, pointers, etc.
+   Question: 
+        Write a program to print the total count of numbers 
+        which are less than 100000 and whose sum of digits is 14
+   Function Name: 
+        disp_count_sum14
+   Answer:
+        2710
   */
 #include<stdio.h>
-int disp_count_sum14(int);
+int disp_count_sum14(int n);
 int main()
 {
-int x,y;
-x = 10;
-y = disp_count_sum14(x);
-printf("%d",y);
+    printf("%d", disp_count_sum14(59));
 }
-int disp_count_sum14(int a)
+int disp_count_sum14(int n)
 {
-int y, temp, count = 0;
-//your code here
-  while(a<100000)
+    int count = 0, sum, temp;
+    while(n<100000)
     {
-      temp = a, y = 0;
-      while(temp)
+        sum = 0;
+        temp = n;
+        while(temp)
         {
-          y += (temp%10);
-          temp /= 10;
+            sum += temp%10;
+            temp /= 10;
         }
-      if(y==14)
-      {
-        count++;
-      }
-        a++;
+        if(sum == 14)
+            count++;
+        n++;
     }
-return (count);
+    return count;
 }
