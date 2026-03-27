@@ -1,5 +1,15 @@
+/*
+  C LEVEL 09 Problem 11
+    Use only int variables
+    Use ont decimals
+    Use arrays
+  Question: 
+    Get 5 numbers from the user and 
+    reverse each number and 
+    create a new array and then  
+    print the sum of all numbers in the new array 
+*/
 #include <stdio.h>
-
 // Function Prototypes
 void get5numbers(int a[]);
 int getbitwidth(int num);
