@@ -1,13 +1,13 @@
 /*
   C LEVEL 09 Problem 14
-  Use only int variables
-  Use only decimals
-  use arrays
-Question: 
-Get multiple numbers from the user and store them in an array . 
-Stop when the number is 0. 
-If total number is odd then print middle number, 
-otherwise print the average of middle two numbers */
+    Use only int variables
+    Use only decimals
+    Use arrays
+  Question: 
+    Get multiple numbers from the user and store them in an array . 
+    Stop when the number is 0. 
+    If total number is odd then print middle number, 
+    otherwise print the average of middle two numbers */
 #include<stdio.h>
 int main()
 {
