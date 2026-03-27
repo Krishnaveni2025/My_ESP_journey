@@ -1,13 +1,15 @@
 /*
   C LEVEL 09 Problem 13
-  Use only int variables
-  Use ont decimals
-  use arrays
-Question: Get multiple numbers from the user and 
-store them in an array . 
-Stop when the number is 0. 
-If  numbers entered  if first and last numbers are equal, 
-print "Success" else "Failure"*/
+    Use only int variables
+    Use ont decimals
+    Use arrays
+  Question: 
+    Get multiple numbers from the user and 
+    store them in an array . 
+    Stop when the number is 0. 
+    If  numbers entered  if first and last numbers are equal, 
+    print "Success" else "Failure"
+*/
 #include<stdio.h>
 int main()
 {
@@ -17,7 +19,7 @@ int main()
         printf("Enter %d Element: ",i+1);
         scanf("%d",&number);
         if(!number)
-            break;
+                break;
         numbers[i] = number;
         total++;
         i++;
