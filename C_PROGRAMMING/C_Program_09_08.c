@@ -31,7 +31,7 @@ int get5numbersremoveodd(int a[],int b[])
     {
         printf("Enter %d Element: ",i);
         scanf("%d",&a[i]);
-        if(a[i]%2)
+        if(!(a[i]%2))
         {
             b[evencount] = a[i];
             evencount++;
