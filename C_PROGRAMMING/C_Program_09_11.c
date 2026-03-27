@@ -1,43 +1,59 @@
 #include <stdio.h>
 
-// Function to reverse bits based on a specific bit-width
-int reverse_bits(int num, int bit_size) {
-    unsigned int reversed = 0;
-    for (int i = 0; i < bit_size; i++) {
-        // 1. Shift reversed left to make room for the next bit
-        reversed <<= 1;
-        
-        // 2. If the rightmost bit of num is 1, set the rightmost bit of reversed to 1
-        if (num & 1) {
-            reversed |= 1;
-        }
-        
-        // 3. Shift num right to process the next bit
-        num >>= 1;
-    }
-    return reversed;
-}
+// Function Prototypes
+void get5numbers(int a[]);
+int getbitwidth(int num);
+int revers_number(int a[], int b[]);
 
 int main() {
-    int input[5], output[5];
-    int bits = 8; // Example: reversing within an 8-bit boundary
-
-    for(int i = 0; i < 5; i++) {
-        printf("Enter number %d: ", i + 1);
-        scanf("%d", &input[i]);
-        
-        // Reverse the bits and store in the second array
-        output[i] = reverse_bits(input[i], bits);
-    }
-
-    // Print results and sum
-    int sum = 0;
-    printf("\nReversed (Binary Logic):\n");
-    for(int i = 0; i < 5; i++) {
-        printf("%d -> %d\n", input[i], output[i]);
-        sum += output[i];
-    }
-    printf("Total Sum: %d\n", sum);
-
+    int numbers[5], reversen[5], sum;
+    
+    get5numbers(numbers);
+    
+    // Reverse the numbers and get the total sum
+    sum = revers_number(numbers, reversen);
+    
+    printf("\nTotal Sum of Reversed Numbers: %d\n", sum);
+    
     return 0;
+}
+
+int revers_number(int a[], int b[]) {
+    int sum = 0;
+    
+    for(int i = 0; i < 5; i++) {
+        unsigned int n = (unsigned int)a[i];
+        int rev = 0;
+        int bit = getbitwidth(n);
+        
+        for(int j = 0; j < bit; j++) {
+            rev <<= 1;          // Shift reversed left
+            if(n & 1) {         // Check if current bit is 1
+                rev |= 1;       // Set bit in reversed
+            }
+            n >>= 1;            // Move to next bit in original
+        }
+        
+        b[i] = rev;             // FIX: Store 'rev', not the depleted 'n'
+        sum += b[i];
+        printf("Original: %d -> Reversed: %d\n", a[i], b[i]);
+    }
+    return sum;
+}
+
+int getbitwidth(int num) {
+    if (num == 0) return 1;
+    int count = 0;            
+    while(num) {
+        count++;
+        num >>= 1;
+    }
+    return (count+1);
+}
+
+void get5numbers(int a[]) {
+    for(int i = 0; i < 5; i++) {
+        printf("Enter Number %d: ", i + 1);
+        scanf("%d", &a[i]);
+    }
 }
