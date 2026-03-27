@@ -1,55 +1,43 @@
-/*
-  C LEVEL 09 Problem 11
-  Use only int variables
-  Use ont decimals
-  use arrays
-Question: Get 5 numbers from the user and 
-reverse each number and 
-create a new array and then  
-print the sum of all numbers in the new array */
+#include <stdio.h>
 
-#include<stdio.h>
-int reverse_num(int num);
-int main()
-{
-    int numbers[5], i, reverse[5],sum =0;
-    for(i=0; i<5; i++)
-    {
-        printf("Enter %d Element: ",i);
-        scanf("%d",&numbers[i]);
-        reverse[i] = reverse_num(numbers[i]);
-        sum += reverse[i];
+// Function to reverse bits based on a specific bit-width
+int reverse_bits(int num, int bit_size) {
+    unsigned int reversed = 0;
+    for (int i = 0; i < bit_size; i++) {
+        // 1. Shift reversed left to make room for the next bit
+        reversed <<= 1;
+        
+        // 2. If the rightmost bit of num is 1, set the rightmost bit of reversed to 1
+        if (num & 1) {
+            reversed |= 1;
+        }
+        
+        // 3. Shift num right to process the next bit
+        num >>= 1;
     }
-    for(i=0;i<5;i++)
-    {
-        printf("%d ",reverse[i]);
-    }
-    printf("\n%d",sum);
+    return reversed;
 }
-int reverse_num(int num)
-{
-    int rev =0;
-    unsigned int n = (unsigned int)num;
-    int bits ,i;
-    if(n<16)
-    {
-        bits = 4;
-    }else if(n<256){
-        bits = 8;
-    }else if(n<65536){
-        bits = 16;
-    }else if(n<4096){
-        bits = 12;
+
+int main() {
+    int input[5], output[5];
+    int bits = 8; // Example: reversing within an 8-bit boundary
+
+    for(int i = 0; i < 5; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &input[i]);
+        
+        // Reverse the bits and store in the second array
+        output[i] = reverse_bits(input[i], bits);
     }
-    else{
-        bits = 32;
+
+    // Print results and sum
+    int sum = 0;
+    printf("\nReversed (Binary Logic):\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%d -> %d\n", input[i], output[i]);
+        sum += output[i];
     }
-    for(i=0; i<bits; i++)
-    {
-        rev<<=1;
-        if(n&1) 
-            rev |= 1;
-        n>>=1;
-    }
-    return (int)rev;
+    printf("Total Sum: %d\n", sum);
+
+    return 0;
 }
