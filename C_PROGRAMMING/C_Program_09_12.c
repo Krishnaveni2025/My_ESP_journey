@@ -11,22 +11,24 @@
     print the sum of numbers
 */
 #include<stdio.h>
+void getnumbers(int a[]);
+int total, all_sum, input[], i;
 int main()
 {
-    int number, numbers[100], total = 0, sum = 0, i = 0;
+    getnumbers(input);
+    printf("\nTotal = %d, Sum = %d",total,all_sum);
+}
+void getnumbers(int a[])
+{
+    int number;
     while(1)
     {
-        printf("Enter %d Number: ",i+1);
+        printf("Enter %d Element: ",total+1);
         scanf("%d",&number);
         if(!number)
-        {
             break;
-        }
-        numbers[i] = number;
+        a[total] = number;
+        all_sum += a[total];
         total++;
-        sum += numbers[i];
-        i++;
     }
-    printf("%d",total);
-    printf("\n%d",sum);
 }
