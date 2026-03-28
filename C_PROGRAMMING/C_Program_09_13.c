@@ -11,21 +11,25 @@
     print "Success" else "Failure"
 */
 #include<stdio.h>
+void getnumbers(int a[]);
+int input[], number, total;
 int main()
 {
-    int numbers[100], number, i=0, total = 0;
+    getnumbers(input);
+    if(input[0]==input[total-1])
+            printf("Success");
+    else
+            printf("Failure");
+}
+void getnumbers(int a[])
+{
     while(1)
     {
-        printf("Enter %d Element: ",i+1);
+        printf("Enter %d Element: ",total+1);
         scanf("%d",&number);
         if(!number)
-                break;
-        numbers[i] = number;
+            break;
+        input[total] = number;
         total++;
-        i++;
     }
-    if(numbers[0]==numbers[total-1])
-        printf("Success");
-    else
-        printf("Failure");
 }
