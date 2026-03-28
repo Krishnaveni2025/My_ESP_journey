@@ -7,30 +7,28 @@
     Get multiple numbers from the user and store them in an array . 
     Stop when the number is 0. 
     If total number is odd then print middle number, 
-    otherwise print the average of middle two numbers */
+    otherwise print the average of middle two numbers 
+*/
 #include<stdio.h>
+int number,total, input[500];
+int getnumbers(int a[]);
 int main()
 {
-    int numbers[100], i = 0, number, total = 0,middle, average = 0;
+    printf("%d",getnumbers(input));
+}
+int getnumbers(int a[])
+{
     while(1)
     {
-        printf("Enter %d Number: ",i+1);
+        printf("Enter %d Number: ",total+1);
         scanf("%d",&number);
         if(!number)
-            break;
-        numbers[i] = number;
-        i++;
+             break;
+        input[total] = number;
         total++;
     }
-    middle = total/2;
     if(total%2)
-    {
-        printf("Middle = %d",numbers[middle]);
-    }
+            return input[total/2];
     else
-    {
-        average = ((numbers[middle])+(numbers[middle-1]));
-        average /= 2;
-        printf("Average = %d",average);
-    }
+            return ((input[total/2]+(input[(total/2)-1]))/2);
 }
