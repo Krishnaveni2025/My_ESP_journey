@@ -1,18 +1,24 @@
 /* C LEVEL 10 Problem 04
-  Don't use structures
-  Question: Get a number as string and print the integer value of the string
+        Don't use structures
+   Question: 
+        Get a number as string and print the integer value of the string
 */
-#include <stdio.h>
+#include<stdio.h>
+void getNS_printIS(char *nstrng);
+char input[100];
 int main()
 {
-    char str[100];
-    int i, value;
-    printf("Enter Number String: ");
-    scanf("%99s",str);
-    for(i=0; str[i]!= '\0'; i++)
+    getNS_printIS(input);
+}
+void getNS_printIS( char *nstrng)
+{
+    int i = 0;
+    printf("Enter Numbers: ");
+    scanf("%s",nstrng);
+    if(nstrng)
+    while(nstrng[i]!=0)
     {
-        printf("%d",str[i]);
+        printf("%d",(nstrng[i]-48));
+        i++;
     }
-
-    return 0;
 }
