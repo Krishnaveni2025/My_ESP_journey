@@ -1,13 +1,18 @@
 /* C LEVEL 10 Problem 02
-  Don't use structures
-  Question: Get a single number and print it's ASCII value
+        Don't use structures
+   Question: 
+        Get a single number and print it's ASCII value
 */
-#include <stdio.h>
+#include<stdio.h>
+int number;
+void getnumprintASCII(int n);
 int main()
 {
-    int number;
-    printf("Enter Single Number: ");
+    getnumprintASCII(number);
+}
+void getnumprintASCII(int n)
+{
+    printf("Enter a Single Number: ");
     scanf("%d",&number);
-    printf("ASCII Value: %d",number+48);//ACII in decimal of numbers start with 0->48
-    return 0;
+    printf("ASCII: %d",number+(0x30));//number+48
 }
