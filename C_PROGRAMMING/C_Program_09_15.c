@@ -3,7 +3,7 @@
         Use only int variables
         Use only decimals
         Use arrays
- Question: 
+  Question: 
         Get multiple numbers from the user and store them in an array . 
         Stop when the number is 0.
         Add each numbers digit and put them in an array and 
@@ -11,57 +11,62 @@
         print the same
 */
 #include<stdio.h>
-int sumofdigits(int num);
+void getnumbers(int a[]);
+void printarray(int a[],int s);
+int sumofdigits(int n);
+void array_ascend(int a[], int total);
+int input[100], output[100], number,temp, total, i, j;
 int main()
 {
-    int input[200], output[200], i = 0, count = 0, number,j=0, temp;
-    while(1)
+    getnumbers(input);
+    printarray(input, total);
+    printarray(output, total);
+    array_ascend(output, total);
+    printarray(output, total);
+}
+void array_ascend(int a[], int total)
+{
+    for(i=0; i<total; i++)
     {
-        printf("Enter %d Element: ",i);
-        scanf("%d",&number);
-        if(number)
+        for(j = i+1; j<total; j++)
         {
-            input[i] = number;
-            output[i] = sumofdigits(number);
-            i++;
-            count++;
-        }
-        else
-        {
-            break;
-        }
-        
-    }
-    printf("\nNew Array: ");
-    for(i=0; i<count; i++)
-    {
-        printf("%d ",output[i]);
-    }
-    for(i=0; i<count; i++)
-    {
-        for(j=i+1; j<count; j++)
-        {
-            if(output[i]>output[j])
+            if(a[i]>a[j])
             {
-                temp = output[j];
-                output[j] = output[i];
-                output[i] = temp;
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
             }
         }
     }
-    printf("\nArranged Array in ascending order: ");
-    for(i=0; i<count; i++)
-    {
-        printf("%d ",output[i]);
-    }
 }
-int sumofdigits(int num)
+int sumofdigits(int n)
 {
     int sum = 0;
-    while(num)
+    while(n)
     {
-        sum+=num%10;
-        num/=10;
+        sum += (n%10);
+        n/=10;
     }
     return sum;
+}
+void printarray(int a[], int s)
+{
+    printf("\n");
+    for(i = 0; i<total; i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+void getnumbers(int a[])
+{
+    while(1)
+    {
+        printf("Enter %d Element: ",total+1);
+        scanf("%d",&number);
+        if(!number)
+                break;
+        input[total] = number;
+        output[total] = sumofdigits(number);
+        total++;
+    }
 }
