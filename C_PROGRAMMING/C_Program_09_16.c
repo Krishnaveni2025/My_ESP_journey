@@ -8,7 +8,7 @@
 */
 #include<stdio.h>
 int integer1[50], integer2[50], result[51];
-int i, j, total = 50;
+int i, total = 50;
 void getinteger(int a[], int s);
 void printarray(int a[], int s);
 void addintegers(int a[], int b[]);
