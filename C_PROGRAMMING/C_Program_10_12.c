@@ -1,24 +1,29 @@
 /* C LEVEL 10 Problem 12
-  Don't use structures
-  Question: Convert an integer of upto 50 digits to an character array using "printf("%s,...");"
-  Example: 
-  Array-1 4 5 8 7 6 3
-  Answer:1458763
+        Don't use structures
+   Question: 
+        Convert an integer of upto 50 digits to an character array using "printf("%s,...");"
+   Example: 
+        Array-1 4 5 8 7 6 3
+        Answer:1458763
 */
 #include<stdio.h>
+int integer[50],i;
+char char_arr[51];
+void getnumber(int a[]);
 int main()
 {
-    char numbstr[51];
-    int number[50],i = 0,j = 0, size;
-    printf("Enter the size of Array:");
-    scanf("%d",&size);
-    printf("Integer array:\n");
-    for(j=0;j<size;j++)
+    getnumber(integer);
+    printf("%s",char_arr);
+}
+void getnumber(int a[])
+{
+    for( i = 0; i<50; i++)
     {
-        printf("%d Element:",j);
-        scanf("%d",&number[j]);
-        numbstr[j] = number[j]+48;
+       // printf("Enter %d Element: ",i+1);
+        scanf("%d ",&a[i]);
+        if(a[i]==0)
+                break;
+        char_arr[i] = a[i]+48;
     }
-    numbstr[j] = '\0';
-    printf("character array: %s",numbstr);
+    char_arr[i] = '\0';//char_arr[50]
 }
