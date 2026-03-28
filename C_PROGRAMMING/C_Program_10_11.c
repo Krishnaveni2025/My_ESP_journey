@@ -1,22 +1,47 @@
 /* C LEVEL 10 Problem 11
-  Don't use structures
-  Question: Get a number string upto 50 digits and convert it to an integer array
+        Don't use structures
+   Question: 
+        Get a number string upto 50 digits and convert it to an integer array
 */
 #include<stdio.h>
+char input[51];
+int integer[50];
+int i,length;
+void get50numbers(char *str);
+void getlength(char *str);
+void convert(char *str, int a[]);
+void printarray(int a[]);
 int main()
 {
-    char numbstr[51];
-    int number[50],i = 0,j = 0;
-    printf("Enter Number string:");
-    scanf("%s",numbstr);
-    while(numbstr[i]!='\0')
+    get50numbers(input);
+    convert(input,integer);
+    printarray(integer);
+}
+void getlength(char *str)
+{
+    while(str[length]!='\0')
     {
-        number[i]= (numbstr[i])-48;
-        i++;
+        length++;
     }
-    printf("Integer array:\n");
-    for(j=0;j<i;j++)
+}
+void convert(char *str, int a[])
+{
+    getlength(str);
+    for(i=0; i<length; i++)
     {
-        printf("%d",number[j]);
+        a[i] = str[i]-48;
     }
+}
+void printarray(int a[])
+{
+    printf("Integer Array\n");
+   for(i=0; i<length; i++)
+   {
+       printf("%d",a[i]);
+   }
+}
+void get50numbers(char *str)
+{
+    printf("Enter upto 50 digits\n");
+    scanf("%s",input);
 }
