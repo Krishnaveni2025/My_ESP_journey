@@ -1,7 +1,7 @@
 /*
   C LEVEL 09 Problem 11
     Use only int variables
-    Use ont decimals
+    Use only decimals
     Use arrays
   Question: 
     Get 5 numbers from the user and 
@@ -10,60 +10,52 @@
     print the sum of all numbers in the new array 
 */
 #include <stdio.h>
-// Function Prototypes
 void get5numbers(int a[]);
-int getbitwidth(int num);
-int revers_number(int a[], int b[]);
-
-int main() {
-    int numbers[5], reversen[5], sum;
-    
-    get5numbers(numbers);
-    
-    // Reverse the numbers and get the total sum
-    sum = revers_number(numbers, reversen);
-    
-    printf("\nTotal Sum of Reversed Numbers: %d\n", sum);
-    
-    return 0;
+int reverse(int a[], int b[]);
+int getbitwidth(int n);
+int main()
+{
+    int input[5], output[5];
+    get5numbers(input);
+    printf("\n%d",reverse(input, output));
 }
-
-int revers_number(int a[], int b[]) {
-    int sum = 0;
-    
-    for(int i = 0; i < 5; i++) {
-        unsigned int n = (unsigned int)a[i];
-        int rev = 0;
-        int bit = getbitwidth(n);
-        
-        for(int j = 0; j < bit; j++) {
-            rev <<= 1;          // Shift reversed left
-            if(n & 1) {         // Check if current bit is 1
-                rev |= 1;       // Set bit in reversed
-            }
-            n >>= 1;            // Move to next bit in original
+int reverse(int a[], int b[])
+{
+    int rev =0, bit, sum = 0;
+    unsigned int r;
+    for(int i = 0; i<5; i++)
+    {
+        rev = 0;
+        r = (unsigned int)a[i];
+        bit = getbitwidth(a[i]);
+        for(int j = 0; j<bit; j++)
+        {
+            rev <<= 1;
+            if(r&1)
+                 rev |= 1;
+            r>>=1;
         }
-        
-        b[i] = rev;             // FIX: Store 'rev', not the depleted 'n'
+        b[i] = (int)rev;
+        printf("%d->%d ",a[i],b[i]);
         sum += b[i];
-        printf("Original: %d -> Reversed: %d\n", a[i], b[i]);
     }
     return sum;
 }
-
-int getbitwidth(int num) {
-    if (num == 0) return 1;
-    int count = 0;            
-    while(num) {
+int getbitwidth(int n)
+{
+    int count = 1;
+    while(n)
+    {
         count++;
-        num >>= 1;
+        n>>=1;
     }
-    return (count+1);
+    return count;
 }
-
-void get5numbers(int a[]) {
-    for(int i = 0; i < 5; i++) {
-        printf("Enter Number %d: ", i + 1);
-        scanf("%d", &a[i]);
+void get5numbers(int a[])
+{
+    for(int i = 0; i<5; i++)
+    {
+        printf("Enter %d Number: ",i+1);
+        scanf("%d",&a[i]);
     }
 }
