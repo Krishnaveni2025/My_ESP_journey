@@ -1,34 +1,32 @@
 /* C LEVEL 11 Problem 08
-  Use Pointers
-Question: Write a function to compare to strings. Print success or failure
-Function Name: strcomp(src, dst)
+            Use Pointers
+   Question: 
+            Write a function two compare to strings. Print success or failure
+   Function Name: 
+            strcomp(src, dst)
 */
 #include<stdio.h>
 int strcomp(char *src, char *dst);
+char source[100],destination[100];
 int main()
 {
-    char input1[100],input2[100];
-    printf("Enter First String:\n");
-    scanf("%s",input1);
-    printf("Enter Second String:\n");
-    scanf("%s",input2);
-    if(strcomp(input1,input2))
-            printf("Success");
+    printf("Enter 1st String\n");
+    scanf("%s",source);
+    printf("Enter 2nd String\n");
+    scanf("%s",destination);
+    if(strcomp(source, destination))
+            printf("\nsuccess");
     else
-            printf("Failure");
+            printf("\nfailure");
 }
 int strcomp(char *src, char *dst)
 {
-    int result = 1;
-    while(*src != '\0')
+    while(*src!='\0')
     {
         if(*src != *dst)
-        {
-            result = 0;
-            break;
-        }
+                return 0;
         src++;
         dst++;
     }
-    return result;
+    return 1;
 }
