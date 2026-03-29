@@ -1,31 +1,47 @@
 /* C LEVEL 11 Problem 05
-  Use Pointers
-Question: Write a function to copy integers from one location to another location
-Function Name: memcopy(src,dst,size)
+        Use Pointers
+   Question: 
+        Write a function to copy integers from one location to another location
+   Function Name: 
+        memcopy(src,dst,size)
 */
 #include<stdio.h>
-void memcopy(int *src,int *dst, int size);
+int i,size;
+void memcopy(int *src, int *dst, int size);
+void getsource(int *src, int size);
+void print(int *a, int size);
 int main()
 {
-    int size, array[size], copy[size] ,i;
-    printf("Enter the size of array: ");
+    printf("Enter Size of Array\n");
     scanf("%d",&size);
-    for(i=0; i<size; i++)
+    int source[size], destination[size];
+    getsource(source,size);
+    print(source,size);
+    memcopy(source,destination,size);
+    print(destination,size);
+}
+void print(int *a, int size)
+{
+    printf("\n");
+    for(i=0;i<size;i++)
     {
-        printf("Enter %d Element: ",i);
-        scanf("%d",&array[i]);
+        printf("%d ",a[i]);
     }
-    memcopy(array, copy, size);
-    printf("Copied array:\n");
+}
+void getsource(int *src, int size)
+{
     for(i=0; i<size; i++)
     {
-        printf("%d ",copy[i]);
+        printf("Enter %d Element: ",i+1);
+        scanf("%d",&src[i]);
     }
 }
 void memcopy(int *src, int *dst, int size)
 {
-    for(int i =0 ; i<size; i++)
+    for(i=0; i<size; i++)
     {
-        *(dst++) = *(src++);
+        *(dst) = *(src);
+        dst++;
+        src++;
     }
 }
