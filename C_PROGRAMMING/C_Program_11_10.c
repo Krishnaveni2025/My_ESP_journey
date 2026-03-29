@@ -1,25 +1,35 @@
 /* C LEVEL 11 Problem 10
-  Use Pointers
-Question: Write a function to concatenate two strings to another 
-Function Name: strcon(src1, src2, dst)
+        Use Pointers
+   Question: 
+        Write a function to concatenate two strings to another 
+   Function Name: 
+        strcon(src1, src2, dst)
 */
 #include<stdio.h>
 void strcon(char *src1, char *src2, char *dst);
+char source1[100],source2[100],destination[200];
+void getstring(char *str);
 int main()
 {
-    char input1[50], input2[50], output[101];
-    printf("Enter First String: ");
-    scanf("%s",input1);
-    printf("Enter Second String: ");
-    scanf("%s",input2);
-    strcon(input1, input2, output);
-    printf("Result: %s",output);
-    return 0;
+    getstring(source1);
+    getstring(source2);
+    printf("First String: ");
+    printf("%s",source1);
+    printf("\nSecond String: ");
+    printf("%s",source2);
+    strcon(source1, source2, destination);
+    printf("\nSingle String: ");
+    printf("%s",destination);
+}
+void getstring(char *str)
+{
+    printf("Enter String\n");
+    scanf("%s",str);
 }
 void strcon(char *src1, char *src2, char *dst)
 {
-    int i= 0, j=0;
-    while(src1[i] != '\0')
+    int i = 0, j = 0;
+    while(src1[i]!='\0')
     {
         dst[i] = src1[i];
         i++;
@@ -30,5 +40,5 @@ void strcon(char *src1, char *src2, char *dst)
         i++;
         j++;
     }
-    dst[i]= '\0';
+    dst[i] = '\0';
 }
