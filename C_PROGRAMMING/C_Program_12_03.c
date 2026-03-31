@@ -1,62 +1,57 @@
 /* C LEVEL 12 - Problem 03
-Use Pointers
-  Question: Get a check string and substring. check the substring in the main string and print the position.
-  Example:
-  string: helloetalvislearning
-  sub-striing: etal
-  Answer: 6
+        Use Pointers
+   Question: 
+        Get a check string and substring. 
+        check the substring in the main string and print the position.
+   Example:
+   string: helloetalvislearning
+   sub-string: etal
+   Answer: 6
 */
+#include<stdio.h>
+char char_string[50],substring[5];
+void getStringSubstring(char *str, char *sstr);
+int getlength(char *s);
+void print_position(char *str, char *sstr);
 
-#include <stdio.h>
-
-// Function prototypes
-void get_strings(char *src, char *sub);
-void find_substring(char *src, char *sub);
-
-int main() {
-    char mainstr[100], substr[50];
-    get_strings(mainstr, substr);
-    find_substring(mainstr, substr);
-    return 0;
+int main()
+{
+    getStringSubstring(char_string, substring);
+    print_position(char_string, substring);
 }
-
-void get_strings(char *src, char *sub) {
-    printf("Enter Main String: ");
-    scanf("%99s", src);
-    printf("Enter Substring: ");
-    scanf("%49s", sub);
-    printf("Main String: %s\n", src);
-    printf("Substring: %s\n", sub);
-    printf("____________________________________________________________\n");
+void getStringSubstring(char *str,char *sstr)
+{
+    printf("Enter String: ");
+    scanf("%s",str);
+    printf("Enter sub-string: ");
+    scanf("%s",sstr);
 }
-
-// Manual length function
-int mystrlen(char *s) {
-    int len = 0;
-    while (*s != '\0') {
-        len++;
-        s++;
+int getlength(char *s)
+{
+    int length = 0;
+    while(s[length]!='\0')
+    {
+        length++;
     }
-    return len;
+    return length;
 }
-
-void find_substring(char *src, char *sub) {
-    int len1 = mystrlen(src);
-    int len2 = mystrlen(sub);
-    int i, j, found;
-
-    for (i = 0; i <= len1 - len2; i++) {
+void print_position(char *str, char *sstr)
+{
+    int sl, ssl, found;
+    sl = getlength(str);
+    ssl = getlength(sstr);
+    for(int i = 0; i<sl; i++)
+    {
         found = 1;
-        for (j = 0; j < len2; j++) {
-            if (src[i + j] != sub[j]) {
-                found = 0;
-                break;
-            }
+        for(int j = 0; j<ssl; j++)
+        {
+            if(str[i+j]!=sstr[j])
+                {
+                    found = 0;
+                    break;
+                }
         }
-        if (found) {
-            printf("Substring found at position: %d\n", i + 1); // 1-based index
-            return;
-        }
+        if(found)
+                printf("%d ", i+1);
     }
-    printf("Substring not found\n");
 }
