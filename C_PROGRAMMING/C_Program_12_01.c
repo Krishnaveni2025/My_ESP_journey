@@ -13,58 +13,54 @@
 #include<stdio.h>
 void getnumbers(char *n1, char *n2);
 void addnumbers(char *n1, char *n2, char *r);
-void print(char *str);
+void reverse_str(char *str, int s);
 int getlength(char *str);
-void reversestring(char *str, int length);
+void print(char *str);
 
 char number1[51], number2[51], result[52];
+
 int main()
 {
     getnumbers(number1, number2);
-    print(number1);
-    print(number2);
     addnumbers(number1, number2, result);
     print(result);
 }
-void getnumbers(char *n1, char *n2)
-{
-    printf("Enter First Number\n");
-    scanf("%s",n1);
-    printf("Enter Second Number\n");
-    scanf("%s",n2);
-}
 void addnumbers(char *n1, char *n2, char *r)
 {
-    int d1, d2, l1, l2, l = 0, i, j, sum , carry = 0;
+    int d1, d2, l1, l2, i, j,k = 0, sum, carry = 0;
     l1 = getlength(n1);
     l2 = getlength(n2);
     i = l1-1;
     j = l2-1;
-    while(n1[i]!='\0'|| n2[j]!='\0'||carry>0)
+    while(i>=0 || j>= 0|| carry>0)
     {
         d1 = (i>=0) ? n1[i--]-'0' : 0;
         d2 = (j>=0) ? n2[j--]-'0' : 0;
-        sum = d1+d2+carry;
-        carry = sum /10;
-        r[l] = sum + '0';
-        l++;
+        
+        sum = d1+ d2+ carry;
+        carry = sum/10;
+        r[k] = sum + '0';
+        k++;
     }
-    r[l] = '\0';
-    reversestring(r,l);
+    r[k] = '\0';
+    reverse_str(r,k);
 }
-void reversestring(char *str, int length)
+void reverse_str(char *str, int s)
 {
-    int temp, i;
-    for(i = 0; i<length/2; i++)
+    int temp;
+    for(int i = 0; i<s/2; i++)
     {
-        temp = str[i];
-        str[i] = str[length-i-1];
-        str[length-i-1] = temp;
+       temp =  str[i];
+       str[i] = str[s-i-1];
+       str[s-i-1] = temp;
     }
 }
-void print(char *str)
+void getnumbers(char *n1, char *n2)
 {
-    printf("%s\n",str);
+    printf("Enter First Number(upto 50 digits):\n");
+    scanf("%s",n1);
+    printf("Enter Second Number(upto 50 digits):\n");
+    scanf("%s",n2);
 }
 int getlength(char *str)
 {
@@ -74,4 +70,8 @@ int getlength(char *str)
         length++;
     }
     return length;
+}
+void print(char *str)
+{
+    printf("Result = %s",str);
 }
