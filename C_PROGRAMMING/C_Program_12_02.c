@@ -1,47 +1,46 @@
 /* C LEVEL 12 - Problem 02
-Use Pointers
-  Question: Get a string and a character from the user, find the all the positions where the character is present, and print it.
-  Example:
-  string: helloetalvislearning
-  character: e
-  Answer: 2,6,14
+        Use Pointers
+   Question: 
+        Get a string and a character from the user, 
+        find the all the positions where the character is present, and print it.
+   Example:
+   string: helloetalvislearning
+   character: e
+   Answer: 2,6,14
 */
+#include<stdio.h>
 
-#include <stdio.h>
+char char_string[100], letter;
+void get_char_string(char *str, char *c);
+void print_position(char *str, char c);
 
-void get_string_char(char *src, char *letter);
-void get_char_pos(char *src, char letter);
-
-int main() {
-    char input_string[100], letter;
-    get_string_char(input_string, &letter);
-    get_char_pos(input_string, letter);
-    return 0;
+int main()
+{
+    get_char_string(char_string,&letter);
+    print_position(char_string, letter);
 }
-
-void get_string_char(char *src, char *letter) {
-    printf("Enter String: ");
-    scanf("%99s", src);
-    printf("Enter Character: ");
-    scanf(" %c", letter);   // space skips newline
-    printf("Entered String: %s\n", src);
-    printf("Entered Character: %c\n", *letter);
-    printf("________________________________________________________________\n");
-}
-
-void get_char_pos(char *src, char letter) {
-    int i = 0, found = 0;
-    printf("Positions: ");
-    while (src[i] != '\0') {
-        if (src[i] == letter) {
-            if (found) printf(",");   // add comma between positions
-            printf("%d", i + 1);      // 1-based index
+void print_position(char *str, char c)
+{
+    int  i = 0, found = 0;
+    while(str[i]!='\0')
+    {
+        if(str[i] == c)
+        {
+            if(found)
+                printf(",");
+            printf("%d",i+1);
             found = 1;
         }
+        found = 0;
         i++;
     }
-    if (!found) {
-        printf("Character not found");
-    }
-    printf("\n");
+    if(!found)
+            printf("\ncharacter is found");
+}
+void get_char_string(char *str, char *c)
+{
+    printf("Enter String: ");
+    scanf("%s",str);
+    printf("Enter character: ");
+    scanf(" %c",c);
 }
