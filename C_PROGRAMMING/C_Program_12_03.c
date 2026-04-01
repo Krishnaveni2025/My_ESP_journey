@@ -9,31 +9,14 @@
    Answer: 6
 */
 #include<stdio.h>
-char char_string[50],substring[5];
-void getStringSubstring(char *str, char *sstr);
-int getlength(char *s);
+char fullString[50], substring[5];
+void getStrSubstr(char *str, char *sstr);
 void print_position(char *str, char *sstr);
-
+int getlength(char *str);
 int main()
 {
-    getStringSubstring(char_string, substring);
-    print_position(char_string, substring);
-}
-void getStringSubstring(char *str,char *sstr)
-{
-    printf("Enter String: ");
-    scanf("%s",str);
-    printf("Enter sub-string: ");
-    scanf("%s",sstr);
-}
-int getlength(char *s)
-{
-    int length = 0;
-    while(s[length]!='\0')
-    {
-        length++;
-    }
-    return length;
+    getStrSubstr(fullString, substring);
+    print_position(fullString, substring);
 }
 void print_position(char *str, char *sstr)
 {
@@ -54,4 +37,20 @@ void print_position(char *str, char *sstr)
         if(found)
                 printf("%d ", i+1);
     }
+}
+int getlength(char *str)
+{
+    int l=0;
+    while(str[l]!='\0')
+    {
+        l++;
+    }
+    return l;
+}
+void getStrSubstr(char *str, char *sstr)
+{
+    printf("String: ");
+    scanf("%s",str);
+    printf("sub-string: ");
+    scanf("%s",sstr);
 }
