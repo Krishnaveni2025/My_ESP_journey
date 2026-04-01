@@ -4,7 +4,7 @@
                   Write a program to Create a stack using linked list .
                   Use Push & Pop .
                   Push will insert the entry on the top of the list.
-                  Pop will delete top of the list and display will show from top to bottom.
+                  Pop will get top of the list and display will show from top to bottom.
                   Menu Items
                   1. Push
                   2. Pop
