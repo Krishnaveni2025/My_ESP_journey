@@ -11,6 +11,7 @@
                   3. Exit
         ********************Hint**********************************
         struct student{
+          struct student *prev;
           int id;
           int math;
           int science;
