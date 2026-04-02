@@ -1,6 +1,7 @@
 /* C LEVEL 12 - Problem 05
-Use Pointers
-  Question: Write a program to multiply upto 50 digit numbers.
+        Use Pointers
+   Question: 
+        Write a program to multiply upto 50 digit numbers.
   #include<stdio.h>
   int main()
   {
@@ -9,74 +10,87 @@ Use Pointers
     print(result);
   }
 */
-#include <stdio.h>
+#include<stdio.h>
 
-// Function prototypes
+
+char number1[51], number2[51], result[102];
+
 void getnumbers(char *n1, char *n2);
-void multiplynumbers(char *n1, char *n2, char *result);
-void print(char *result);
+void multiplynumbers(char *n1, char *n2, char *r);
+int getlength(char *str);
+void reverse(char *str, int s);
+void print(char *str);
 
-// Manual string length function (no string.h)
-int mystrlen(char *s) {
-    int len = 0;
-    while (*s != '\0') {
-        len++;
-        s++;
-    }
-    return len;
-}
-
-int main() {
-    char number1[51], number2[51], result[102]; // 50 digits each → result up to 100 digits
+int main()
+{
     getnumbers(number1, number2);
     multiplynumbers(number1, number2, result);
-    print(result);
-    return 0;
+    print(result);  
 }
 
-void getnumbers(char *n1, char *n2) {
-    printf("Enter 1st Number (up to 50 digits): ");
-    scanf("%50s", n1);
-    printf("Enter 2nd Number (up to 50 digits): ");
-    scanf("%50s", n2);
-    printf("____________________________________________________________\n");
+void getnumbers(char *n1, char *n2)
+{
+    printf("Enter First Number\n");
+    scanf("%s",n1);
+    printf("Enter Second Number\n");
+    scanf("%s",n2);
 }
 
-void multiplynumbers(char *n1, char *n2, char *result) {
-    int len1 = mystrlen(n1);
-    int len2 = mystrlen(n2);
-    int temp[102] = {0}; // store intermediate results
+void multiplynumbers(char *n1, char *n2, char *r)
+{
+    int l1 = getlength(n1);
+    int l2 = getlength(n2);
+    int temp_res[102] = {0}; // Temporary int array to handle carries easily
 
-    // Multiply digit by digit (from right to left)
-    for (int i = len1 - 1; i >= 0; i--) {
-        for (int j = len2 - 1; j >= 0; j--) {
+    // Nested loops: Multiply each digit of n1 by each digit of n2
+    for (int i = l1 - 1; i >= 0; i--) {
+        for (int j = l2 - 1; j >= 0; j--) {
             int d1 = n1[i] - '0';
             int d2 = n2[j] - '0';
-            temp[i + j + 1] += d1 * d2;
+            
+            // Calculate current product and add to the existing value at this position
+            int product = (d1 * d2) + temp_res[i + j + 1];
+            
+            temp_res[i + j + 1] = product % 10; // Keep unit digit
+            temp_res[i + j] += product / 10;    // Carry to the left
         }
     }
 
-    // Handle carries
-    for (int k = len1 + len2 - 1; k > 0; k--) {
-        if (temp[k] >= 10) {
-            temp[k - 1] += temp[k] / 10;
-            temp[k] %= 10;
+    // Convert the integer array back into your char *r (result)
+    int k = 0, start = 0;
+    while (start < (l1 + l2) && temp_res[start] == 0) start++; // Skip leading zeros
+    
+    if (start == (l1 + l2)) r[k++] = '0'; // Handle case where result is 0
+    else {
+        while (start < (l1 + l2)) {
+            r[k++] = temp_res[start++] + '0';
         }
     }
-
-    // Convert to string (skip leading zeros)
-    int start = 0;
-    while (start < len1 + len2 - 1 && temp[start] == 0) {
-        start++;
-    }
-
-    int pos = 0;
-    for (int m = start; m < len1 + len2; m++) {
-        result[pos++] = temp[m] + '0';
-    }
-    result[pos] = '\0';
+    r[k] = '\0';
 }
 
-void print(char *result) {
-    printf("Result: %s\n", result);
+int getlength(char *str)
+{
+    int l = 0;
+    while(str[l]!='\0')
+    {
+        l++;
+    }
+    return l;
+}
+
+void reverse(char *str, int s)
+{
+    int temp;
+    for(int i = 0; i<s/2; i++)
+    {
+       temp = str[i];
+       str[i] = str[s-i-1];
+       str[s-i-1] = temp;
+    }
+}
+
+void print(char *str)
+{
+    printf("Result: %s\n", str);
 }
