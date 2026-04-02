@@ -1,50 +1,45 @@
 /* C LEVEL 12 - Problem 04
-Use Pointers
-  Question: Get a string using gets function and count all the words in it.
-  Example:
-  string: welcome to etalvis learning
-  Answer: 4
+        Use Pointers
+   Question: 
+        Get a string using gets function and count all the words in it.
+   Example:
+        string: welcome to etalvis learning
+   Answer: 4
 */
-/* C LEVEL 12 - Problem 04
-Use Pointers
-  Question: Get a string using gets function and count all the words in it.
-  Example:
-  string: welcome to etalvis learning
-  Answer: 4
-*/
-#include <stdio.h>
+#include<stdio.h>
 
-// Function prototypes
-void get_string(char *src);
-int count_words(char *src);
+char line[100];
+int word_count = 0;
 
-int main() {
-    char input[200];   // buffer for string
-    get_string(input);
-    int words = count_words(input);
-    printf("Word Count: %d\n", words);
-    return 0;
+void getinput(char *str);
+int count_words(char *str);
+
+int main()
+{
+    getinput(line);
+    printf("%d",count_words(line));
 }
-
-void get_string(char *src) {
-    printf("Enter a string: ");
-    gets(src);   // as per problem statement (unsafe, but required here)
-}
-
-int count_words(char *src) {
-    int count = 0;
-    int inWord = 0;   // flag to track if we are inside a word
-
-    while (*src != '\0') {
-        if (*src != ' ' && *src != '\t') {
-            if (!inWord) {
-                count++;     // new word starts
-                inWord = 1;
+int count_words(char *str)
+{
+    int inword = 0;
+    while(*str!='\0')
+    {
+        if(*str!=' '&& *str!='\t')
+        {
+            if(!inword)
+            {
+                word_count++;
+                inword = 1;
             }
-        } else {
-            inWord = 0;      // space ends the current word
         }
-        src++;               // move pointer forward
+        else
+            inword = 0;
+        str++;
     }
-    return count;
+    return word_count;
+}
+void getinput(char *str)
+{
+    printf("String: ");
+    gets(str);
 }
