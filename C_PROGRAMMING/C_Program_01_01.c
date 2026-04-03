@@ -16,7 +16,7 @@ Example:
 int main()
 {
     int number;
-    printf("Input: ");
+    printf("Input ");
     scanf("%d",&number);
     printf("Output:%d",number+2);
 }
