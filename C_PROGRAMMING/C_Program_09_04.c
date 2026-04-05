@@ -1,35 +1,43 @@
 /*
   C LEVEL 09 Problem 04
-  Use only int variables
-  Use ont decimals
-  use arrays
-Question: Get 5 numbers from the user and print the biggest number
+          Use only int variables
+          Use only decimals
+          Use arrays
+  Question: 
+          Get 5 numbers from the user and print the biggest number
 */
 #include<stdio.h>
+
 void get5numbers(int a[]);
-void print_biggest(int a[]);
+int findbigg(int a[],int b);
+void print(int b);
+
 int main()
 {
-    int numbers[5];
-    get5numbers(numbers);
-    print_biggest(numbers);
+    int number[5], biggest;
+    get5numbers(number);
+    biggest = findbigg(number, biggest);
+    print(biggest);
 }
-void print_biggest(int a[])
+int findbigg(int a[], int b)
 {
-    int i = 0, big = a[0];
-    for(i=1; i<5; i++)
+    b = a[0];
+    for(int j = 1; j<5; j++)
     {
-        if(big<a[i])
-                big =  a[i];
+        if(b<a[j])
+                b = a[j];
     }
-    printf("%d",big);
+    return b;
 }
 void get5numbers(int a[])
 {
-    int i = 0;
-    for(i=0; i<5; i++)
+    for(int i = 0; i<5; i++)
     {
-        printf("Enter %d Number: ",i);
+        printf("Enter %d Number: ",i+1);
         scanf("%d",&a[i]);
     }
+}
+void print(int b)
+{
+    printf("Biggest Number: %d",b);
 }
