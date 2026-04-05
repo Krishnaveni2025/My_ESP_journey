@@ -19,7 +19,6 @@ int main()
 }
 void get5numbers(int a[])
 {
-    result = 0;
     for(int i = 0 ; i<5; i++)
     {
         printf("Enter %d Number: ",i+1);
