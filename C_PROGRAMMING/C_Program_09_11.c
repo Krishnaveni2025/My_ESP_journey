@@ -10,14 +10,14 @@
             print the sum of all numbers in the new array 
   Example:
             Input:  7 7 7 7 7
-            Output: 70 (14 + 14 + 14 + 14 + 14)
+            Output: 5 5 5 5 5 (14  14  14  14  14)
 */
 #include<stdio.h>
 void getnumbers(int a[], int s);
 void reverse(int a[], int b[], int s);
 void print_array(int a[], int s);
 int getbitwidth(int n);
-int sumofarray(int a[], int s);
+int sum(int a);
 int main()
 {
     int size = 5;
@@ -26,14 +26,14 @@ int main()
     print_array(numbers, size);
     reverse(numbers, result, size);
     print_array(result, size);
-    printf("\nSum = %d",sumofarray(result,size));
 }
-int sumofarray(int a[], int s)
+int sum(int a)
 {
     int sum = 0;
-    for(int i = 0; i<s; i++)
+    while(a)
     {
-        sum += a[i];
+        sum += (a%10);
+        a /= 10;
     }
     return sum;
 }
@@ -63,7 +63,8 @@ void reverse(int a[], int b[], int s)
                     rev |= 1;
             num >>= 1;
         }
-        b[i] = rev;
+        b[i] = sum(rev);
+        
     }
 }
 void getnumbers(int a[], int s)
