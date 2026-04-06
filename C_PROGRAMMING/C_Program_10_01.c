@@ -1,6 +1,7 @@
 /* C LEVEL 10 Problem 01
-    Don't use structures
-   Question: Get an alphabet  and print it's ASCII value
+                Don't use structures
+   Question:
+                Get an alphabet  and print it's ASCII value
 */
 #include<stdio.h>
 char alphabet;
@@ -13,5 +14,7 @@ void getalphaprintASCII(char c)
 {
     printf("Enter Alphabet: ");
     scanf("%c",&c);
-    printf("ASCII: %d",c);
+    //printf("ASCII(decimal): %d",c);
+    //printf("ASCII(Hexa decimal): %X",c);
+    printf("ASCII(octal): %o",c);
 }
