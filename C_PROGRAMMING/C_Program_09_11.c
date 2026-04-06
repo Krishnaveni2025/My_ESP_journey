@@ -1,61 +1,84 @@
 /*
   C LEVEL 09 Problem 11
-    Use only int variables
-    Use only decimals
-    Use arrays
+            Use only int variables
+            Use only decimals
+            Use arrays
   Question: 
-    Get 5 numbers from the user and 
-    reverse each number and 
-    create a new array and then  
-    print the sum of all numbers in the new array 
+            Get 5 numbers from the user and 
+            reverse each number and 
+            create a new array and then  
+            print the sum of all numbers in the new array 
+  Example:
+            Input:  7 7 7 7 7
+            Output: 70 (14 + 14 + 14 + 14 + 14)
 */
-#include <stdio.h>
-void get5numbers(int a[]);
-int reverse(int a[], int b[]);
+#include<stdio.h>
+void getnumbers(int a[], int s);
+void reverse(int a[], int b[], int s);
+void print_array(int a[], int s);
 int getbitwidth(int n);
+int sumofarray(int a[], int s);
 int main()
 {
-    int input[5], output[5];
-    get5numbers(input);
-    printf("\n%d",reverse(input, output));
+    int size = 5;
+    int numbers[size], result[size];
+    getnumbers(numbers, size);
+    print_array(numbers, size);
+    reverse(numbers, result, size);
+    print_array(result, size);
+    printf("\nSum = %d",sumofarray(result,size));
 }
-int reverse(int a[], int b[])
+int sumofarray(int a[], int s)
 {
-    int rev =0, bit, sum = 0;
-    unsigned int r;
-    for(int i = 0; i<5; i++)
+    int sum = 0;
+    for(int i = 0; i<s; i++)
     {
-        rev = 0;
-        r = (unsigned int)a[i];
-        bit = getbitwidth(a[i]);
-        for(int j = 0; j<bit; j++)
-        {
-            rev <<= 1;
-            if(r&1)
-                 rev |= 1;
-            r>>=1;
-        }
-        b[i] = (int)rev;
-        printf("%d->%d ",a[i],b[i]);
-        sum += b[i];
+        sum += a[i];
     }
     return sum;
 }
 int getbitwidth(int n)
 {
-    int count = 1;
+    int size = 1;
     while(n)
     {
-        count++;
-        n>>=1;
+        size++;
+        n >>= 1;
     }
-    return count;
+    return size;
 }
-void get5numbers(int a[])
+void reverse(int a[], int b[], int s)
 {
-    for(int i = 0; i<5; i++)
+    int rev , bits;
+     int num;
+    for( int i = 0; i<s; i++)
+    {
+        rev = 0;
+        num = a[i];
+        bits = getbitwidth(num);
+        for(int j = 0; j<bits; j++)
+        {
+            rev<<=1;
+            if(num&1)
+                    rev |= 1;
+            num >>= 1;
+        }
+        b[i] = rev;
+    }
+}
+void getnumbers(int a[], int s)
+{
+    for(int i = 0; i<s; i++)
     {
         printf("Enter %d Number: ",i+1);
         scanf("%d",&a[i]);
+    }
+}
+void print_array(int a[], int s)
+{
+    printf("\n");
+    for(int i = 0; i<s; i++)
+    {
+        printf("%d ",a[i]);
     }
 }
