@@ -7,46 +7,49 @@
         Get 5 numbers from the user and arrange in ascending order and print the same
 */
 #include<stdio.h>
-void get5numbers(int a[]);
-void arrange_ascend(int a[]);
-void print_ascend(int a[]);
+
+void printaarray(int a[],int s);
+void getnumbers(int a[], int s);
+void arrange_ascend(int a[], int s);
+
 int main()
 {
-    int numbers[5];
-    get5numbers(numbers);
-    arrange_ascend(numbers);
-    print_ascend(numbers);
+    int size = 5;
+    int numbers[size];
+    getnumbers(numbers, size);
+    printaarray(numbers,size);
+    arrange_ascend(numbers,size);
+    printaarray(numbers,size);
 }
-void print_ascend(int a[])
+void arrange_ascend(int a[], int s)
 {
-    int i = 0;
-    for(i = 0;i<5;i++)
+    int temp;
+    for(int i = 0; i<s; i++)
     {
-        printf("%d ",a[i]);
-    }
-}
-void arrange_ascend(int a[])
-{
-    int i, j,temp;
-    for(i=0; i<5; i++)
-    {
-        for(j = i+1; j< 5; j++)
+        for(int j = i+1; j<s; j++)
         {
             if(a[j]<a[i])
             {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+                temp = a[j];
+                a[j] = a[i];
+                a[i] = temp;
             }
         }
     }
 }
-void get5numbers(int a[])
+void printaarray(int a[], int s)
 {
-    int i =0;
-    for(i=0; i<5; i++)
+    printf("\n");
+    for(int i = 0; i<s; i++)
     {
-        printf("Enter %d Element: ",i);
+        printf("%d ",a[i]);
+    }
+}
+void getnumbers(int a[], int s)
+{
+    for(int i = 0; i<s; i++)
+    {
+        printf("Enter %d Number: ",i+1);
         scanf("%d",&a[i]);
     }
 }
