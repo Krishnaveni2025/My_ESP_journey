@@ -1,4 +1,4 @@
-/*
+/* C LEVEL - Problem 01
 Create a linked list for the following structure
 and get user inputs id, math mark, science mark.
 once the user inputs the id as -1
