@@ -7,35 +7,51 @@
             remove the odd  numbers and 
             create a new array and 
             then  print the same
+  Example:
+        Input:  15 14 13 12 11
+        Output: 14 12
 */
 #include<stdio.h>
-int get5numbersremoveodd(int a[],int b[]);
-void printresult(int n[], int e);
+
+void getnumbers(int a[], int s);
+void print_array(int a[], int s);
+int removeOddNumbers(int a[], int b[], int s);
+
 int main()
 {
-    int input[5], output[5], evencount;
-    evencount = get5numbersremoveodd(input, output);
-    printresult(output,evencount);
+    int size = 5, evencount;
+    int numbers[size], evenNumbers[size];
+    getnumbers(numbers,size);
+    print_array(numbers, size);
+    evencount = removeOddNumbers(numbers, evenNumbers, size);
+    print_array(evenNumbers, evencount);
 }
-void printresult(int n[],int e)
+int removeOddNumbers(int a[], int b[], int s)
 {
-    for(int i = 0; i<e; i++)
+    int ec = 0;
+    for(int i = 0; i<s; i++)
     {
-        printf("%d ",n[i]);
-    }
-}
-int get5numbersremoveodd(int a[],int b[])
-{
-    int i, evencount = 0;
-    for(i=0; i<5; i++)
-    {
-        printf("Enter %d Element: ",i);
-        scanf("%d",&a[i]);
         if(!(a[i]%2))
         {
-            b[evencount] = a[i];
-            evencount++;
-        }
+            b[ec] = a[i];
+            ec++;
+        }  
     }
-    return evencount;
+    return ec;
+}
+void print_array(int a[], int s)
+{
+    printf("\n");
+    for(int i = 0; i<s; i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+void getnumbers(int a[], int s)
+{
+    for(int i = 0; i<s; i++)
+    {
+        printf("Enter %d Number: ",i+1);
+        scanf("%d",&a[i]);
+    }
 }
