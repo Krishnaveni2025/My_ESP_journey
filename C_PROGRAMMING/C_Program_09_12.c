@@ -1,34 +1,43 @@
 /*
   C LEVEL 09 Problem 12
-    Use only int variables
-    Use only decimals
-    Use arrays
+            Use only int variables
+            Use only decimals
+            Use arrays
   Question: 
-    Get multiple numbers from the user and 
-    store them in an array . 
-    Stop when the number is 0. 
-    Print the total numbers entered by the user and 
-    print the sum of numbers
+            Get multiple numbers from the user and 
+            store them in an array . 
+            Stop when the number is 0. 
+            Print the total numbers entered by the user and 
+            print the sum of numbers
 */
 #include<stdio.h>
+
 void getnumbers(int a[]);
-int total, all_sum, input[], i;
+void print(int n);
+int total , sum;
+
 int main()
 {
-    getnumbers(input);
-    printf("\nTotal = %d, Sum = %d",total,all_sum);
+    int numbers[50];
+    getnumbers(numbers);
+    print(total);
+    print(sum);
 }
 void getnumbers(int a[])
 {
     int number;
     while(1)
     {
-        printf("Enter %d Element: ",total+1);
+        printf("Enter %d Number: ",total+1);
         scanf("%d",&number);
-        if(!number)
-            break;
+        if(!(number))
+                break;
         a[total] = number;
-        all_sum += a[total];
+        sum += a[total];
         total++;
     }
+}
+void print(int n)
+{
+    printf("\n%d",n);
 }
