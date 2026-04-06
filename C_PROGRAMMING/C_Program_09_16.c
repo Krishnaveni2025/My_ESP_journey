@@ -1,10 +1,10 @@
 /*
   C LEVEL 09 Problem 16
-    Use only int variables
-    Use only decimals
-    Use arrays
+            Use only int variables
+            Use only decimals
+            Use arrays
   Question: 
-    Add two integer arrays upto 50 digits and store the result in an 51 digit array
+            Add two integer arrays upto 50 digits and store the result in an 51 digit array
 */
 #include<stdio.h>
 int integer1[50], integer2[50], result[51];
