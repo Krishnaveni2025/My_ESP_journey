@@ -1,11 +1,11 @@
 /*
   C LEVEL 09 Problem 17
-        Use only int variables
-        Use only decimals
-        Use arrays
+            Use only int variables
+            Use only decimals
+            Use arrays
   Question: 
-        Adjust the carry in an  integer array 
-        (i.e convert the 2 digit number into single digit and add carry to the next number)
+            Adjust the carry in an  integer array 
+            (i.e convert the 2 digit number into single digit and add carry to the next number)
 */
 #include<stdio.h>
 int integer1[50], integer2[50], result[51];
@@ -26,18 +26,9 @@ void addintegers(int a[], int b[])
 {
     for(i=49; i>=0; i--)
     {
-        a[i] += carry;
-        sum = a[i] + b[i];
-        if(sum>9)
-        {
-            result[i+1] = sum%10;
-            carry = sum/10;
-        }
-        else
-        {
-            carry = 0;
-            result[i+1] = sum;
-        }
+        sum = a[i] + b[i]+ carry;
+        carry  = sum/10;
+        result[i+1] = (sum%10);
     }
 }
 void getinteger(int a[], int s)
@@ -54,6 +45,6 @@ void printarray(int a[], int s)
     printf("\n");
     for(i=0; i<s; i++)
     {
-        printf("%d ",a[i]);
+        printf("%d",a[i]);
     }
 }
