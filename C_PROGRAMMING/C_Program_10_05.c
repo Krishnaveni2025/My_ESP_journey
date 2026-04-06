@@ -1,34 +1,35 @@
-/* C LEVEL 10 Problem 05
-        Don't use structures
-  Question: 
-        Get an integer and print it as a string
+/* 
+    C LEVEL 10 Problem 05
+                Don't use structures
+    Question: 
+                Get an integer and print it as a string
 */
 #include<stdio.h>
-int number, i , j, temp;
-char result[100];
-void getN_printStr(void);
+void getINT_printSTR(int n);
+
 int main()
 {
-    getN_printStr();
+    int number;
+    getINT_printSTR(number);
 }
-void getN_printStr(void)
+void getINT_printSTR(int n)
 {
+    char num[10];
+    int i = 0, temp;
     printf("Enter Number: ");
-    scanf("%d",&number);
-    while(number)
+    scanf("%d",&n);
+    while(n)
     {
-        result[i] = (number%10)+48;//'0' or 0x30
-        number /= 10;
+        num[i] = (n%10) + '0';
+        n /= 10;
         i++;
     }
-    result[i]='\0';
-    //printf("%s\n",result);
-    int length = i;
-    for(j=0; j<length/2; j++)
+    num[i] = '\0';
+    for(int j = 0; j<i/2; j++)
     {
-        temp = result[j];
-        result[j] = result[length-j-1];
-        result[length-j-1] = temp;
+        temp = num[j];
+        num[j] = num[i-j-1];
+        num[i-j-1] = temp ;
     }
-    printf("%s",result);
+    printf("String: %s",num);
 }
