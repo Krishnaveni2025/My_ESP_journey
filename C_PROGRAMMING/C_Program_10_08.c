@@ -1,30 +1,29 @@
-/* C LEVEL 10 Problem 08
-        Don't use structures
-   Question: 
-        Get a string of numbers upto 50 digits and validate the number
+/* 
+    C LEVEL 10 Problem 08
+                Don't use structures
+    Question: 
+                Get a string of numbers upto 50 digits and validate the number
 */
-int valid(char *strng);
-char input[51];
 #include<stdio.h>
+int valid(char *n);
 int main()
 {
-    printf("Enter number of 50 digits:\n");
-    scanf("%s",input);
-    if(valid(input))
-            printf("Valid");
+    char charofnum[51];
+    printf("Enter Number(upto 50 digits): ");
+    scanf("%s",charofnum);
+    if(valid(charofnum))
+            printf("Number is Valid");
     else
-            printf("Not Valid");
+            printf("Number is not Valid");
 }
-int valid(char *strng)
+int valid(char *n)
 {
-    int valid = 1;
-    for(int i = 0; i<51; i++)
+    int i = 0;
+    while(*(n+i)!='\0')
     {
-        if(strng[i]<'0' || strng[i]>'9')
-        {
-            valid = 0;
-            break;
-        }
+        if(((*(n+i))<'0')||((*(n+i))>'9'))
+                return 0;
+        i++;
     }
-    return valid;
+    return 1;
 }
