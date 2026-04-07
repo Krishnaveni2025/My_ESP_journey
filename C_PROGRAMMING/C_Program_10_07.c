@@ -1,23 +1,24 @@
 /* C LEVEL 10 Problem 07
-        Don't use structures
+                Don't use structures
    Question: 
-        Get a string and find the length of the string
+                Get a string and find the length of the string
 */
 #include<stdio.h>
-char input[100];
-int length;
-int getlength(char *str);
+int length(char *str);
 int main()
 {
-    printf("Enter String: ");
-    scanf("%s",input);
-    printf("Length: %d",getlength(input));
+    char string[50];
+    printf("Enter a string: ");
+    scanf("%s",string);
+    printf("%d",length(string));
+    return 0;
 }
-int getlength(char *str)
+int length(char *str)
 {
-    while(str[length]!='\0')
+    int l = 0;
+    while(*(str+l)!='\0')
     {
-        length++;
+        l++;
     }
-    return length;
+    return l;
 }
