@@ -1,28 +1,42 @@
-/* C LEVEL 10 Problem 09
-        Don't use structures
-   Question: 
-        Get a string of numbers upto 50 digits and remove all leading zeros
+/* 
+    C LEVEL 10 Problem 09
+                Don't use structures
+    Question: 
+                Get a string of numbers upto 50 digits and remove all leading zeros
 */
 #include<stdio.h>
-void removeleading0s(char *numstrng);
-char input[51], output[51];
-int i,j;
+int length(char *n);
+void removeleading0s(char *n, char *r);
 int main()
 {
-    printf("Enter 50 digits:");
-    scanf("%s",input);
-    removeleading0s(input);
-    printf("Result\n%s",output);
+    char number[51],result[51];
+    printf("Enter Number(upto 50 digits): ");
+    scanf("%s",number);
+    removeleading0s(number,result);
+    printf("%s",result);
 }
-void removeleading0s(char *numstrng)
+int length(char *n)
 {
-    while(numstrng[i]!='\0')
+    int l = 0;
+    while(*(n+l)!='\0')
     {
-        if(numstrng[i]!='0')
-        {
-            output[j] = numstrng[i];
-            j++;
-        }
+        l++;
+    }
+    return l;
+}
+void removeleading0s(char *n, char *r)
+{
+    int len = length(n);
+    int i = 0, j = 0;
+    while((*(n+i)=='0')&&(i<len))
+    {
         i++;
     }
+    while(i<len)
+    {
+        *(r+j) = *(n+i);
+        j++;
+        i++;
+    }
+    *(r+j) = '\0';
 }
