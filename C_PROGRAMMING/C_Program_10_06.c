@@ -1,37 +1,34 @@
-/* C LEVEL 10 Problem 06
-        Don't use structures
-   Question: 
-        Get an intger and print each digit as a character. 
-        Print one character on one line
+/* 
+    C LEVEL 10 Problem 06
+                Don't use structures
+    Question: 
+                Get an intger and print each digit as a character. 
+                Print one character on one line
 */
 #include<stdio.h>
-int number,i,j, temp;
-char charofnum[100];
-void getnum_printchar(void);
+void getint_printchar(int n, char *str);
 int main()
 {
-    getnum_printchar();
+    int number;
+    char charofnum[20];
+    getint_printchar(number, charofnum);
 }
-void getnum_printchar(void)
+void getint_printchar(int n, char *str)
 {
+    int i = 0;
     printf("Enter Number: ");
-    scanf("%d",&number);
-    while(number)
+    scanf("%d",&n);
+    while(n)
     {
-        charofnum[i] = (number%10) + '0';
-        number /= 10;
+        str[i]= (n%10)+'0';
+        n /= 10;
         i++;
     }
-    charofnum[i] = '\0';
-    
-    for(j=0; j<i/2; j++)
+    str[i] = '\0';
+    i = i-1;
+    while(str[i]!=0)
     {
-        temp = charofnum[j];
-        charofnum[j] = charofnum[i-j-1];
-        charofnum[i-j-1] = temp;
-    }
-    for(j=0; charofnum[j]!='\0';j++)
-    {
-        printf("%c\n",charofnum[j]);
+        printf("%c\n",str[i]);
+        i--;
     }
 }
