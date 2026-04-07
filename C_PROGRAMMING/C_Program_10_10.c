@@ -1,35 +1,38 @@
-/* C LEVEL 10 Problem 10
-        Don't use structures
-   Question: 
-        Get a number upto 50 digits and reverse it
+/* 
+    C LEVEL 10 Problem 10
+                Don't use structures
+    Question: 
+                Get a number upto 50 digits and reverse it
 */
 #include<stdio.h>
-void reverse_string(char *str);
-int getlength(char *str);
-char input[51];
-int i,temp, length;
+int length(char *n);
+void reverse(char *n);
 int main()
 {
-    printf("Enter 50 digits\n");
-    scanf("%50s",input);
-    reverse_string(input);
-    printf("Result\n%s",input);
+    char number[51];
+    printf("Enter Number(upto 50 digits)\n");
+    scanf("%s",number);
+    reverse(number);
+    printf("\n%s",number);
+    return 0;
 }
-void reverse_string(char *str)
+int length(char *n)
 {
-    length = getlength(str);
-    for(i=0; i<length/2; i++)
+    int len = 0;
+    while(*(n+len)!='\0')
     {
-        temp = str[i];
-        str[i] = str[length-i-1];
-        str[length-i-1] = temp;
+        len++;
     }
+    return len;
 }
-int getlength(char *str)
+void reverse(char *n)
 {
-    while(str[length]!='\0')
+    int l = length(n);
+    int temp;
+    for(int i = 0; i<l/2;i++)
     {
-        length++;
+        temp = *(n+i);
+        *(n+i) = *(n+(l-i-1));
+        *(n+(l-i-1)) = temp;
     }
-    return length;
 }
