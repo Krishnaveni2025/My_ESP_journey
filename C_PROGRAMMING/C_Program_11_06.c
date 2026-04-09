@@ -1,9 +1,10 @@
-/* C LEVEL 11 Problem 06
-        Use Pointers
+/* 
+   C LEVEL 11 Problem 06
+                  Use Pointers
    Question: 
-        Write a function to copy a string to another
+                  Write a function to copy a string to another
    Function Name: 
-        strcopy(src,dst)
+                  strcopy(src,dst)
 */
 #include<stdio.h>
 void strcopy(char *src, char *dst);
