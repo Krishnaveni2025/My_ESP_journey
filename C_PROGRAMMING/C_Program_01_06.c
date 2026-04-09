@@ -1,20 +1,26 @@
-/*    C LEVEL 01 Problem 06
-        Use only int variables
-        Use only Decimals
-        Use the following operations only
-        +,-,/,*,%
-        Do not use any other operations
-Question: 
-    Get a two-digit number from the user and print the ones digit
-Example: Input: 45  Output: 5
-         Input: 56  Output: 6
+/*    
+ C LEVEL 01 Problem 06
+           Use only int variables
+           Use only Decimals
+           Use the following operations only
+           +,-,/,*,%
+           Do not use any other operations
+ Question: 
+           Get a two-digit number from the user and print the ones digit
+ Example: 
+           Input: 45  Output: 5
+           Input: 56  Output: 6
   */
 #include<stdio.h>
+void get2d_print1s(void);
 int main()
+{
+    get2d_print1s();
+}
+void get2d_print1s(void)
 {
   int number;
   printf("Input: ");
   scanf("%d",&number);
   printf("Output: %d",number%10);
-  return 0;
 }
