@@ -1,9 +1,10 @@
-/* C LEVEL 11 Problem 05
-        Use Pointers
+/* 
+   C LEVEL 11 Problem 05
+                  Use Pointers
    Question: 
-        Write a function to copy integers from one location to another location
+                  Write a function to copy integers from one location to another location
    Function Name: 
-        memcopy(src,dst,size)
+                  memcopy(src,dst,size)
 */
 #include<stdio.h>
 int i,size;
