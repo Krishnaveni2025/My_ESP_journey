@@ -1,23 +1,28 @@
-/* C LEVEL 01 Problem 02
-        Use only int variables
-        Use only Decimals
-        Use the following operations only
-        +,-,/,*,%
-        Do not use any other operations
-Question: 
-  Get a number from the user and  
-  subtract 5 from that number and  
-  print the result
-Example: 
-  Input: 45, Output: 40
-  Input:56789, Output: 56784
+/* 
+    C LEVEL 01 Problem 02
+            Use only int variables
+            Use only Decimals
+            Use the following operations only
+            +,-,/,*,%
+            Do not use any other operations
+   Question: 
+            Get a number from the user and  
+            subtract 5 from that number and  
+            print the result
+   Example: 
+            Input: 45, Output: 40
+            Input:56789, Output: 56784
 */
 #include<stdio.h>
+void getnumSub5(void);
 int main()
+{
+    getnumSub5();
+}
+void getnumSub5(void)
 {
   int number;
   printf("Input: ");
   scanf("%d",&number);
-  printf("Output: %d",number-5);
-  return 0;
+  printf("Output: %d",number-5);    
 }
