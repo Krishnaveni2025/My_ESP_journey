@@ -1,9 +1,10 @@
-/* C LEVEL 11 Problem 08
-            Use Pointers
+/* 
+   C LEVEL 11 Problem 08
+                  Use Pointers
    Question: 
-            Write a function two compare to strings. Print success or failure
+                  Write a function two compare to strings. Print success or failure
    Function Name: 
-            strcomp(src, dst)
+                  strcomp(src, dst)
 */
 #include<stdio.h>
 int strcomp(char *src, char *dst);
