@@ -1,9 +1,10 @@
-/* C LEVEL 11 Problem 07
-        Use Pointers
+/* 
+   C LEVEL 11 Problem 07
+                  Use Pointers
    Question: 
-        Write a function to compare a set of integers and print success or failure
+                  Write a function to compare a set of integers and print success or failure
    Function Name: 
-        memcomp(src,dst,size)
+                  memcomp(src,dst,size)
 */
 #include<stdio.h>
 int memcomp(int *src, int *dst, int size);
