@@ -1,9 +1,10 @@
-/* C LEVEL 11 Problem 09
-        Use Pointers
+/*
+   C LEVEL 11 Problem 09
+                 Use Pointers
    Question: 
-        Write a function to concatenate two integer arrays into a single array
+                 Write a function to concatenate two integer arrays into a single array
    Function Name: 
-        intcon(src1, size1, src2, size2, dst)
+                 intcon(src1, size1, src2, size2, dst)
 */
 #include<stdio.h>
 void intcon(int *src1, int size1,int *src2,int size2, int *dst);
