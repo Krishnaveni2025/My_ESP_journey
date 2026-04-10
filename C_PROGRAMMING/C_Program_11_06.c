@@ -7,20 +7,31 @@
                   strcopy(src,dst)
 */
 #include<stdio.h>
-void strcopy(char *src, char *dst);
-char source[100], destination[100];
+void strcopy(char *source, char *destination);
+void getsource(char *str);
+void print(char *str);
 int main()
 {
-    printf("Enter Source\n");
-    scanf("%s",source);
-    strcopy(source, destination);
-    printf("Destination\n%s",destination);
+    char src[51], dst[51];
+    getsource(src);
+    print(src);
+    strcopy(src, dst);
+    print(dst);
 }
-void strcopy(char *src, char *dst)
+void print(char *str)
 {
-    while(*src!='\0')
+    printf("\n%s",str);
+}
+void getsource(char *str)
+{
+    printf("Enter Source: ");
+    scanf("%s",str);
+}
+void strcopy(char *source, char *destination)
+{
+    while(*(source)!='\0')
     {
-        *(dst++) = *(src++);
+        *(destination++) = *(source++);
     }
-    *dst = '\0';
+    *(destination) = '\0';
 }
