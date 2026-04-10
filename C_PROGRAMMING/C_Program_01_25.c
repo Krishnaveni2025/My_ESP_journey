@@ -22,7 +22,12 @@
         Input:991 Output:1(19;10;1)
 */
 #include<stdio.h>
+void get3d_printsum(void);
 int main()
+{
+    get3d_printsum();
+}
+void get3d_printsum(void)
 {
   int number;
   printf("Enter a three digit number: ");
@@ -32,5 +37,4 @@ int main()
   number = (number/10 + number%10);
   number = (number/10 + number%10);
   printf("%d",number);
-  return 0;
 }
