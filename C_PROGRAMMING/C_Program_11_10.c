@@ -7,39 +7,41 @@
                  strcon(src1, src2, dst)
 */
 #include<stdio.h>
-void strcon(char *src1, char *src2, char *dst);
-char source1[100],source2[100],destination[200];
-void getstring(char *str);
+void getstr(char *source1, char *source2);
+void strcon(char *source1, char *source2, char *destination);
+void print(char *str);
 int main()
 {
-    getstring(source1);
-    getstring(source2);
-    printf("First String: ");
-    printf("%s",source1);
-    printf("\nSecond String: ");
-    printf("%s",source2);
-    strcon(source1, source2, destination);
-    printf("\nSingle String: ");
-    printf("%s",destination);
+    char src1[51], src2[51],dst[102];
+    getstr(src1,src2);
+    print(src1);
+    print(src2);
+    strcon(src1, src2, dst);
+    print(dst);
 }
-void getstring(char *str)
+void print(char *str)
 {
-    printf("Enter String\n");
-    scanf("%s",str);
+    printf("\n%s",str);
 }
-void strcon(char *src1, char *src2, char *dst)
+void strcon(char *source1, char *source2, char *destination)
 {
-    int i = 0, j = 0;
-    while(src1[i]!='\0')
+    int l1 = 0,l2 = 0;
+    while(*(source1+l1)!='\0')
     {
-        dst[i] = src1[i];
-        i++;
+        *(destination+l1) = *(source1+l1);
+        l1++;
     }
-    while(src2[j]!='\0')
+    while(*(source2+l2)!='\0')
     {
-        dst[i] = src2[j];
-        i++;
-        j++;
+        *(destination+l1+l2) = *(source2+l2);
+        l2++;
     }
-    dst[i] = '\0';
+    *(destination+l1+l2) = '\0';
+}
+void getstr(char *source1, char *source2)
+{
+    printf("Source 1: ");
+    scanf("%s",source1);
+    printf("Source 2: ");
+    scanf("%s",source2);
 }
