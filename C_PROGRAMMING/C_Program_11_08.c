@@ -7,27 +7,34 @@
                   strcomp(src, dst)
 */
 #include<stdio.h>
-int strcomp(char *src, char *dst);
-char source[100],destination[100];
+int strcomp(char *source, char *destination);
+void getstrs(char *source, char *destination);
 int main()
 {
-    printf("Enter 1st String\n");
-    scanf("%s",source);
-    printf("Enter 2nd String\n");
-    scanf("%s",destination);
-    if(strcomp(source, destination))
-            printf("\nsuccess");
+    char src[51], dst[51];
+    getstrs(src, dst);
+    int equal;
+    equal = strcomp(src,dst);
+    if(equal)
+            printf("success");
     else
-            printf("\nfailure");
+            printf("failure");
 }
-int strcomp(char *src, char *dst)
+void getstrs(char *source, char *destination)
 {
-    while(*src!='\0')
+    printf("string 1: ");
+    scanf("%s",source);
+    printf("string 2: ");
+    scanf("%s",destination);
+}
+int strcomp(char *source, char *destination)
+{
+    int i = 0;
+    while(*(source+i)!='\0')
     {
-        if(*src != *dst)
+        if(*(source+i)!= *(destination+i))
                 return 0;
-        src++;
-        dst++;
+        i++;
     }
     return 1;
 }
