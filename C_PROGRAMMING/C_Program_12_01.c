@@ -1,6 +1,8 @@
-/* C LEVEL 12 - Problem 01
-        Use Pointers
-   Question: Get two numbers upto 50 digits and perform addition and print the result.
+/* 
+   C LEVEL 12 - Problem 01
+            Use Pointers
+   Question: 
+            Get two numbers upto 50 digits and perform addition and print the result.
   #include<stdio.h>
   int main()
   {
