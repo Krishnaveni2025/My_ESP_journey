@@ -10,26 +10,32 @@
    character: e
    Answer: 2,6,14
 */
-#include<stdio.h>
 void get_str_char(char *str, char *l);
-void print_lposition(char *str, char *l);
+void print_position(char *str, char *l);
+#include<stdio.h>
+
 int main()
 {
-    char input[51];
-    char letter;
-    get_str_char(input, &letter);
-    print_lposition(input, &letter);
+    char line[50], letter;
+    get_str_char(line,&letter);
+    print_position(line, &letter);
 }
-void print_lposition(char *str, char *l)
+void get_str_char(char *str, char *l)
 {
-    int i = 0, found = 0, count = 0;
+    printf("String: ");
+    scanf("%s",str);
+    printf("Character: ");
+    scanf(" %c",l);
+}
+void print_position(char *str, char *l)
+{
+    int found = 0, i = 0, count = 0;
     while(*(str+i)!='\0')
     {
-        if(*(str+i)== *l)
+        if(str[i]==*l)
         {
             if(found)
-                    printf(",");
-            found = 0;
+                printf(",");
             printf("%d",i+1);
             found = 1;
             count++;
@@ -38,11 +44,4 @@ void print_lposition(char *str, char *l)
     }
     if(!count)
             printf("Character not found");
-}
-void get_str_char(char *str, char *l)
-{
-    printf("String: ");
-    scanf("%s",str);
-    printf("Character: ");
-    scanf(" %c",l);
 }
