@@ -25,7 +25,6 @@ Question:
 */
 #include <stdio.h>
 
-// Prototypes
 void addnumbers(char *n1, char *n2, char *r);
 void subtractnumbers(char *n1, char *n2, char *r);
 void multiplynumbers(char *n1, char *n2, char *r);
