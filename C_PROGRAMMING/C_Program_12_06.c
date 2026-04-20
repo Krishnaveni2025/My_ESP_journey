@@ -43,7 +43,7 @@ int main() {
 
     while (1) {
         printf("Calc> ");
-        // Reading the whole line manually to simulate a real terminal prompt
+        // Reading the whole line manually to simulate a real terminal prompt 
         if (scanf("%s", input) == 0) break;
 
         // Check for Exit
@@ -95,8 +95,6 @@ int main() {
     }
     return 0;
 }
-
-// --- Logic Implementation ---
 
 void addnumbers(char *n1, char *n2, char *r) {
     int l1 = getlen(n1) - 1, l2 = getlen(n2) - 1, carry = 0, k = 0;
@@ -166,7 +164,7 @@ void dividenumbers(char *n1, char *n2, char *q, char *rem) {
     strcopy(current, rem);
 }
 
-// --- Helper Functions ---
+
 
 int getlen(char *n) {
     int l = 0;
