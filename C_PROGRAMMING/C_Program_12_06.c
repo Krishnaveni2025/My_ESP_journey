@@ -72,7 +72,6 @@ int main() {
             continue;
         }
 
-        // Processing
         if (op == '+') {
             addnumbers(n1, n2, res);
             printf("%s\n", res);
