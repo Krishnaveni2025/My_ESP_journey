@@ -13,16 +13,21 @@
             Input:859 Output:958
 */
 #include<stdio.h>
-void get3d_printrev(void);
+int reverse(int n);
 int main()
 {
-    get3d_printrev();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",reverse(number));
 }
-void get3d_printrev(void)
+int reverse(int n)
 {
-  int number;
-  //your code here
-  printf("Enter a three-digit number: ");
-  scanf("%d",&number);
-  printf("Result = %d", (((number%10)*100)+(((number/10)%10)*10)+(number/100)));    
+    int rev = 0;
+    while(n)
+    {
+        rev = (rev*10) + (n%10);
+        n /= 10;
+    }
+    return rev;
 }
