@@ -13,15 +13,20 @@
             Input:18 Output:10
 */
 #include<stdio.h>
-void get2d_make1s0(void);
+int ones(int n);
+int make1s0(int n);
 int main()
 {
-    get2d_make1s0();
+    int twod_number;
+    printf("Input: ");
+    scanf("%d",&twod_number);
+    printf("Output: %d",make1s0(twod_number));
 }
-void get2d_make1s0(void)
+int make1s0(int n)
 {
-  int number;
-  printf("Enter a two digit number: ");
-  scanf("%d",&number);
-  printf("Result = %d",(number/10)*10);
+    return (10*ones(n));
+}
+int ones(int n)
+{
+    return (n/10);
 }
