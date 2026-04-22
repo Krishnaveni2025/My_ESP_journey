@@ -25,113 +25,87 @@ Question:
 */
 #include <stdio.h>
 
+#define MAX_SIZE 102
+
+// Prototypes
 void addnumbers(char *n1, char *n2, char *r);
 void subtractnumbers(char *n1, char *n2, char *r);
 void multiplynumbers(char *n1, char *n2, char *r);
-void dividenumbers(char *n1, char *n2, char *q, char *rem);
-
-int getlen(char *n);
-void reverse(char *str);
+void dividenumbers(char *n1, char *n2, char *q, char *r);
+int getlen(char *number);
 void strcopy(char *src, char *dst);
+void reverse(char *number);
+void removeleading0s(char *number);
 int compare(char *n1, char *n2);
-void removeleading0s(char *str);
-void covert_int_char(int *a, int s, char *str);
+void con_int_char(int *a, int s, char *c);
 
 int main() {
-    char input[150], n1[60], n2[60], res[120], rem[60];
-    char op;
+    char input[110], op, number1[51], number2[51], result[MAX_SIZE], remainder[MAX_SIZE];
 
     while (1) {
-        printf("Calc> ");
-        // Reading the whole line manually to simulate a real terminal prompt 
-        if (scanf("%s", input) == 0) break;
+        printf("calc>");
+        if (scanf("%s", input) <= 0) break;
 
-        // Check for Exit
-        if ((input[0] == 'E' || input[0] == 'e') && 
-            (input[1] == 'x' || input[1] == 'X')) break;
+        if ((input[0] == 'E' || input[0] == 'e') && (input[1] == 'X' || input[1] == 'x') &&
+            (input[2] == 'I' || input[2] == 'i') && (input[3] == 'T' || input[3] == 't')) break;
 
-        // Parser: Split the string based on the operator
-        int i = 0, j = 0, found_op = 0;
-        op = '\0';
-        while (input[i] != '\0') {
-            if (input[i] >= '0' && input[i] <= '9') {
-                if (!found_op) n1[j++] = input[i];
-                else n2[j++] = input[i];
-            } else if (input[i] == '+' || input[i] == '-' || input[i] == '*' || input[i] == '/') {
-                n1[j] = '\0'; // Terminate first number
-                op = input[i];
-                found_op = 1;
-                j = 0; // Reset index for second number
-            }
-            i++;
-        }
-        n2[j] = '\0';
-
-        if (!found_op) {
-            printf("Invalid Format\n");
-            continue;
-        }
+        int i = 0, n1_idx = 0, n2_idx = 0;
+        char *p = input;
+        while (*p >= '0' && *p <= '9' && n1_idx < 50) number1[n1_idx++] = *p++;
+        number1[n1_idx] = '\0';
+        op = *p++;
+        while (*p >= '0' && *p <= '9' && n2_idx < 50) number2[n2_idx++] = *p++;
+        number2[n2_idx] = '\0';
 
         if (op == '+') {
-            addnumbers(n1, n2, res);
-            printf("%s\n", res);
+            addnumbers(number1, number2, result);
+            removeleading0s(result);
+            printf("%s\n", result);
         } else if (op == '-') {
-            subtractnumbers(n1, n2, res);
-            printf("%s\n", res);
-        } else if (op == '*') {
-            multiplynumbers(n1, n2, res);
-            printf("%s\n", res);
-        } else if (op == '/') {
-            if (n2[0] == '0' && n2[1] == '\0') {
-                printf("Error: Division by zero\n");
+            if (compare(number1, number2) < 0) {
+                subtractnumbers(number2, number1, result);
+                removeleading0s(result);
+                printf("-%s\n", result);
             } else {
-                dividenumbers(n1, n2, res, rem);
-                removeleading0s(res);
-                removeleading0s(rem);
-                printf("Quotient: %s, Remainder: %s\n", res, rem);
+                subtractnumbers(number1, number2, result);
+                removeleading0s(result);
+                printf("%s\n", result);
+            }
+        } else if (op == '*') {
+            multiplynumbers(number1, number2, result);
+            removeleading0s(result);
+            printf("%s\n", result);
+        } else if (op == '/') {
+            if (number2[0] == '0' && number2[1] == '\0') printf("Error: Div by zero\n");
+            else {
+                dividenumbers(number1, number2, result, remainder);
+                removeleading0s(result);
+                removeleading0s(remainder);
+                printf("Quotient: %s, Remainder: %s\n", result, remainder);
             }
         }
     }
     return 0;
 }
 
-void addnumbers(char *n1, char *n2, char *r) {
-    int l1 = getlen(n1) - 1, l2 = getlen(n2) - 1, carry = 0, k = 0;
-    while (l1 >= 0 || l2 >= 0 || carry) {
-        int d1 = (l1 >= 0) ? n1[l1--] - '0' : 0;
-        int d2 = (l2 >= 0) ? n2[l2--] - '0' : 0;
-        int sum = d1 + d2 + carry;
-        r[k++] = (sum % 10) + '0';
-        carry = sum / 10;
-    }
-    r[k] = '\0';
-    reverse(r);
-}
+void dividenumbers(char *n1, char *n2, char *q, char *r) {
+    char temp_dividend[110], next_q[110];
+    strcopy("0", q);
+    strcopy(n1, temp_dividend);
 
-void subtractnumbers(char *n1, char *n2, char *r) {
-    int cmp = compare(n1, n2);
-    if (cmp == 0) { r[0] = '0'; r[1] = '\0'; return; }
-    char *large = (cmp == 1) ? n1 : n2;
-    char *small = (cmp == 1) ? n2 : n1;
-    int l1 = getlen(large) - 1, l2 = getlen(small) - 1, k = 0, borrow = 0;
-    while (l1 >= 0) {
-        int d1 = large[l1--] - '0';
-        int d2 = (l2 >= 0) ? small[l2--] - '0' : 0;
-        int diff = d1 - d2 - borrow;
-        if (diff < 0) { diff += 10; borrow = 1; }
-        else borrow = 0;
-        r[k++] = diff + '0';
+    while (compare(temp_dividend, n2) >= 0) {
+        subtractnumbers(temp_dividend, n2, r); // Result of subtraction goes to 'r'
+        strcopy(r, temp_dividend);            // Update dividend for next loop
+        addnumbers(q, "1", next_q);           // Increment quotient
+        strcopy(next_q, q);
     }
-    if (cmp == -1) r[k++] = '-';
-    r[k] = '\0';
-    reverse(r);
-    removeleading0s(r);
+    strcopy(temp_dividend, r); // Final remainder
 }
 
 void multiplynumbers(char *n1, char *n2, char *r) {
     int l1 = getlen(n1), l2 = getlen(n2);
-    int temp[120];
-    for (int i = 0; i < 120; i++) temp[i] = 0;
+    int temp[MAX_SIZE] = {0}; // Must be zero-initialized
+    
     for (int i = l1 - 1; i >= 0; i--) {
         for (int j = l2 - 1; j >= 0; j--) {
             int prod = (n1[i] - '0') * (n2[j] - '0') + temp[i + j + 1];
@@ -139,74 +113,79 @@ void multiplynumbers(char *n1, char *n2, char *r) {
             temp[i + j] += prod / 10;
         }
     }
-    covert_int_char(temp, l1 + l2, r);
+    con_int_char(temp, l1 + l2, r);
     removeleading0s(r);
 }
 
-void dividenumbers(char *n1, char *n2, char *q, char *rem) {
-    char current[60] = "", temp_sub[60] = "";
-    int k = 0, l1 = getlen(n1);
-    for (int i = 0; i < l1; i++) {
-        int len = getlen(current);
-        current[len] = n1[i];
-        current[len + 1] = '\0';
-        removeleading0s(current);
-        int count = 0;
-        while (compare(current, n2) >= 0) {
-            subtractnumbers(current, n2, temp_sub);
-            strcopy(temp_sub, current);
-            count++;
-        }
-        q[k++] = count + '0';
+void addnumbers(char *n1, char *n2, char *r) {
+    int d1, d2, l1 = getlen(n1) - 1, l2 = getlen(n2) - 1, l = 0, carry = 0;
+    while (l1 >= 0 || l2 >= 0 || carry > 0) {
+        d1 = (l1 >= 0) ? n1[l1--] - '0' : 0;
+        d2 = (l2 >= 0) ? n2[l2--] - '0' : 0;
+        int sum = d1 + d2 + carry;
+        carry = sum / 10;
+        r[l++] = (sum % 10) + '0';
     }
-    q[k] = '\0';
-    strcopy(current, rem);
+    r[l] = '\0';
+    reverse(r);
 }
 
-
-
-int getlen(char *n) {
-    int l = 0;
-    while (n[l]) l++;
-    return l;
-}
-
-void reverse(char *str) {
-    int l = getlen(str);
-    for (int i = 0; i < l / 2; i++) {
-        char t = str[i];
-        str[i] = str[l - i - 1];
-        str[l - i - 1] = t;
+void subtractnumbers(char *n1, char *n2, char *r) {
+    int i = getlen(n1) - 1, j = getlen(n2) - 1, k = 0, borrow = 0;
+    while (i >= 0) {
+        int d1 = n1[i--] - '0';
+        int d2 = (j >= 0 ? n2[j--] - '0' : 0) + borrow;
+        if (d1 < d2) { d1 += 10; borrow = 1; } 
+        else borrow = 0;
+        r[k++] = (d1 - d2) + '0';
     }
+    r[k] = '\0';
+    reverse(r);
+    removeleading0s(r);
 }
 
-void strcopy(char *src, char *dst) {
-    int i = 0;
-    while (src[i] != '\0') { dst[i] = src[i]; i++; }
-    dst[i] = '\0';
+// --- Utility Functions ---
+
+void con_int_char(int *a, int s, char *c) {
+    int i;
+    for (i = 0; i < s; i++) c[i] = a[i] + '0';
+    c[i] = '\0';
 }
 
 int compare(char *n1, char *n2) {
-    removeleading0s(n1); removeleading0s(n2);
     int l1 = getlen(n1), l2 = getlen(n2);
     if (l1 > l2) return 1;
     if (l1 < l2) return -1;
-    for (int i = 0; i < l1; i++) {
-        if (n1[i] > n2[i]) return 1;
-        if (n1[i] < n2[i]) return -1;
+    while (*n1) {
+        if (*n1 > *n2) return 1;
+        if (*n1 < *n2) return -1;
+        n1++; n2++;
     }
     return 0;
 }
 
-void removeleading0s(char *str) {
-    int i = 0, l = getlen(str);
-    int start = (str[0] == '-') ? 1 : 0;
-    while (str[start + i] == '0' && (start + i) < l - 1) i++;
-    if (i > 0) strcopy(&str[start + i], &str[start]);
+void removeleading0s(char *number) {
+    int i = 0, l = getlen(number);
+    while (number[i] == '0' && i < l - 1) i++;
+    if (i > 0) strcopy(&number[i], number);
 }
 
-void covert_int_char(int *a, int s, char *str) {
-    int i;
-    for (i = 0; i < s; i++) str[i] = a[i] + '0';
-    str[i] = '\0';
+void reverse(char *number) {
+    int l = getlen(number);
+    for (int i = 0; i < l / 2; i++) {
+        char temp = number[i];
+        number[i] = number[l - i - 1];
+        number[l - i - 1] = temp;
+    }
+}
+
+void strcopy(char *src, char *dst) {
+    while (*src) *dst++ = *src++;
+    *dst = '\0';
+}
+
+int getlen(char *number) {
+    int l = 0;
+    while (number[l]) l++;
+    return l;
 }
