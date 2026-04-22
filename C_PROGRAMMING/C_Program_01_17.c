@@ -13,7 +13,7 @@
             Input:18 Output:10
 */
 #include<stdio.h>
-int ones(int n);
+int tens(int n);
 int make1s0(int n);
 int main()
 {
@@ -24,9 +24,9 @@ int main()
 }
 int make1s0(int n)
 {
-    return (10*ones(n));
+    return (10*tens(n));
 }
-int ones(int n)
+int tens(int n)
 {
     return (n/10);
 }
