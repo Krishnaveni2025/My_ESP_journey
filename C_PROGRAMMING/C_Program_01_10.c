@@ -13,15 +13,15 @@
             Input:569 Output:6
 */
 #include<stdio.h>
-void get3d_print10s(void);
+int tensdigit(int n);
 int main()
 {
-    get3d_print10s();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("%d",tensdigit(number));
 }
-void get3d_print10s(void)
+int tensdigit(int n)
 {
-    int threedigitNumber;
-    printf("Enter Three Digit Number: ");
-    scanf("%d",&threedigitNumber);
-    printf("%d",(threedigitNumber%100)/10);
+    return ((n/10)%10);
 }
