@@ -13,15 +13,15 @@
             Input:56   Output:5
   */
 #include<stdio.h>
-void get2d_print10sd(void);
+int tensdisgit(int n);
 int main()
 {
-    get2d_print10sd();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",tensdisgit(number));
 }
-void get2d_print10sd(void)
+int tensdisgit(int n)
 {
-  int number;
-  printf("Input: ");
-  scanf("%d",&number);
-  printf("Output: %d",number/10);
+    return n/10;
 }
