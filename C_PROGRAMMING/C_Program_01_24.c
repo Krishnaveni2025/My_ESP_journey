@@ -16,16 +16,20 @@
             Input:372  Output:372
 */
 #include<stdio.h>
-void get3d_sub5(void);
+int ones(int n);
+int hundreds(int n);
 int main()
 {
-    get3d_sub5();
+    int three_dn;
+    printf("Input: ");
+    scanf("%d",&three_dn);
+    printf("Output: %d",(three_dn-(5*( (hundreds(three_dn)%2)*(ones(three_dn)%2) )) ));
 }
-void get3d_sub5(void)
+int hundreds(int n)
 {
-  int number;
-  printf("Enter a three digit number: ");
-  scanf("%d",&number);
-  //your code here
-  printf("Result = %d",(number - 5*( ((number/100)%2) * ((number%10)%2) )));
+    return n/100;
+}
+int ones(int n)
+{
+    return n%10;
 }
