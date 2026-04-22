@@ -14,14 +14,15 @@
            Input: 143, Output: 7
 */
 #include<stdio.h>
-void getDivby8PrintRem(void);
+int divideby8(int n);
 int main()
 {
-    getDivby8PrintRem();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",divideby8(number));
 }
-void getDivby8PrintRem(void)
+int divideby8(int n)
 {
-  int number;
-  printf("Input: ");
-  scanf("%d",&number);    
+    return n%8;
 }
