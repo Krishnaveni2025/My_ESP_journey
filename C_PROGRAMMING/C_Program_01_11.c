@@ -13,15 +13,21 @@
             Input:69 output:15
 */
 #include<stdio.h>
-void get2d_printsumd(void);
+int sumofdigits(int n);
 int main()
 {
-    get2d_printsumd();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",sumofdigits(number));
 }
-void get2d_printsumd(void)
+int sumofdigits(int n)
 {
-    int twodigitNumber;
-    printf("Enter Two Digit Number: ");
-    scanf("%d",&twodigitNumber);
-    printf("Sum: %d",((twodigitNumber%10)+(twodigitNumber/10)));
+    int sum = 0;
+    while(n)
+    {
+        sum += (n%10);
+        n /= 10;
+    }
+    return sum;
 }
