@@ -14,15 +14,15 @@
             Input:181 Output:182
 */
 #include<stdio.h>
-void get3d_make1s2(void);
+int make1sd2(int n);
 int main()
 {
-    get3d_make1s2();
+    int three_dn;
+    printf("Input: ");
+    scanf("%d",&three_dn);
+    printf("Output: %d",make1sd2(three_dn));
 }
-void get3d_make1s2(void)
+int make1sd2(int n)
 {
-  int number;
-  printf("Enter a three digit number: ");
-  scanf("%d",&number);
-  printf("Result = %d",((number/10)*10)+2);
+    return (((n/10)*10)+2);
 }
