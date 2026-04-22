@@ -14,16 +14,25 @@
             Input:3859 Output:8359
 */
 #include<stdio.h>
-void get4d_rev100s1000s(void);
+int thousands(int n);
+int hundreds(int n);
+int reverse_last2(int n);
 int main()
 {
-    get4d_rev100s1000s();
+    int fourd_number;
+    printf("Input: ");
+    scanf("%d",&fourd_number);
+    printf("Output: %d",reverse_last2(fourd_number));
 }
-void get4d_rev100s1000s(void)
+int reverse_last2(int n)
 {
-  int number;
-  //your code here
-  printf("Enter a four digit number: ");
-  scanf("%d",&number);
-  printf("%d",((((number/100)%10)*1000)+((number/1000)*100)+(number%100)));    
+    return ((hundreds(n)*1000)+(thousands(n)*100)+(n%100));
+}
+int hundreds(int n)
+{
+    return ((n/100)%10);
+}
+int thousands(int n)
+{
+    return (n/1000);
 }
