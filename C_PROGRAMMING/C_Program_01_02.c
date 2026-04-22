@@ -14,15 +14,15 @@
             Input:56789, Output: 56784
 */
 #include<stdio.h>
-void getnumSub5(void);
+int subtract5(int n);
 int main()
 {
-    getnumSub5();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",subtract5(number));
 }
-void getnumSub5(void)
+int subtract5(int n)
 {
-  int number;
-  printf("Input: ");
-  scanf("%d",&number);
-  printf("Output: %d",number-5);    
+    return n-5;
 }
