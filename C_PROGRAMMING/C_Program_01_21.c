@@ -16,16 +16,10 @@
             Input:182 Output:182
 */
 #include<stdio.h>
-void getnum_sub5(void);
 int main()
 {
-    getnum_sub5();
-}
-void getnum_sub5(void)
-{
-  int number;
-  //your code here
-  printf("Enter a number: ");
-  scanf("%d",&number);
-  printf("Result = %d",(number - 5*(number%2)));
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",(number-(5*(number%2))));
 }
