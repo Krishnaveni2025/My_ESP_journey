@@ -12,15 +12,15 @@
            Input: 56  Output: 6
   */
 #include<stdio.h>
-void get2d_print1s(void);
+int ones(int n);
 int main()
 {
-    get2d_print1s();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",ones(number));
 }
-void get2d_print1s(void)
+int ones(int n)
 {
-  int number;
-  printf("Input: ");
-  scanf("%d",&number);
-  printf("Output: %d",number%10);
+    return n%10;
 }
