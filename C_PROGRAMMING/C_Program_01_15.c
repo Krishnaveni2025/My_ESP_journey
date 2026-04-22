@@ -14,16 +14,25 @@
             Input:3859 Output:3895
 */
 #include<stdio.h>
-void get4d_rev1s10s(void);
+int reverse_first2ds(int n);
+int ones(int n);
+int tens(int n);
 int main()
 {
-    get4d_print1s10s();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",reverse_first2ds(number));
 }
-void get4d_print1s10s(void)
+int tens(int n)
 {
-  int number;
-  //your code here
-  printf("Enter a four digit number: ");
-  scanf("%d",&number);
-  printf("Result = %d",(((number/100)*100)+(((number%10)*10))+((number/10)%10)));    
+    return ((n/10)%10);
+}
+int ones(int n)
+{
+    return n%10;
+}
+int reverse_first2ds(int n)
+{
+    return (((n/100)*100)+(ones(n)*10)+(tens(n)));
 }
