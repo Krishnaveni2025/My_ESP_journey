@@ -13,16 +13,15 @@
             Input:59 Output:95
 */
 #include<stdio.h>
-void get2d_printrev(void);
+int reverse(int n);
 int main()
 {
-    get2d_printrev();
+    int twodigit;
+    printf("Input: ");
+    scanf("%d",&twodigit);
+    printf("Output: %d",reverse(twodigit));
 }
-void get2d_printrev(void)
+int reverse(int n)
 {
-  int number;
-  //your code here
-  printf("Enter a three digit number: ");
-  scanf("%d",&number);
-  printf("Result = %d",(((number%10)*10)+(number/10)));
+    return (((n%10)*10)+(n/10));
 }
