@@ -14,15 +14,15 @@
             Input: 1200, Output: 3600
 */
 #include<stdio.h>
-void getnumMul3(void);
+int multiplyby3(int n);
 int main()
 {
-    getnumMul3();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",multiplyby3(number));
 }
-void getnumMul3(void)
+int multiplyby3(int n)
 {
-  int number;
-  printf("Input: ");
-  scanf("%d",&number);
-  printf("Output: %d",number*3);   
+    return n*3;
 }
