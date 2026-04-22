@@ -13,15 +13,15 @@
           Input:569 Output:9
   */
 #include<stdio.h>
-void get3d_print1sd(void);
+int onesdigit(int n);
 int main()
 {
-    get3d_print1sd();
+    int number;
+    printf("Input(3digit): ");
+    scanf("%d",&number);
+    printf("Output: %d",onesdigit(number));
 }
-void get3d_print1sd(void)
+int onesdigit(int n)
 {
-  int number;
-  printf("Enter a three digit number: ");
-  scanf("%d",&number);
-  printf("Output: %d",number%10);    
+    return n%10;
 }
