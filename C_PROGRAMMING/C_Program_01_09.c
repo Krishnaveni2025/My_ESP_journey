@@ -12,16 +12,16 @@
             Input:456 Output:4
             Input:569 Output:5
   */
-  #include<stdio.h>
-  void get3d_print100s(void);
-  int main()
-  {
-      get3d_print100s();
-  }
-  void get3d_print100s(void)
-  {
-      int threedigitNumber;
-      printf("Enter Three Digit Number: ");
-      scanf("%d",&threedigitNumber);
-      printf("%d",threedigitNumber/100);
-  }
+#include<stdio.h>
+int hundredsdigit(int n);
+int main()
+{
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d", hundredsdigit(number));
+}
+int hundredsdigit(int n)
+{
+    return n/100;
+}
