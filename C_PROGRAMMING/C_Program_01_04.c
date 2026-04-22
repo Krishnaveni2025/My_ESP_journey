@@ -7,22 +7,22 @@
             Do not use any other operations
    Question: 
             Get a number from the user and 
-            the number by 6 and  
+            divide the number by 6 and  
             print the result
    Example: 
             Input: 45, Output: 7
             Input: 143, Output: 23
 */
 #include<stdio.h>
-void getnumDivby6(void);
+int divideby6(int n);
 int main()
-{
-    getnumDivby6();
-}
-void getnumDivby6(void)
 {
     int number;
     printf("Input: ");
     scanf("%d",&number);
-    printf("Output: %d",number/6);
+    printf("Output: %d",divideby6(number));
+}
+int divideby6(int n)
+{
+    return n/6;
 }
