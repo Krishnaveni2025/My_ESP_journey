@@ -13,15 +13,25 @@
             Input:182 Output:102
 */
 #include<stdio.h>
-void get3d_make10s0(void);
+int make10sd(int n);
+int hundreds_d(int n);
+int ones_d(int n);
 int main()
 {
-    get3d_make10s0();
+    int three_dn;
+    printf("Input: ");
+    scanf("%d",&three_dn);
+    printf("Output: %d",make10sd(three_dn));
 }
-void get3d_make10s0(void)
+int ones_d(int n)
 {
-  int number;
-  printf("Enter a three digit number: ");
-  scanf("%d",&number);
-  printf("Result = %d",(((number/100)*100)+(number%10)));
+    return n%10;
+}
+int hundreds_d(int n)
+{
+    return n/100;
+}
+int make10sd(int n)
+{
+    return ((hundreds_d(n)*100)+(ones_d(n)));
 }
