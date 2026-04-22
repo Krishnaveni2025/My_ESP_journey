@@ -13,15 +13,15 @@
             Input:469 Output:19
 */
 #include<stdio.h>
-void get3d_printsum(void);
+int sumofdigits(int n);
 int main()
 {
-    get3d_printsum();
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",sumofdigits(number));
 }
-void get3d_printsum(void)
+int sumofdigits(int n)
 {
-    int threedNumber;
-    printf("Enter Three Digit Number: ");
-    scanf("%d",&threedNumber);
-    printf("Sum : %d",(threedNumber/100)+((threedNumber%100)/10)+(threedNumber%10));
+    return ((n/100)+(n%10)+((n/10)%10));
 }
