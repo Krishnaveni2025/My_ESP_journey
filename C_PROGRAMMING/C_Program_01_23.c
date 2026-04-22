@@ -15,16 +15,21 @@
             Input:72 Output:67
 */
 #include<stdio.h>
-void get2d_sub5(void);
+int sumofdigits(int n);
 int main()
 {
-    get2d_sub5();
+    int twodn;
+    printf("Input: ");
+    scanf("%d",&twodn);
+    printf("Output: %d",twodn-5*(sumofdigits(twodn)%2));
 }
-void get2d_sub5(void)
+int sumofdigits(int n)
 {
-  int number;
-  printf("Eneter a two - digit number: ");
-  scanf("%d",&number);
-  //your code here
-  printf("Result = %d",(number - 5*( ((number%10)+(number/10))%2 )));    
+    int sum = 0;
+    while(n)
+    {
+        sum += (n%10);
+        n /= 10;
+    }
+    return sum;
 }
