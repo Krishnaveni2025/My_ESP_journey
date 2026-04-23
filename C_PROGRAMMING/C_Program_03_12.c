@@ -1,29 +1,35 @@
-/* C LEVEL 03 Program 12
-      Use int variables
-      Use only Decimals
-      Use "if/else" statements 
+/* 
+   C LEVEL 03 Program 12
+            Use int variables
+            Use only Decimals
+            Use "if/else" statements 
    Question: 
-      Get a two digit number from the user and 
-      check if the digit 1 is greater than equals to digit 0. 
-      If yes then print "Success", otherwise "Failure".
+            Get a two digit number from the user and 
+            check if the digit 1 is greater than equals to digit 0. 
+            If yes then print "Success", otherwise "Failure".
    Example:
-     Input:66 Output:"Success"
-     Input:67 Output:"Failure"
-     Input:98 Output:"Success"
+            Input:66 Output: Success
+            Input:67 Output: Failure
+            Input:98 Output: Success
 */
 #include<stdio.h>
+int digit1(int n);
+int digit0(int n);
 int main()
 {
-  int number;
-  printf("Enter a two digit number: ");
-  scanf("%d",&number);
-  //your code here
-  if(((number/10)>=(number%10)))
-  {
-    printf("\"Success\"");
-  }
-  else
-  {
-    printf("\"Failure\"");
-  }
+    int two_dn;
+    printf("Input: ");
+    scanf("%d",&two_dn);
+    if((digit1(two_dn)>=digit0(two_dn)))
+            printf("Output: Success");
+    else
+            printf("Output: Failure");
+}
+int digit1(int n)
+{
+    return n/10;
+}
+int digit0(int n)
+{
+    return n%10;
 }
