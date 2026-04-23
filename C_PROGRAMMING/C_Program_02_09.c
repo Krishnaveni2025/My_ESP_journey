@@ -26,7 +26,7 @@ int main()
 }
 int is1slessthan10s(int n)
 {
-    return (ones(n)<=tens(n));
+    return (ones(n)<tens(n));
 }
 int tens(int n)
 {
