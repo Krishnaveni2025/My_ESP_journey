@@ -12,18 +12,20 @@
             Input:56789 Output: Failure
 */
 #include<stdio.h>
+int is50(int n);
 int main()
 {
-  int number;
-  printf("Enter a number: ");
-  scanf("%d",&number);
-  //your code here
-  if(number==50)
-  {
-    printf("Success");
-  }
-  else
-  {
-    printf("Failure");
-  }
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    if(is50(number))
+            printf("Output: Success");
+    else
+            printf("Output: Failure");
+}
+int is50(int n)
+{
+    if(n==50)
+            return 1;
+    return 0;
 }
