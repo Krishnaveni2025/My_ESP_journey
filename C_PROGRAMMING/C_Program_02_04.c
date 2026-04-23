@@ -1,25 +1,29 @@
-/* C LEVEL 02 Program 04
-        Use only int variables
-        Use only Decimals
-        Use the following operations only
-        +, -, /, *, %, ==, !=, <, >, <=, >=
-        Do not use if, for, while, arrays, pointers, strings, etc.
+/* 
+    C LEVEL 02 Program 04
+            Use only int variables
+            Use only Decimals
+            Use the following operations only
+            +, -, /, *, %, ==, !=, <, >, <=, >=
+            Do not use if, for, while, arrays, pointers, strings, etc.
    Question: 
-        Get a number from the user and 
-        check if the number is greater than 50. 
-        If yes then print 1, 
-        Otherwise print 0.
+            Get a number from the user and 
+            check if the number is greater than 50. 
+            If yes then print 1, 
+            Otherwise print 0.
    Example:
-        Input: 45    Output:0
-        Input: 56789 Output:1
+            Input: 45    Output:0
+            Input: 56789 Output:1
   */
 #include<stdio.h>
+int isgreaterthan50(int n);
 int main()
 {
-  int number;
-  printf("Enter a number: ");
-  scanf("%d",&number);
-  //your code here
-  printf("Result = %d",number>50);
-  return 0;
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",isgreaterthan50(number));
+}
+int isgreaterthan50(int n)
+{
+    return n>50;
 }
