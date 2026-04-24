@@ -1,32 +1,37 @@
-/* C LEVEL 04 Program 07
-        Use only int variables
-        Use only Decimals
-        Use only "if/else", goto statements. Don't use  "for/while"
-        Don't use arrays, pointers, strings, etc.
+/* 
+   C LEVEL 04 Program 07
+            Use only int variables
+            Use only Decimals
+            Use only "if/else", goto statements. Don't use  "for/while"
+            Don't use arrays, pointers, strings, etc.
    Question: 
-        Write a loop program to print two digit odd numbers whose sum of digits are 7
+            Write a loop program to print two digit odd numbers whose sum of digits are 7
    Answer:
-        25
-        43
-        61
+            25
+            43
+            61
   */
 #include<stdio.h>
+void print_2dodd_sofd7(void);
 int main()
 {
-  int number;
-  //your code here
-  number = 11;
-  loop:if(number<100)
-  {
-    if(number%2)
-    {
-        if((number%10)+(number/10)==7)
+    print_2dodd_sofd7();
+}
+void print_2dodd_sofd7(void)
+{
+    int n = 11, sum;
+    loop:
+        if(n<70)
         {
-            printf("%d\n",number);
+            if(n%2)
+            {
+                sum = (n/10)+(n%10);
+                if(sum==7)
+                {
+                    printf("%d\n",n);
+                }
+            }
+            n++;
+            goto loop;
         }
-    }
-    number++;
-    goto loop;
-  }
-  return 0;
 }
