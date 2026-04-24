@@ -13,3 +13,23 @@
             4
             5
 */
+void print_1to5(void);
+#include<stdio.h>
+int main()
+{
+    print_1to5();
+}
+void print_1to5(void)
+{
+    int n = 1;
+    for(;;)
+    {
+        if(n<6)
+        {
+            printf("%d\n",n);
+            n++;
+        }
+        else
+                break;
+    }
+}
