@@ -1,50 +1,41 @@
-/* C LEVEL 04 Program 17
-        Use only int variables
-        Use only Decimals
-        Use only "if/else", goto statements. Don't use  "for/while"
-        Don't use arrays, pointers, strings, etc.
+/* 
+   C LEVEL 04 Program 17
+            Use only int variables
+            Use only Decimals
+            Use only "if/else", goto statements. Don't use  "for/while"
+            Don't use arrays, pointers, strings, etc.
    Question: 
-        Write a program to get a number from the user and 
-        print whether the number is prime or not
+            Write a program to get a number from the user and 
+            print whether the number is prime or not
    Answer:
-        Input:31   Output:prime
-        Input:27  Output:not prime
-  */
+           Input:31   Output:prime
+           Input:27   Output:not prime
+*/
 #include<stdio.h>
+int prime(int n);
 int main()
 {
-  int x;
-  //your code here
-  printf("Enter a number: ");
-  scanf("%d",&x);
- 
- int i = 2, is_prime = 1;
-
-    if (x <= 1)
-    {
-        is_prime = 0;
-    }
+    int number;
+    printf("Number: ");
+    scanf("%d",&number);
+    if(prime(number))
+            printf("Prime");
     else
-    {
-        loop:
-            if (i * i <= x)
+            printf("Not Prime");
+}
+int prime(int n)
+{
+    int is_prime = 1, i = 2;
+    loop:
+            if((i*i)<=n)
             {
-                if (x % i == 0)
+                if(!(n%i))
                 {
                     is_prime = 0;
                     
                 }
-                else
-                {
                 i++;
                 goto loop;
-                }
             }
-        }
-    if (is_prime == 1)
-         printf("Prime");
-    else
-        printf("Not Prime");    
-  return 0;
+    return is_prime;
 }
-
