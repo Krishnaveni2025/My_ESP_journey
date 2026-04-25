@@ -1,4 +1,5 @@
-/* C LEVEL 05 Problem 16
+/* 
+   C LEVEL 05 Problem 16
         Use only int variables
         Use only Decimals
         Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
@@ -11,28 +12,30 @@
         Input: 27 - Output: Not prime
 */
 #include<stdio.h>
+int prime(int n);
 int main()
 {
-  int number, is_prime = 1, i = 2;
-  printf("Enter Number: ");
-  scanf("%d",&number);
-  for(;;)
-  {
-      loop:
-            if(i<number)
-            {
-                if(!(number%i))
-                {
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    if(prime(number))
+            printf("Output: Prime");
+    else
+            printf("output: Not Prime");
+}
+int prime(int n)
+{
+    int is_prime = 1, i = 2;
+    for(;;)
+    {
+        if((i*i)<=n)
+        {
+            if(!(n%i))
                     is_prime = 0;
-                    break;
-                }
-                i++;
-                goto loop;
-            }
-            break;
-  }
-  if(is_prime)
-        printf("Prime");
-  else
-        printf("Not Prime");
+            i++;
+        }
+        else
+                break;
+    }
+    return is_prime;
 }
