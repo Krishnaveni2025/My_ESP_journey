@@ -10,31 +10,3 @@
         Input: 359 - Output: Prime
         Input: 3577 - Output: Not prime
 */
-#include<stdio.h>
-int main()
-{
-    int number, is_prime = 1, i = 2;
-    printf("Enter Number: ");
-    scanf("%d",&number);
-    number = number % 100;
-    for(;;)
-    {
-        loop:
-            if(i<number)
-            {
-                if(!(number%i))
-                {
-                    is_prime = 0;
-                    break;
-                }
-                i++;
-                goto loop;
-            }
-            break;
-    }
-    if(is_prime)
-            printf("Prime");
-    else
-            printf("Not Prime");
-  return 0;
-}
