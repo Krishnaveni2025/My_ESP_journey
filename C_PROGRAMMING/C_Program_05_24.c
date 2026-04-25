@@ -1,43 +1,49 @@
-/* C LEVEL 05 Problem 24
-        Use only int variables
-        Use only Decimals
-        Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
-        Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 05 Problem 24
+            Use only int variables
+            Use only Decimals
+            Use "for" statements to solve the problems. "If" also can be used to decision making but not for loop.
+            Don't use Arrays, pointers, strings,etc.
    Question: 
-        Write a program to get a number from the user and 
-        print the total number of two digit perfect square numbers in the number
+            Write a program to get a number from the user and 
+            print the total number of two digit perfect square numbers in the number
    Answer:
-        Input: 163496481 Output: 4
-        Input: 364925    Output: 4
-  */
+            Input: 163496481 Output: 4
+            Input: 364925    Output: 4
+*/
 #include<stdio.h>
+int twodigit_perfect_count(int n);
 int main()
 {
-  int number,i = 1;
-  //your code here
-  printf("Enter a number: ");
-  scanf("%d",&number);
-  int ps_count = 0;
-  for(;;)
-  {
-      loop:
-      if(number>10)
-      {
-          i = 1;
-          loop1:
-            if(i<10)
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",twodigit_perfect_count(number));
+    return 0;
+}
+int twodigit_perfect_count(int n)
+{
+    int count = 0, i;
+    for(;;)
+    {
+        if(n>15)
+        {
+            i = 4;
+            for(;;)
             {
-                if((number%100)==(i*i))
+                if(i<10)
                 {
-                    ps_count++;
+                    if((i*i)==(n%100))
+                            count++;
+                    i++;
                 }
-                i++;
-                goto loop1;
+                else
+                        break;
             }
-            number /= 10;
-            goto loop;
-      }
-      break;
-  }
-  printf("Output: %d",ps_count);
+            n /= 10;
+        }
+        else
+                break;
+    }
+    return count;
 }
