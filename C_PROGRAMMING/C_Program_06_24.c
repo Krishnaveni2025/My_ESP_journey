@@ -1,41 +1,45 @@
-/* C LEVEL 06 Problem 24
-         Use only int variables
-         Use only Decimals
-         Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 06 Problem 24
+            Use only int variables
+            Use only Decimals
+            Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
+            Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a program to get a number from the user and 
-         print the total number of two digit perfect square numbers in the number
+            Write a program to get a number from the user and 
+            print the total number of two digit perfect square numbers in the number
    Answer:
-         Input: 163496481 Output: 4
-         Input: 364925    Output: 4
-  */
+            Input: 163496481 Output: 4
+            Input: 364925    Output: 4
+*/
 #include<stdio.h>
+int twod_perfectCount(int n);
 int main()
 {
-  int number, twops_count = 0, i;
-  //your code here
-  printf("Enter a number: ");
-  scanf("%d",&number);
-  while(1)
-  {
-      loop:
-            if(number>9)
+    int number;
+    printf("Input: ");
+    scanf("%d",&number);
+    printf("Output: %d",twod_perfectCount(number));
+    return 0;
+}
+int twod_perfectCount(int n)
+{
+    int i, count = 0;
+    while(1)
+    {
+        if(n>15)
+        {
+            i = 4;
+            while(1)
             {
-                i =4;
-                ploop:
-                    if(i<10)
-                    {
-                        if((number%100)==(i*i))
-                                twops_count++;
+                if(i<10)
+                {
+                    if((i*i)==(n%100))
+                            count++;
                     i++;
-                    goto ploop;
-                    }
-                number /= 10;
-                goto loop;
+                }else break;
             }
-        break;
-  }
-  printf("Output: %d",twops_count);
-  return 0;
+            n /= 10;
+        }
+        else return count;
+    }
 }
