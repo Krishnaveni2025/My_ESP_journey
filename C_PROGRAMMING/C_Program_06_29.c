@@ -1,49 +1,45 @@
-/* C LEVEL 06 Problem 29
-         Use only int variables
-         Use only Decimals
-         Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
-         Don't use Arrays, pointers, strings,etc.
-  Question: Write a program to get three numbers from the user and print the LCM of those numbers
-  Answer:
-  Input: 20 40 80 Output: 80
-  Input: 15 78 63 Output: 8190
-  */
+/* 
+  C LEVEL 06 Problem 29
+            Use only int variables
+            Use only Decimals
+            Use "while" statements to solve the problems. "If" also can be used to decision making but not for loop.
+            Don't use Arrays, pointers, strings,etc.
+   Question: 
+            Write a program to get three numbers from the user and 
+            print the LCM of those numbers
+   Answer:
+            Input: 20 40 80 Output: 80
+            Input: 15 78 63 Output: 8190
+*/
 #include<stdio.h>
+int lcm(int n1, int n2, int n3);
 int main()
 {
-    int number1, number2, number3, lcm;
-    printf("Enter three Numbers: ");
+    int number1, number2, number3;
+    printf("Input: ");
     scanf("%d %d %d",&number1, &number2, &number3);
-    if(number1>number2)
+    printf("Output: %d",lcm(number1, number2, number3));
+    return 0;
+}
+int lcm(int n1, int n2, int n3)
+{
+    int lcm;
+    if(n1>n2)
     {
-        if(number1>number3)
-        {
-            lcm = number1;
-        }
-        else
-        {
-            lcm = number3;
-        }
+        if(n1>n3) lcm = n1;
+        else lcm = n3;
     }
-    else
+    else lcm = n2;
+    while(1)
     {
-        lcm = number2;
-    }
-    for(;;)
-    {
-        loop:
-            if(!(lcm%number1))
+        if(!(lcm%n1))
+        {
+            if(!(lcm%n2))
             {
-               if(!(lcm%number2))
-               {
-                   if(!(lcm%number3))
-                   {
-                       break;
-                   }
-               }
+                if(!(lcm%n3))
+                        return lcm;
             }
-            lcm++;
-            goto loop;
+        }
+        lcm++;
     }
-    printf("Output: %d",lcm);
 }
