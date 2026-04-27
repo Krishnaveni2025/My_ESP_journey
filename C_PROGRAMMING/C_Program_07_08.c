@@ -1,16 +1,17 @@
-/* C LEVEL 07 Problem 08
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 08
+                  Use only int variables
+                  Use only Decimals
+                  Use functions with not return value.
+                  Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a loop program to print the two digit even numbers, whose sum of digits are 6
+                  Write a loop program to print the two digit even numbers, whose sum of digits are 6
    Function Name: 
-         disp_2digit_even_sum6
+                  disp_2digit_even_sum6
    Answer:
-         24
-         42
-         60
+                  24
+                  42
+                  60
 */
 #include<stdio.h>
 void disp_2digit_even_sum6(int n);
