@@ -1,18 +1,19 @@
-/* C LEVEL 07 Problem 02
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 02
+                  Use only int variables
+                  Use only Decimals
+                  Use functions with not return value.
+                  Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a loop program to print 5 to 1 on one by one
+                  Write a loop program to print 5 to 1 on one by one
    Function Name: 
-         disp_descend
+                  disp_descend
    Answer:
-         5
-         4
-         3
-         2
-         1
+                  5
+                  4
+                  3
+                  2
+                  1
 */
 #include<stdio.h>
 void disp_descend(int n);
