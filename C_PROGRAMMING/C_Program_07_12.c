@@ -1,16 +1,17 @@
-/* C LEVEL 07 Problem 12
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 12
+                  Use only int variables
+                  Use only Decimals
+                  Use functions with not return value.
+                  Don't use Arrays, pointers, strings,etc.
    Question: 
-         Get a number from the user print the sum of all digits.
+                  Get a number from the user print the sum of all digits.
    Function Name: 
-         disp_sum_all_digits
+                  disp_sum_all_digits
    Answer:
-         Input:123456   Output:21
-         Input:76895439 Output:51
-         Input:675      Output:18
+                  Input:123456   Output:21
+                  Input:76895439 Output:51
+                  Input:675      Output:18
   */
 #include<stdio.h>
 void disp_sum_all_digits(int n);
