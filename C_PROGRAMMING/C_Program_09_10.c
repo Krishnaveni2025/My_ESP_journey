@@ -12,62 +12,61 @@
             Input: 15 14 13 12 11
             Output: 15 14 12
 */
-
 #include<stdio.h>
-
-void getnumbers(int a[], int s);
-void print_array(int a[], int s);
-int removeprime(int a[], int b[], int s);
+#define size 5
 int prime(int a);
-
+int remove_prime(int a[], int r[]);
+void print(int a[], int s);
+void getnumbers(int a[]);
 int main()
 {
-    int size = 5, composite_count;
-    int numbers[size], composite_numbers[size];
-    getnumbers(numbers, size);
-    print_array(numbers, size);
-    composite_count = removeprime(numbers, composite_numbers, size );
-    print_array(composite_numbers, composite_count);
+    int numbers[size], result[size], composite;
+    getnumbers(numbers);
+    composite = remove_prime(numbers, result);
+    print(result,composite);
+    return 0;
+}
+void print(int a[], int s)
+{
+    int i;
+    printf("Output: ");
+    for(i = 0; i<s; i++)
+    {
+        printf("%d ",a[i]);
+    }
 }
 int prime(int a)
 {
-    int is_prime = 1, j = 2;
-    for(j=2; j<a; j++)
+    int i, is_prime = 1;
+    if(a<2) return 0;
+    for(i = 2; i<a; i++)
     {
-        if(!(a%j))
+        if(!(a%i))
         {
-            is_prime = 0;
-            break;
+            return 0;
         }
     }
-    return is_prime;
+    return 1;
 }
-int removeprime(int a[], int b[], int s)
+int remove_prime(int a[], int r[])
 {
-    int cc = 0;
-    for(int i = 0; i<s; i++)
+    int i, count = 0;
+    for(i = 0; i<size; i++)
     {
-        if(!prime(a[i]))
+        if(!(prime(a[i])))
         {
-           b[cc] = a[i];
-           cc++;
+            r[count] = a[i];
+            count++;
         }
     }
-    return cc;
+    return count;
 }
-void getnumbers(int a[], int s)
+void getnumbers(int a[])
 {
-    for(int i = 0; i<s; i++)
+    int i;
+    printf("Input: ");
+    for(i = 0; i<size; i++)
     {
-        printf("Enter %d Number: ",i+1);
-        scanf("%d",&a[i]);
-    }
-}
-void print_array(int a[], int s)
-{
-    printf("\n");
-    for(int i = 0; i<s; i++)
-    {
-        printf("%d ",a[i]);
+        scanf("%d", &a[i]);
     }
 }
