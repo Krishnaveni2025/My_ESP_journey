@@ -9,26 +9,25 @@
             Stop when the number is 0. 
             Print the total numbers entered by the user and 
             print the sum of numbers
+  Answer:
+            Input: 1 2 3 4 5 0
+            Total Number: 5
+            Sum of all Numbers: 15
 */
 #include<stdio.h>
-
-void getnumbers(int a[]);
-void print(int n);
-int total , sum;
-
+#define MAX 50
+void result(int a[]);
 int main()
 {
-    int numbers[50];
-    getnumbers(numbers);
-    print(total);
-    print(sum);
+    int numbers[MAX];
+    result(numbers);
 }
-void getnumbers(int a[])
+void result(int a[])
 {
-    int number;
+    int number, total = 0, sum = 0;
+    printf("Input: ");
     while(1)
     {
-        printf("Enter %d Number: ",total+1);
         scanf("%d",&number);
         if(!(number))
                 break;
@@ -36,8 +35,5 @@ void getnumbers(int a[])
         sum += a[total];
         total++;
     }
-}
-void print(int n)
-{
-    printf("\n%d",n);
+    printf("Total Number: %d\nSum of all Numbers: %d",total,sum);
 }
