@@ -1,15 +1,15 @@
 /* C LEVEL 08 Problem 17
-        Use only int variables
-        Use only Decimals
-        Use Functions with a return value
-        Do not use arrays, strings, pointers, etc.
+                 Use only int variables
+                 Use only Decimals
+                 Use Functions with a return value
+                 Do not use arrays, strings, pointers, etc.
    Question: 
-        Write a program to print the total count of numbers 
-        which are less than 100000 and whose sum of digits is 14
+                 Write a program to print the total count of numbers 
+                 which are less than 100000 and whose sum of digits is 14
    Function Name: 
-        disp_count_sum14
+                 disp_count_sum14
    Answer:
-        2710
+                 2710
   */
 #include<stdio.h>
 int disp_count_sum14(int n);
