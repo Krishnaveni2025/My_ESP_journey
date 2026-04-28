@@ -3,7 +3,8 @@
             Use only int variables
             Use only decimals
             Use arrays
-  Question: Get 5 numbers from the user and 
+  Question: 
+            Get 5 numbers from the user and 
             remove the even numbers and 
             create a new array and 
             then  print the same
@@ -12,46 +13,51 @@
             Output: 15 13 11
 */
 #include<stdio.h>
-
-void getnumbers(int a[], int s);
-void print_array(int a[], int s);
-int removeEvenNumbers(int a[], int b[], int s);
-
+#define size 5
+int even(int a);
+int remove_even(int a[], int r[]);
+void print(int a[], int s);
+void getnumbers(int a[]);
 int main()
 {
-    int size = 5, oddcount;
-    int numbers[size], oddNumbers[size];
-    getnumbers(numbers,size);
-    print_array(numbers, size);
-    oddcount = removeEvenNumbers(numbers, oddNumbers, size);
-    print_array(oddNumbers, oddcount);
+    int numbers[size], result[size], odd;
+    getnumbers(numbers);
+    odd = remove_even(numbers, result);
+    print(result,odd);
+    return 0;
 }
-int removeEvenNumbers(int a[], int b[], int s)
+void print(int a[], int s)
 {
-    int oc = 0;
-    for(int i = 0; i<s; i++)
-    {
-        if(a[i]%2)
-        {
-            b[oc] = a[i];
-            oc++;
-        }  
-    }
-    return oc;
-}
-void print_array(int a[], int s)
-{
-    printf("\n");
-    for(int i = 0; i<s; i++)
+    int i;
+    printf("Output: ");
+    for(i = 0; i<s; i++)
     {
         printf("%d ",a[i]);
     }
 }
-void getnumbers(int a[], int s)
+int even(int a)
 {
-    for(int i = 0; i<s; i++)
+    return (a%2);
+}
+int remove_even(int a[], int r[])
+{
+    int i, count = 0;
+    for(i = 0; i<size; i++)
     {
-        printf("Enter %d Number: ",i+1);
-        scanf("%d",&a[i]);
+        if(even(a[i]))
+        {
+            r[count] = a[i];
+            count++;
+        }
+    }
+    return count;
+}
+void getnumbers(int a[])
+{
+    int i;
+    printf("Input: ");
+    for(i = 0; i<size; i++)
+    {
+        scanf("%d", &a[i]);
     }
 }
