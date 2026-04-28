@@ -1,36 +1,35 @@
-/* C LEVEL 07 Problem 21
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 21
+                    Use only int variables
+                    Use only Decimals
+                    Use functions with not return value.
+                    Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a program to get a number from the user and 
-         print the total number of digits which are odd in that number
+                    Write a program to get a number from the user and 
+                    print the total number of digits which are odd in that number
    Function Name: 
-         disp_total_odd_digits
+                    disp_total_odd_digits
    Answer:
-         Input: 12345678 Output: 4
-         Input: 987531   Output:5
-  */
+                    Input: 12345678 Output: 4
+                    Input: 987531   Output:5
+*/
 #include<stdio.h>
-void disp_total_odd_digits(int n);
+void disp_total_odd_digits(int a);
 int main()
 {
     int number;
-    printf("Enter Number: ");
+    printf("Input: ");
     scanf("%d",&number);
     disp_total_odd_digits(number);
 }
-void disp_total_odd_digits(int n)
+void disp_total_odd_digits(int a)
 {
-    int sodd_count = 0;
-    while(n)
+    int total = 0;
+    while(a)
     {
-        if((n%10)%2)
-        {
-            sodd_count++;
-        }
-        n /= 10;
+        if((a%10)%2)
+                total++;
+        a /= 10;
     }
-    printf("%d",sodd_count);
+    printf("Output: %d",total);
 }
