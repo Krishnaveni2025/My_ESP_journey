@@ -1,32 +1,34 @@
-/* C LEVEL 07 Problem 26
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 26
+                    Use only int variables
+                    Use only Decimals
+                    Use functions with not return value.
+                    Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a program to print the biggest 4-digit number which is divisible by 7 and 9
+                    Write a program to print the biggest 4-digit number which is divisible by 7 and 9
    Function Name: 
-         disp_biggest_4digit_div7_9 
+                    disp_biggest_4digit_div7_9 
    Answer:
-         9954
-  */
+                    9954
+*/
 #include<stdio.h>
-void disp_biggest_4digit_div7_9(int n);
+void disp_biggest_4digit_div7_9(int a);
 int main()
 {
-    disp_biggest_4digit_div7_9(1000);
+    int number = 1000;
+    disp_biggest_4digit_div7_9(number);
 }
-void disp_biggest_4digit_div7_9(int n)
+void disp_biggest_4digit_div7_9(int a)
 {
     int big;
-    while(n<10000)
+    while(a<10000)
     {
-        if(!(n%7))
+        if(!(a%7))
         {
-            if(!(n%9))
-                    big = n;
+            if(!(a%9))
+                    big = a;
         }
-        n++;
+        a++;
     }
-    printf("%d",big);
+    printf("Output: %d",big);
 }
