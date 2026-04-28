@@ -1,42 +1,40 @@
 /*
   C LEVEL 09 Problem 07
-        Use only int variables
-        Use only decimals
-        Use arrays
+            Use only int variables
+            Use only decimals
+            Use arrays
   Question: 
-        Get 5 numbers from the user and arrange in descending order and print the same
+            Get 5 numbers from the user and arrange in descending order and print the same
 */
 #include<stdio.h>
-
-void get5numbers(int a[], int s);
-void arrange_descend(int a[], int s);
-void print_array(int a[], int s);
+#define size 5
+void print(int a[]);
+void getnumbers(int a[]);
+void arrange_descend(int a[]);
 int main()
 {
-    int size = 5;
     int numbers[size];
-    get5numbers(numbers, size);
-    print_array(numbers, size);
-    arrange_descend(numbers, size);
-    print_array(numbers, size);
+    getnumbers(numbers);
+    arrange_descend(numbers);
+    print(numbers);
 }
-void print_array(int a[], int s)
+void getnumbers(int a[])
 {
-    printf("\n");
-    int i = 0;
-    for(i = 0;i<s;i++)
+    int i;
+    for(i = 0; i<size; i++)
     {
-        printf("%d ",a[i]);
+        printf("Enter %d Number: ",i+1);
+        scanf("%d",&a[i]);
     }
 }
-void arrange_descend(int a[], int s)
+void arrange_descend(int a[])
 {
-    int i, j,temp;
-    for(i=0; i<s; i++)
+    int i, j, temp;
+    for(i = 0; i<size; i++)
     {
-        for(j = i+1; j< s; j++)
+        for(j = i+1; j<size; j++)
         {
-            if(a[j]>a[i])
+            if(a[i]<a[j])
             {
                 temp = a[i];
                 a[i] = a[j];
@@ -45,12 +43,11 @@ void arrange_descend(int a[], int s)
         }
     }
 }
-void get5numbers(int a[], int s)
+void print(int a[])
 {
-    int i =0;
-    for(i=0; i<s; i++)
+    int i;
+    for(i = 0; i<size; i++)
     {
-        printf("Enter %d Element: ",i+1);
-        scanf("%d",&a[i]);
+        printf("%d ",a[i]);
     }
 }
