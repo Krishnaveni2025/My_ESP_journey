@@ -1,40 +1,40 @@
-/* C LEVEL 07 Problem 20
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 20
+                    Use only int variables
+                    Use only Decimals
+                    Use functions with not return value.
+                    Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a program to print total number single digit prime numbers.
+                    Write a program to print total number single digit prime numbers.
    Function Name: 
-         disp_count_single_digit_prime
+                    disp_count_single_digit_prime
    Answer:
-           4
+                    4
 */
 #include<stdio.h>
-void disp_count_single_digit_prime(int n);
+void disp_count_single_digit_prime(int a);
 int main()
 {
     int number = 2;
     disp_count_single_digit_prime(number);
 }
-void disp_count_single_digit_prime(int n)
+void disp_count_single_digit_prime(int a)
 {
-    int count = 0, divider,  is_prime;
-    while(n<9)
+    int count = 0, i, is_prime;
+    while(a<9)
     {
-        divider = 2, is_prime = 1;
-        while(divider<n)
+        is_prime = 1;
+        for(i = 2; (i*i)<= a; i++)
         {
-            if(!(n%divider))
+            if(!(a%i))
             {
                 is_prime = 0;
                 break;
             }
-            divider++;
         }
         if(is_prime)
-             count++;
-        n++;
+                count++;
+        a++;
     }
-    printf("%d",count);
+    printf("Output: %d",count);
 }
