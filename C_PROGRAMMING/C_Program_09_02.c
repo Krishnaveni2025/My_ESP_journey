@@ -1,33 +1,28 @@
 /*
   C LEVEL 09 Problem 02
-        Use only int variables
-        Use only decimals
-        Use arrays
-Question: 
-        Get 5 numbers from user and print average of all numbers
+            Use only int variables
+            Use only decimals
+            Use arrays
+  Question: 
+            Get 5 numbers from user and print average of all numbers
 */
 #include<stdio.h>
-int number[5], result = 0;
-
-void get5numbers(int a[]);
-void print(int avg);
-
+#define size 5
+int disp_avg(int a[]);
 int main()
 {
-    get5numbers(number);
-    print(result);
+    int numbers[size];
+    printf("Output: %d",disp_avg(numbers));
+    return 0;
 }
-void get5numbers(int a[])
+int disp_avg(int a[])
 {
-    for(int i = 0; i<5; i++)
+    int sum = 0, i;
+    for(i = 0; i<size; i++)
     {
-        printf("Enter %d Number: ",i+1);
+        printf("Enter %d Number: ", i+1);
         scanf("%d",&a[i]);
-        result += a[i];
+        sum += a[i];
     }
-}
-void print(int avg)
-{
-    avg /= 5;
-    printf("Average = %d",avg);
+    return (sum/size);
 }
