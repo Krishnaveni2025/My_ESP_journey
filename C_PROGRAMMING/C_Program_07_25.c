@@ -1,46 +1,47 @@
-/* C LEVEL 07 Problem 25
-         Use only int variables
-         Use only Decimals
-         Use functions with not return value.
-         Don't use Arrays, pointers, strings,etc.
+/* 
+   C LEVEL 07 Problem 25
+                    Use only int variables
+                    Use only Decimals
+                    Use functions with not return value.
+                    Don't use Arrays, pointers, strings,etc.
    Question: 
-         Write a program to get a number from the user and 
-         print the total number of single digit prime numbers in the number
+                    Write a program to get a number from the user and 
+                    print the total number of single digit prime numbers in the number
    Function Name: 
-         disp_single_digit_prime
+                    disp_single_digit_prime
    Answer:
-         Input: 163496481 Output: 1
-         Input: 364925    Output: 3
-  */
-
+                    Input: 163496481 Output: 1
+                    Input: 364925    Output: 3
+*/
 #include<stdio.h>
-void disp_single_digit_prime(int n);
+void disp_single_digit_prime(int a);
 int main()
 {
     int number;
-    printf("Enter Number: ");
+    printf("Input: ");
     scanf("%d",&number);
     disp_single_digit_prime(number);
+    return 0;
 }
-void disp_single_digit_prime(int n)
+void disp_single_digit_prime(int a)
 {
-    int prime_count = 0, is_prime = 1, divider = 2;
-    while(n)
+    int count = 0, is_prime, i;
+    while(a>1)
     {
-        is_prime = 1;
-        for(divider=2; divider<(n%10); divider++)
+        for(i = 2; i<(a%10); i++)
         {
-            if(!((n%10)%divider))
+            is_prime = 1;
+            if(!((a%10)%i))
             {
                 is_prime = 0;
                 break;
             }
         }
-         if((n%10)<2)
-                  is_prime = 0;
+        if((a%10)<2)
+                is_prime = 0;
         if(is_prime)
-                prime_count++;
-        n/=10;
+                count++;
+        a /= 10;
     }
-    printf("%d",prime_count);
+    printf("Output: %d",count);
 }
