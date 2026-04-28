@@ -10,76 +10,75 @@
             print the sum of all numbers in the new array 
   Example:
             Input:  7 7 7 7 7
-            Output: 5 5 5 5 5 (14  14  14  14  14)
+            Output: 70 (14  14  14  14  14)
 */
 #include<stdio.h>
-void getnumbers(int a[], int s);
-void reverse(int a[], int b[], int s);
-void print_array(int a[], int s);
+#define size 5
+void reverse(int a[], int r[]);
 int getbitwidth(int n);
-int sum(int a);
+int sum(int a[]);
+void print(int a[]);
+void getnumbers(int a[]);
 int main()
 {
-    int size = 5;
     int numbers[size], result[size];
-    getnumbers(numbers, size);
-    print_array(numbers, size);
-    reverse(numbers, result, size);
-    print_array(result, size);
+    getnumbers(numbers);
+    reverse(numbers, result);
+    //print(result);
+    printf("Output: %d", sum(result));
+    return 0;
 }
-int sum(int a)
+void print(int a[])
 {
-    int sum = 0;
-    while(a)
+    int i;
+    for(i = 0; i<size; i++)
     {
-        sum += (a%10);
-        a /= 10;
+        printf("%d ",a[i]);
+    }
+}
+int sum(int a[])
+{
+    int i, sum = 0;
+    for(i = 0; i<size; i++)
+    {
+        sum += a[i];
     }
     return sum;
 }
-int getbitwidth(int n)
+void reverse(int a[], int r[])
 {
-    int size = 1;
-    while(n)
-    {
-        size++;
-        n >>= 1;
-    }
-    return size;
-}
-void reverse(int a[], int b[], int s)
-{
-    int rev , bits;
-     int num;
-    for( int i = 0; i<s; i++)
+    int rev, i, j, bits, num;
+    for(i = 0; i<size; i++)
     {
         rev = 0;
         num = a[i];
         bits = getbitwidth(num);
-        for(int j = 0; j<bits; j++)
+        for(j = 0; j<bits; j++)
         {
             rev<<=1;
             if(num&1)
-                    rev |= 1;
-            num >>= 1;
+                    rev|=1;
+            num>>=1;
         }
-        b[i] = sum(rev);
-        
+        r[i] = rev;
     }
 }
-void getnumbers(int a[], int s)
+int getbitwidth(int n)
 {
-    for(int i = 0; i<s; i++)
+    int b = 1;
+    while(n)
     {
-        printf("Enter %d Number: ",i+1);
+        b++;
+        n>>=1;
+    }
+    return b;
+}
+void getnumbers(int a[])
+{
+    int i;
+    printf("Input: ");
+    for(i = 0; i<size; i++)
+    {
         scanf("%d",&a[i]);
-    }
-}
-void print_array(int a[], int s)
-{
-    printf("\n");
-    for(int i = 0; i<s; i++)
-    {
-        printf("%d ",a[i]);
     }
 }
