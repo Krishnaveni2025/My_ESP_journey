@@ -9,40 +9,32 @@
             Stop when the number is 0. 
             If  numbers entered  if first and last numbers are equal, 
             print "Success" else "Failure"
+  Example:
+            Input: 8 1 5 4 3 6 2 7 8 0    Output: Success
+            Input: 1 2 3 4 5 0            Output: Failure
 */
 #include<stdio.h>
-
-void getnumbers(int a[]);
-int equal(int f, int l);
-int total;
-
+void result(int a[]);
+#define MAX 50
 int main()
 {
-    int numbers[50];
-    getnumbers(numbers);
-    int first = numbers[0];
-    int last = numbers[total-1];
-    if(equal(first,last))
-            printf("Success");
-    else
-            printf("Failure");
+    int numbers[MAX];
+    result(numbers);
 }
-int equal(int f, int l)
+void result(int a[])
 {
-    if(f==l)
-            return 1;
-    return 0;
-}
-void getnumbers(int a[])
-{
-    int number;
+    int number, total = 0;
+    printf("Input: ");
     while(1)
     {
-        printf("Enter %d Number: ",total+1);
         scanf("%d",&number);
-        if(!number)
-                break;
+        if(!(number)) break;
         a[total] = number;
         total++;
     }
+    printf("Output: ");
+    if(a[0]==a[total-1])
+            printf("Success");
+    else
+            printf("Failure");
 }
