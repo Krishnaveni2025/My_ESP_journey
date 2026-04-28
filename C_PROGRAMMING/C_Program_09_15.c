@@ -9,77 +9,56 @@
             Add each numbers digit and put them in an array and 
             arrange the new array in the ascending order and 
             print the same
+  Answer:
+            Input: 15 14 13 12 11 0 
+            Output: 2 3 4 5 6
 */
 #include<stdio.h>
-
-void getnumbers(int a[]);
-void addDigits(int a[], int b[]);
-void arrange_ascend(int a[]);
-void print(int a[]);
-int sum(int n);
-int total;
-
+#define MAX 50
+int sumofdigits(int n);
+void arrange_ascend(int a[], int r[]);
 int main()
 {
-    int numbers[50],result[50];
-    getnumbers(numbers);
-    print(numbers);
-    addDigits(numbers,result);
-    print(result);
-    arrange_ascend(result);
-    print(result);
+    int numbers[MAX], result[MAX];
+    arrange_ascend(numbers, result);
 }
-void arrange_ascend(int a[])
+int sumofdigits(int n)
 {
-    int temp;
-    for(int i = 0; i<total; i++)
+    int sum = 0;
+    while(n)
     {
-        for(int j = i+1; j<total; j++)
+        sum += (n%10);
+        n /= 10;
+    }
+    return sum;
+}
+void arrange_ascend(int a[], int r[])
+{
+    int number, temp, i, j, total = 0;
+    printf("Input: ");
+    while(1)
+    {
+        scanf("%d",&number);
+        if(!(number))   break;
+        a[total] = number;
+        r[total] = sumofdigits(number);
+        total++;
+    }
+    for(i = 0; i<total; i++)
+    {
+        for(j = i+1; j<total; j++)
         {
-            if(a[j]<a[i])
+            if(r[i]>r[j])
             {
-                temp = a[j];
-                a[j] = a[i];
-                a[i] = temp;
+                temp = r[i];
+                r[i] = r[j];
+                r[j] =temp;
             }
         }
     }
-}
-void print(int a[])
-{
-    printf("\n");
-    for(int i = 0; i<total; i++)
+    printf("Output: ");
+    for(i = 0; i<total; i++)
     {
-        printf("%d ",a[i]);
-    }
-}
-int sum(int n)
-{
-    int sumofdigits = 0;
-    while(n)
-    {
-        sumofdigits += (n%10);
-        n /= 10;
-    }
-    return sumofdigits;
-}
-void addDigits(int a[], int b[])
-{
-    for(int i = 0; i<total; i++)
-    {
-        b[i] = sum(a[i]);
-    }
-}
-void getnumbers(int a[])
-{
-    int number;
-    while(1)
-    {
-        printf("Enter %d Number: ",total+1);
-        scanf("%d",&number);
-        if(!(number))
-                break;
-        a[total] = number;
-        total++;
+        printf("%d ",r[i]);
     }
 }
