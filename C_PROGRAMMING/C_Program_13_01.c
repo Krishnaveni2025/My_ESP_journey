@@ -12,7 +12,7 @@ struct student{
     struct student *next;
 }
 */
-#include<Stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 struct student{
     int id;
