@@ -12,28 +12,68 @@ struct student{
     struct student *next;
 }
 */
-
-#include<stdio.h>
+#include<Stdio.h>
 #include<stdlib.h>
 struct student{
     int id;
     int math;
-    int science,
+    int science;
     struct student *next;
 };
+typedef struct student node;
+void create(node *list);
+void display(node *list);
+void freelist(node *list);
+node *head = NULL;
 int main()
 {
-    struct student *head = NULL;
-    int inputID;
-    while(1)
+    create(head);
+    display(head);
+    freelist(head);
+}
+void freelist(node *list)
+{
+    node *nextnode;
+    node *ptr = list;
+    while(ptr!=NULL)
     {
-        printf("Enter ID: ");
-        scanf("%d",&inputID);
-        if(inputID == -1)
-        {
-            break;
-        }
-        head = malloc((sizeof(struct student)));
-        
+        nextnode = ptr->next;
+        free(ptr);
+        ptr = nextnode;
     }
+}
+void display(node *list)
+{
+    node *ptr = list;
+    if(ptr==NULL)
+    {
+        printf("No Entries to display");
+    }
+    while (ptr!=NULL)
+    {
+        printf("Student ID: %d |Math: %d |Science: %d\n",ptr->id, ptr->math, ptr->science);
+        ptr = ptr->next;
+    }
+}
+void create(node *list)
+{
+    node *new = NULL;
+    node *current = NULL;
+    int inid;
+    while (1)
+    {
+        printf("Enter Id: ");
+        scanf("%d",&inid);
+        if(inid==-1) break;
+        new = malloc(sizeof(node));
+        new->id = inid;
+        printf("Enter Math Marks: ");
+        scanf("%d",&new->math);
+        printf("Enter Science Marks: ");
+        scanf("%d",&new->science);
+        new->next = NULL;
+        if(head == NULL)    head = new;
+        else                current->next = new;
+        current = new;   
+    }   
 }
