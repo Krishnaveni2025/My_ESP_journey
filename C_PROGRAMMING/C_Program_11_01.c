@@ -8,10 +8,10 @@
 #include<stdio.h>
 int main()
 {
-    int *number, value;
+    int number, *pointer;
     printf("Enter Number: ");
-    scanf("%d",number);
-    number = &value;
-    value = 10;
-    printf("%d",*number);
+    scanf("%d",&number);    // 64
+    pointer = &number;      
+    *pointer = 50;
+    printf("Number: %d",number);//50
 }
