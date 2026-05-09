@@ -7,8 +7,8 @@
 */
 #include<stdio.h>
 #define size 5
-void increment(int a[], int s);
-void print(int a[], int s);
+void increment(int *a, int s);
+void print(int *a, int s);
 
 int main()
 {
@@ -20,14 +20,14 @@ int main()
     increment(array,size);
     print(array, size);
 }
-void print(int a[], int s)
+void print(int *a, int s)
 {
     for(int i = 0; i<size; i++)
     {
         printf("%d ",a[i]);
     }
 }
-void increment(int a[], int s)
+void increment(int *a, int s)
 {
     for(int i = 0; i<size; i++)
     {
