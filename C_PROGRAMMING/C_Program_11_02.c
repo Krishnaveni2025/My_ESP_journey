@@ -6,18 +6,31 @@
                 increment each array element in the function
 */
 #include<stdio.h>
-void incementby1(int *a);
-int integer[] = { 1, 2, 3, 4, 5};
-int size = *(&integer + 1)- integer;
+#define size 5
+void increment(int a[], int s);
+void print(int a[], int s);
+
 int main()
 {
-    incementby1(integer);
+    int array[size];
+    for(int i = 0; i<size; i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    increment(array,size);
+    print(array, size);
 }
-void incementby1(int *a)
+void print(int a[], int s)
 {
-    for(int i=0; i< size; i++)
+    for(int i = 0; i<size; i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+void increment(int a[], int s)
+{
+    for(int i = 0; i<size; i++)
     {
         a[i] += 1;
-        printf("%d ",a[i]);
     }
 }
