@@ -7,40 +7,37 @@
                   memcopy(src,dst,size)
 */
 #include<stdio.h>
-void getsource(int *a,int s);
-void memcopy(int *source, int *destination, int length);
-void print(int *a, int s);
+#define MAX_SIZE 10
+void memcopy(int *src, int *dst, int size);
+void getnumbers(int *array, int size);
+void print(int *array, int size);
 int main()
 {
-    int size;
-    printf("Enter Size of the Number: ");
-    scanf("%d",&size);
-    int src[size],dst[size];
-    getsource(src, size);
-    print(src, size);
-    memcopy(src,dst,size);
-    print(dst,size);
+    int source[MAX_SIZE], destination[MAX_SIZE];
+    getnumbers(source, MAX_SIZE);
+    memcopy(source, destination, MAX_SIZE);
+    print(destination,MAX_SIZE);
 }
-void memcopy(int *source, int *destination, int length)
+void print(int *array, int size)
 {
-    for(int i = 0; i<length; i++)
+    printf("Destination Integers: ");
+    for(int i = 0; i<size; i++)
     {
-        *(destination+i) = *(source+i);
+        printf("%d ",array[i]);
+    }   
+}
+void getnumbers(int *array, int size)
+{
+    printf("Source Integers: ");
+    for(int i = 0; i<size; i++)
+    {
+        scanf("%d",&array[i]);
     }
 }
-void print(int *a, int s)
+void memcopy(int *src, int *dst, int size)
 {
-    printf("\n");
-    for(int i = 0; i<s; i++)
+    for(int i = 0; i<size; i++)
     {
-        printf("%d ",*(a+i));
-    }
-}
-void getsource(int *a,int s)
-{
-    for(int i = 0; i<s; i++)
-    {
-        printf("Enter %d Number: ",i+1);
-        scanf("%d",&a[i]);
+        dst[i] = src[i];
     }
 }
