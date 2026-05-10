@@ -14,18 +14,15 @@
                 5
 */
 #include<stdio.h>
-int arrange_ascend(int *p);
+#define size 5
+int arrange_ascend(int *a);
 int main()
 {
-    int number;
-    for(number = 1; number<6; number++)
-    {
-        if(arrange_ascend(&number))
-                printf("%d\n",number);   
-    }
+  for(int i = 1; i<6; i++)
+        printf("%d\n",arrange_ascend(&i));
 }
-int arrange_ascend(int *p)
+int arrange_ascend(int *a)
 {
-    if(*p<6)
-            return 1;
+  if(*a<6)
+      return *a;
 }
