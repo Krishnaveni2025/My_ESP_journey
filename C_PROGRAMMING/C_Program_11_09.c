@@ -7,57 +7,51 @@
                  intcon(src1, size1, src2, size2, dst)
 */
 #include<stdio.h>
-
-void intcon(int *source1, int size1, int *source2, int size2, int *destination);
-void getint(int *set1, int s1, int *set2, int s2);
-void print(int *a, int s);
+#define s1 8
+#define s2 5
+#define s s1+s2
+void getintegers(int *src1, int size1, int *src2, int size2);
+void intcon(int *src1, int size1, int *src2, int size2, int *dst);
+void print(int *array, int size);
 int main()
 {
-    int size1, size2,size;
-    printf("Enter size of the first array: ");
-    scanf("%d",&size1);
-    printf("Enter size of the second array: ");
-    scanf("%d",&size2);
-    size = size1+size2;
-    int src1[size1], src2[size2],dst[size];
-    getint(src1,size1,src2,size2);
-    print(src1,size1);
-    print(src2,size2);
-    intcon(src1, size1, src2, size2, dst);
-    print(dst,size);
+    int source1[s1], source2[s2],destination[s];
+    getintegers(source1, s1, source2, s2);
+    intcon(source1, s1, source2, s2, destination);
+    print(destination, s);
 }
-void print(int *a, int s)
+void print(int *array, int size)
 {
-    printf("\n");
-    for(int i = 0; i<s; i++)
+    int i = 0;
+    printf("Destination: ");
+    for(i = 0; i<size; i++)
     {
-        printf("%d ",a[i]);
+        printf("%d ",array[i]);
     }
 }
-void getint(int *set1, int s1, int *set2, int s2)
+void getintegers(int *src1, int size1, int *src2, int size2)
 {
-    printf("First Set\n");
-    for(int i = 0; i<s1; i++)
-    {
-        printf("Enter %d Number: ",i+1);
-        scanf("%d",&set1[i]);
-    }
-    printf("Second Set\n");
-    for(int j = 0; j<s2; j++)
-    {
-        printf("Enter %d Number: ",j+1);
-        scanf("%d",&set2[j]);
-    }
-}
-void intcon(int *source1, int size1, int *source2, int size2, int *destination)
-{
-    int i = 0, j = 0;
+    int i;
+    printf("Source 1: ");
     for(i = 0; i<size1; i++)
     {
-        *(destination+i) = *(source1+i);
+        scanf("%d",&src1[i]);
+    }
+    printf("Source 2: ");
+    for(i = 0; i<size2; i++)
+    {
+        scanf("%d",&src2[i]);
+    }
+}
+void intcon(int *src1, int size1, int *src2, int size2, int *dst)
+{
+    int i, j;
+    for(i = 0; i<size1; i++)
+    {
+        dst[i] = src1[i];
     }
     for(j = 0; j<size2; j++)
     {
-       *(destination+i+j) = *(source2+j); 
+        dst[i+j] = src2[j]; 
     }
 }
