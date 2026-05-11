@@ -7,31 +7,31 @@
                   strcopy(src,dst)
 */
 #include<stdio.h>
-void strcopy(char *source, char *destination);
-void getsource(char *str);
+#define MAX_SIZE 8
+void getgroupofchars(char *src);
+void strcopy(char *src, char *dst);
 void print(char *str);
 int main()
 {
-    char src[51], dst[51];
-    getsource(src);
-    print(src);
-    strcopy(src, dst);
-    print(dst);
+   char source[MAX_SIZE], destination[MAX_SIZE];
+   getgroupofchars(source);
+   strcopy(source, destination);
+   print(destination);
+}
+void getgroupofchars(char *src)
+{
+   printf("Source: ");
+   scanf("%s",src);
 }
 void print(char *str)
 {
-    printf("\n%s",str);
+   printf("Destination: %s",str);
 }
-void getsource(char *str)
+void strcopy(char *src, char *dst)
 {
-    printf("Enter Source: ");
-    scanf("%s",str);
-}
-void strcopy(char *source, char *destination)
-{
-    while(*(source)!='\0')
-    {
-        *(destination++) = *(source++);
-    }
-    *(destination) = '\0';
+   while (*src!='\0')
+   {
+      *(dst++) = *(src++);
+   }
+   dst = '\0';
 }
