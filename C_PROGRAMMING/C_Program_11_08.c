@@ -7,32 +7,32 @@
                   strcomp(src, dst)
 */
 #include<stdio.h>
-int strcomp(char *source, char *destination);
-void getstrs(char *source, char *destination);
+#define Max_size 10
+void getstrings(char *src, char *dst);
+int strcomp(char *src, char *dst);
 int main()
 {
-    char src[51], dst[51];
-    getstrs(src, dst);
-    int equal;
-    equal = strcomp(src,dst);
-    if(equal)
-            printf("success");
+    char source[Max_size], destination[Max_size];
+    getstrings(source, destination);
+    if(strcomp(source, destination))
+                printf("Success");
     else
-            printf("failure");
+                printf("Failure");
+    return 0;
 }
-void getstrs(char *source, char *destination)
+void getstrings(char *src, char *dst)
 {
-    printf("string 1: ");
-    scanf("%s",source);
-    printf("string 2: ");
-    scanf("%s",destination);
+    printf("String 1: ");
+    scanf("%s",src);
+    printf("String 2: ");
+    scanf("%s",dst);
 }
-int strcomp(char *source, char *destination)
+int strcomp(char *src, char *dst)
 {
     int i = 0;
-    while(*(source+i)!='\0')
+    while(*(src+i)!='\0')
     {
-        if(*(source+i)!= *(destination+i))
+        if(*(src+i) != *(dst+i))
                 return 0;
         i++;
     }
