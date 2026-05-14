@@ -11,14 +11,14 @@
                 print(result);
             }
 */
-void getnumbers(char *n1, char *n2);
-void print(char *str);
-int getlen(char *str);
-void strcopy(char *src, char *dst);
-void removeleading0s(char *num);
-void multiplynumbers(char *n1, char *n2, char *r);
-void con_int_to_char_array(int *a,int s, char *str);
 #include<stdio.h>
+void getnumbers(char *n1, char *n2);
+void multiplynumbers(char *n1, char *n2, char *r);
+void print(char *n);
+int getlength(char *n);
+void strcopy(char *src, char *dst);
+void removeleading0s(char *n);
+void conv_int_str(int *n, int l,char *s);
 int main()
 {
     char number1[51], number2[51], result[102];
@@ -26,46 +26,50 @@ int main()
     multiplynumbers(number1, number2, result);
     print(result);
 }
-void con_int_to_char_array(int *a,int s, char *str)
-{
-    int i;
-    for(i = 0; i<s; i++)
-    {
-        *(str+i) = a[i]+'0';
-    }
-    *(str+i) = '\0'; 
-}
 void multiplynumbers(char *n1, char *n2, char *r)
 {
-    int l1, l2, d1, d2, product;
-    l1 = getlen(n1);
-    l2 = getlen(n2);
-    int temp[102];
+    int d1, d2, product, l1, l2,l;
+    l1 = getlength(n1);
+    l2 = getlength(n2);
+    l = l1+l2;
+    int temp[102] = {0};
     for(int i = l1-1; i>=0; i--)
     {
-        for(int j = l2-1;j>=0; j--)
+        for(int j = l2-1; j>=0; j--)
         {
-            d1 = n1[i]-'0';
-            d2 = n2[j]-'0';
+            d1 = n1[i] - '0';
+            d2 = n2[j] - '0';
             product = (d1*d2)+temp[i+j+1];
             temp[i+j+1] = (product%10);
             temp[i+j] += (product/10);
         }
     }
-    con_int_to_char_array(temp, l1+l2, r);
+    conv_int_str(temp,l,r);
 }
-void removeleading0s(char *num)
+void conv_int_str(int *n, int l,  char *s)
+{
+    int i;
+    for(i = 0; i<l; i++)
+    {
+        *(s+i) = n[i]+'0';
+    }
+    *(s+i) = '\0';
+}
+void print(char *n)
+{
+    removeleading0s(n);
+    printf("Result: %s",n);
+}
+void removeleading0s(char *n)
 {
     int l, i = 0;
-    l = getlen(num);
-    while(*(num+i)=='0'&&i<l-1)
+    l = getlength(n)-1;
+    while(*(n+i)=='0' && i<l)
     {
-            i++;
+        i++;
     }
     if(i>0)
-    {
-        strcopy(&num[i],num);
-    }
+            strcopy(&n[i], n);
 }
 void strcopy(char *src, char *dst)
 {
@@ -73,26 +77,21 @@ void strcopy(char *src, char *dst)
     {
         *(dst++) = *(src++);
     }
-    *(dst) = '\0';
+    *dst = '\0';
 }
-int getlen(char *str)
+int getlength(char *n)
 {
     int l = 0;
-    while(*(str+l)!='\0')
+    while(*(n+l) != '\0')
     {
         l++;
     }
     return l;
 }
-void print(char *str)
-{
-    removeleading0s(str);
-    printf("%s",str);
-}
 void getnumbers(char *n1, char *n2)
 {
-    printf("First Number\n");
+    printf("Number 1: ");
     scanf("%s",n1);
-    printf("Second Number\n");
+    printf("Number 2: ");
     scanf("%s",n2);
 }
