@@ -9,40 +9,49 @@
    sub-string: etal
    Answer: 6
 */
+#include<stdio.h>
 void get_str_sstr(char *str, char *sstr);
 void print_position(char *str, char *sstr);
-#include<stdio.h>
+int getlength(char *s);
 int main()
 {
-    char s[50], subs[10];
-    get_str_sstr(s,subs);
-    print_position(s, subs);
+   char strng[50], substrng[10];
+   get_str_sstr(strng, substrng);
+   print_position(strng, substrng);
+}
+int getlength(char *s)
+{
+   int l = 0;
+   while(*(s+l)!='\0')
+   {
+      l++;
+   }
+   return l;
 }
 void print_position(char *str, char *sstr)
 {
-    int i = 0, j = 0,found = 0;
-    while(*(str+i)!='\0')
-    {
-        found = 1;
-        j = 0;
-       while(*(sstr+j)!='\0')
-       {
-           if(*(sstr+j)!=*(str+j+i))
-            {
-                found = 0;
-                break;
-            }
-            j++;
-       }
-       if(found)
+   int sl, ssl, i, j, found = 1;
+   sl = getlength(str);
+   ssl = getlength(sstr);
+   for(i = 0; i<sl; i++)
+   {
+      found = 1;
+      for(j = 0; j<ssl; j++)
+      {
+         if(*(str+i+j)!=*(sstr+j))
+         {
+            found  = 0;
+            break;
+         }
+      }
+      if(found)
             printf("%d ",i+1);
-       i++;
-    }
+   }
 }
 void get_str_sstr(char *str, char *sstr)
 {
-    printf("String: ");
-    scanf("%s",str);
-    printf("sub-string: ");
-    scanf("%s",sstr);
+   printf("String: ");
+   scanf("%s",str);
+   printf("Sub-string: ");
+   scanf("%s",sstr);
 }
