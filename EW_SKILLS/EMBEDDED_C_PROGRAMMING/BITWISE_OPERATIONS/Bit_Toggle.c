@@ -24,3 +24,20 @@ Binary representation of 0 is 00000000.
 Toggling the 5th bit (position 5) results in 00100000, which is 32 in decimal.
 Expected Output: 32
 */
+#include <stdio.h>
+
+unsigned char modifyBit(unsigned char reg, int pos, int mode) {
+    // Write your code here
+    if(mode)
+            return ((reg | (1<<pos)));
+    else
+            return((reg &(~(1<<pos))));
+}
+
+int main() {
+    unsigned char reg;
+    int pos, mode;
+    scanf("%hhu %d %d", &reg, &pos, &mode);
+    printf("%d", modifyBit(reg, pos, mode));
+    return 0;
+}
