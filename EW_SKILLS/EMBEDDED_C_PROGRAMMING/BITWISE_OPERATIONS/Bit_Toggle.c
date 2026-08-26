@@ -26,18 +26,14 @@ Expected Output: 32
 */
 #include <stdio.h>
 
-unsigned char modifyBit(unsigned char reg, int pos, int mode) {
+int toggleFifthBit(int n) {
     // Write your code here
-    if(mode)
-            return ((reg | (1<<pos)));
-    else
-            return((reg &(~(1<<pos))));
+    return (n^(1<<5));
 }
 
 int main() {
-    unsigned char reg;
-    int pos, mode;
-    scanf("%hhu %d %d", &reg, &pos, &mode);
-    printf("%d", modifyBit(reg, pos, mode));
+    int n;
+    scanf("%d", &n);
+    printf("%d", toggleFifthBit(n));
     return 0;
 }
