@@ -81,7 +81,6 @@ SET_FIELD(reg, 12, 4, new_mode);
 
 ## Why this matters in embedded/firmware
 Most peripheral registers (UART, Timers, ADC, SPI, etc.) use bit fields to pack multiple settings and status bits into a single register. Overwriting an entire register risks changing unrelated bits (e.g., clearing an enable or status flag). Learning to extract and modify only the targeted bits using masks and shifts is an essential embedded programming skill.
-
 ---
 
 References and further reading:
