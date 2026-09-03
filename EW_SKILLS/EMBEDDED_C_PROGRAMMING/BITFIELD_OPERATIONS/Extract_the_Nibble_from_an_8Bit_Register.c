@@ -28,6 +28,7 @@ Example-3
 Input: reg = 0xFF, pos = 0
 Output: 15
 */
+
 #include <stdio.h>
 
 unsigned char extractNibble(unsigned char reg, int pos) {
