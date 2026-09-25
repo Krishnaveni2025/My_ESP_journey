@@ -51,3 +51,31 @@ Output
 After swapPtr: a=7 b=-3
 After swapRef: a=7 b=-3
 */
+#include <iostream>
+
+// Define swapPtr(int* a, int* b)
+void swapPtr(int* a, int* b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+// Define swapRef(int& a, int& b)
+void swapRef(int& a, int& b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+int main() {
+    int x, y;
+    std::cin >> x >> y;
+
+    int a = x, b = y;
+    swapPtr(&a, &b);
+    std::cout << "After swapPtr: a=" << a << " b=" << b << "\n";
+
+    int c = x, d = y;
+    swapRef(c, d);
+    std::cout << "After swapRef: a=" << c << " b=" << d;
+
+    return 0;
+}
