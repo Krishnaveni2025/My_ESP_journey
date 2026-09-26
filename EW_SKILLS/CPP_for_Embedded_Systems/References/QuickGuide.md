@@ -3,7 +3,7 @@
 A **reference** is an alias for an existing object. It provides direct access to that object without pointer-style syntax and is useful when an API requires a valid object rather than an optional one.
 
 > A reference must be initialized when it is declared and cannot later be reseated to refer to another object.
-
+ 
 ## 1. Basic references
 
 ```cpp
